@@ -1,0 +1,52 @@
+[
+  {
+    "idCategory": 1,
+    "name": "Panel",
+    "image": "/products/category/panel.webp"
+  },
+  {
+    "idCategory": 2,
+    "name": "Bala",
+    "image": "/products/category/bala.jpg"
+  },
+  {
+    "idCategory": 3,
+    "name": "Bombillo",
+    "image": "/products/category/bombillo.webp"
+  },
+  {
+    "idCategory": 4,
+    "name": "Mini Bala",
+    "image": "/products/category/mini-bala.webp"
+  },
+  {
+    "idCategory": 5,
+    "name": "Driver",
+    "image": "/products/category/driver.png"
+  },
+  {
+    "idCategory": 6,
+    "name": "Spot",
+    "image": "/products/category/spot.jpg"
+  },
+  {
+    "idCategory": 7,
+    "name": "Plafón",
+    "image": "/products/category/plafon.jpg"
+  },
+  {
+    "idCategory": 8,
+    "name": "Aplique",
+    "image": "/products/category/aplique.jpg"
+  },
+  {
+    "idCategory": 9,
+    "name": "Colgante",
+    "image": "/products/category/colgante.webp"
+  },
+  {
+    "idCategory": 10,
+    "name": "Lineal",
+    "image": "/products/category/lineal.jpg"
+  }
+]

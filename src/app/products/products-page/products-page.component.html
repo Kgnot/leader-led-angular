@@ -1,0 +1,26 @@
+<section class="padding10-l-r product-page-component">
+  <app-presentation
+    [h1Text]="'Productos'"
+    [description]="'Mira la diversidad de productos'"
+
+    [bannerImg]="'/products.jpg'"
+  />
+  <hr>
+
+  <app-section-selector
+    [currentSection]="currentSection"
+    (sectionChanged)="onSectionChanged($event)">
+  </app-section-selector>
+
+  <app-items-grid
+    [items]="getCurrentItems()"
+    (itemSelected)="onItemSelected($event)"
+  />
+</section>
+@if (isModalOpen) {
+  <app-products-modal
+    [products]="products()"
+    (close)="closeModal()"
+  >
+  </app-products-modal>
+}

@@ -1,0 +1,21 @@
+<div class="section-selector">
+  <div class="selector-container">
+    <button
+      class="section-btn"
+      [class.active]="currentSection === sectionTypes.APPLICATION"
+      (click)="selectSection(sectionTypes.APPLICATION)">
+      <span>Tipo de Aplicación</span>
+    </button>
+
+    <button
+      class="section-btn"
+      [class.active]="currentSection === sectionTypes.CATEGORY"
+      (click)="selectSection(sectionTypes.CATEGORY)">
+      <span>Categoría</span>
+    </button>
+  </div>
+
+<!--  <div class="current-section-indicator">-->
+<!--    {{ getCurrentSectionLabel() }}-->
+<!--  </div>-->
+</div>

@@ -1,0 +1,37 @@
+[
+  {
+    "idbrand": 1,
+    "name": "Tecnolite",
+    "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+  },
+  {
+    "idbrand": 2,
+    "name": "Mean Well",
+    "imageUrl": "https://www.meanwell.com/styles/images/logo2.png"
+  },
+  {
+    "idbrand": 3,
+    "name": "Lutron",
+    "imageUrl": "https://www.lutron.com/themes/custom/lutron/logo-black.svg"
+  },
+  {
+    "idbrand": 4,
+    "name": "Inventronic",
+    "imageUrl": "https://www.inventronics-co.com/wp-content/uploads/2023/04/inventronics-logo-web.png"
+  },
+  {
+    "idbrand": 5,
+    "name": "Leviton",
+    "imageUrl": "https://es.leviton.com/content/dam/leviton/lvt-logo.svg"
+  },
+  {
+    "idbrand": 6,
+    "name": "Osram",
+    "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/415/037/themes/common/logo-467738990-1620943061-79480fd9abfc3c764f011caff87f40a01620943062-480-0.webp"
+  },
+  {
+    "idbrand": 7,
+    "name": "Americanlite",
+    "imageUrl": "https://americanlite.com/mt-content/uploads/2018/02/logo-1360x468-pixels.jpg"
+  }
+]

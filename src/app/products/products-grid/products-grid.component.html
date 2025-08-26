@@ -1,0 +1,29 @@
+<!-- products-grid.component.html -->
+<div class="products-container">
+  <!-- Loading State -->
+  @if (loading) {
+    <div class="loading-state">
+      <div class="loading-spinner"></div>
+      <p>Cargando productos...</p>
+    </div>
+  }
+  <!-- Empty State -->
+  @if (!loading && (!products || products.length === 0)) {
+    <div class="empty-state">
+      <div class="empty-icon">📦</div>
+      <h3>{{ emptyMessage }}</h3>
+      <p>No encontramos productos que mostrar en este momento.</p>
+    </div>
+  }
+  <!-- Products Grid -->
+  @if (!loading && products && products.length > 0) {
+    <div class="products-grid">
+      @for (product of products; track trackByProduct($index, product)) {
+        <app-product-card
+          [product]="product"
+          (productSelected)="onProductSelected($event)">
+        </app-product-card>
+      }
+    </div>
+  }
+</div>

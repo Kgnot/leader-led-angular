@@ -1,0 +1,35 @@
+.banner-component {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 0 0 1em;
+  background: var(--banner-color);
+  margin: 2.5em 0;
+  gap: 0.3em;
+  width: 100%;
+
+  h3 {
+    margin: 0;
+    font-size: 2em;
+    color: #ffffff;
+  }
+
+  h1 {
+    margin: 0;
+    padding-left: 0.5em;
+    font-size: 4.5em;
+    font-weight: 800;
+    color: #cbd3c7;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+
+.tagline {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin: 1rem 0 2rem 0.5em;
+  font-weight: 400;
+}
