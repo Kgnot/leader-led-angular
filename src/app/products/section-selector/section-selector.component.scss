@@ -1,0 +1,42 @@
+.section-selector {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.5rem;
+  width: 100%;
+
+  .selector-container {
+    display: flex;
+    width: 100%;
+
+    .section-btn {
+      flex: 1;
+      padding: 1.2rem 0;
+      border: 1px solid #b0c4b1;
+      background-color: #f5f7f5;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #2f3e2f;
+
+      &:hover {
+        background-color: #e8ede8;
+      }
+
+      &.active {
+        flex: 2;
+        background-color: #a3b9a2;
+        color: #fff;
+        border-color: #8fa88f;
+      }
+    }
+  }
+
+  .current-section-indicator {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2f3e2f;
+  }
+}

@@ -1,0 +1,8 @@
+<div class="item-card" (click)="onItemClick()">
+  <div class="card-image">
+    <img [src]="item.image" [alt]="item.type" />
+  </div>
+  <div class="card-content">
+    <h3>{{ item.type }}</h3>
+  </div>
+</div>

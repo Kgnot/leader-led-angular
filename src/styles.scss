@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+// colors:
+$color-dark-header: #000;
+$color-dark-bg: #393939;
+$color-dark-main-text: #fff;
+
+$color-light-header: #f5f5f5;
+$color-light-bg: #fff; /*linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);*/
+$color-light-main-text: #000;
+
+// general padding:
+$padding: 10em;
+
+// header height:
+$header-height: 5em; //55px
+//banner
+$banner-color: rgba(104, 114, 99, 0.85);
+
+//font:
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+@mixin theme($header, $bg, $main-text) {
+  --header: #{$header};
+  --bg: #{$bg};
+  --main-text: #{$main-text};
+}
+
+:root {
+  @include theme(
+      $color-light-header,
+      $color-light-bg,
+      $color-light-main-text
+  );
+  --general-padding: #{$padding};
+  --header-height: #{$header-height};
+  --banner-color: #{$banner-color};
+}
+
+:root.dark {
+  @include theme(
+      $color-dark-header,
+      $color-dark-bg,
+      $color-dark-main-text
+  );
+  --general-padding: #{$padding};
+  --header-height: #{$header-height};
+  --banner-color: #{$banner-color};
+}
+
+main {
+  position: relative;
+  display: flex;
+  top: var(--header-height);
+
+}
+
+body {
+  position: relative;
+  //display: flex;
+  //align-content: center;
+  //justify-content: center;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  height: 100%;
+  //background: var(--bg);
+  background: linear-gradient(135deg, #f8faf9 0%, #e8f0e6 100%);
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text);
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.padding10-l-r {
+  padding: 0 10rem;
+}
+
+.dummy-component {
+  //border: 1px solid #9f9f9f;
+}

@@ -1,0 +1,8 @@
+<div class="items-grid">
+  @for (item of items; track item.id){
+    <app-item-card
+      [item]="item"
+      (itemSelected)="onItemSelected($event)">
+    </app-item-card>
+  }
+</div>

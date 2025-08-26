@@ -1,0 +1,178 @@
+[{
+  "idInventory": 1,
+  "marketName": "Panel BRIGHTON VI",
+  "reference": "6YDLED431MV30B",
+  "power": 6,
+  "lumens": 320,
+  "desc": "Panel Incrustar Cuadrado Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Interior", "idApplication": 1 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 2,
+  "marketName": "Panel BUCARAMANGA IV",
+  "reference": "6YDLED430MV65B",
+  "power": 6,
+  "lumens": 320,
+  "desc": "Panel Incrustar Redondo Led Integrado 6500K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Interior", "idApplication": 1 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 3,
+  "marketName": "Panel BUCARAMANGA VI",
+  "reference": "18YDLED430MV30B",
+  "power": 18,
+  "lumens": 1200,
+  "desc": "Panel Incrustar Redondo Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Muro", "idApplication": 2 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 4,
+  "marketName": "Panel BUCARAMANGA IX",
+  "reference": "24YDLED430MV65B",
+  "power": 24,
+  "lumens": 1600,
+  "desc": "Panel Incrustar Redondo Led Integrado 6500K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Suspensión", "idApplication": 3 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 5,
+  "marketName": "Panel ALGEDI I",
+  "reference": "6PTLLEDC30MVB",
+  "power": 6,
+  "lumens": 320,
+  "desc": "Panel Sobreponer Cuadrado Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Suspensión", "idApplication": 3 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 6,
+  "marketName": "Panel ANKAA I",
+  "reference": "6PTLLEDR30MVB",
+  "power": 6,
+  "lumens": 320,
+  "desc": "Panel Sobreponer Redondo Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Empotrado", "idApplication": 4 }],
+  "categories": [{ "name": "Bala", "idCategory": 2 }]
+}, {
+  "idInventory": 7,
+  "marketName": "Panel ACRUX",
+  "reference": "40BKLED65MVB",
+  "power": 40,
+  "lumens": 3800,
+  "desc": "Panel Incrustar Cuadrado Led Integrado 6500K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Sobrepuesto", "idApplication": 5 }],
+  "categories": [{ "name": "Panel", "idCategory": 1 }]
+}, {
+  "idInventory": 8,
+  "marketName": "REGOR I",
+  "reference": "100UFOLED65MVN",
+  "power": 100,
+  "lumens": 10000,
+  "desc": "Industrial Led Integrado 6500K",
+  "images": [],
+  "technologies": [
+    { "name": "LED", "idTechnology": 1 },
+    { "name": "Smart", "idTechnology": 4 }
+  ],
+  "applications": [{ "type": "Dirigible", "idApplication": 6 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 9,
+  "marketName": "HIDRUS I",
+  "reference": "A19-LED/010/30",
+  "power": 9,
+  "lumens": 800,
+  "desc": "Bombillo A19 Led Integrado 3000K",
+  "images": [],
+  "technologies": [
+    { "name": "LED", "idTechnology": 1 },
+    { "name": "Smart", "idTechnology": 4 }
+  ],
+  "applications": [{ "type": "Dirigible", "idApplication": 6 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 10,
+  "marketName": "PYXIES IV",
+  "reference": "GU10L-LED/001/30",
+  "power": 6,
+  "lumens": 550,
+  "desc": "Bombillo GU10 Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Industrial", "idApplication": 7 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 11,
+  "marketName": "PEGASUS I",
+  "reference": "8PAR30LED65MV25",
+  "power": 9,
+  "lumens": 850,
+  "desc": "Bombillo PAR30 Led Integrado 6500K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Emergencia", "idApplication": 8 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 12,
+  "marketName": "LICH I",
+  "reference": "20LHBLEDT65MV200",
+  "power": 20,
+  "lumens": 1800,
+  "desc": "Bombillo LHB Led Integrado 6500K",
+  "images": [],
+  "technologies": [
+    { "name": "Halógena", "idTechnology": 2 },
+    { "name": "LED", "idTechnology": 1 }
+  ],
+  "applications": [{ "type": "Solar", "idApplication": 9 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 13,
+  "marketName": "OGMA III",
+  "reference": "09T8LED60MV65C",
+  "power": 9,
+  "lumens": 800,
+  "desc": "Tubo T8 Led Integrado 6500K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Solar", "idApplication": 9 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 14,
+  "marketName": "SANSUNA I",
+  "reference": "10LQLEDY30MVN",
+  "power": 10,
+  "lumens": 1000,
+  "desc": "Reflector Piso Led Integrado 3000K",
+  "images": [],
+  "technologies": [{ "name": "LED", "idTechnology": 1 }],
+  "applications": [{ "type": "Solar", "idApplication": 9 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}, {
+  "idInventory": 15,
+  "marketName": "AQUILA",
+  "reference": "13PAR38LED65MV25",
+  "power": 13,
+  "lumens": 1250,
+  "desc": "Bombillo PAR38 Led Integrado 6500K",
+  "images": [],
+  "technologies": [
+    { "name": "Inducción", "idTechnology": 3 },
+    { "name": "LED", "idTechnology": 1 }
+  ],
+  "applications": [{ "type": "Solar", "idApplication": 9 }],
+  "categories": [{ "name": "Bombillo", "idCategory": 3 }]
+}]

@@ -1,0 +1,47 @@
+[
+  {
+    "idApplication": 1,
+    "type": "Interior",
+    "image": "/products/application/interior.webp"
+  },
+  {
+    "idApplication": 2,
+    "type": "Muro",
+    "image": "/products/application/muro.jpg"
+  },
+  {
+    "idApplication": 3,
+    "type": "Suspensión",
+    "image": "/products/application/suspencion.webp"
+  },
+  {
+    "idApplication": 4,
+    "type": "Empotrado",
+    "image": "/products/application/empotrado.webp"
+  },
+  {
+    "idApplication": 5,
+    "type": "Sobrepuesto",
+    "image": "/products/application/sobreponer.webp"
+  },
+  {
+    "idApplication": 6,
+    "type": "Dirigible",
+    "image": "/products/application/dirigibles.jpg"
+  },
+  {
+    "idApplication": 7,
+    "type": "Industrial",
+    "image": "/products/application/industrial.webp"
+  },
+  {
+    "idApplication": 8,
+    "type": "Emergencia",
+    "image": "/products/application/emergencia.webp"
+  },
+  {
+    "idApplication": 9,
+    "type": "Solar",
+    "image": "/products/application/solar.avif"
+  }
+]

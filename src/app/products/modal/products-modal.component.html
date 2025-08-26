@@ -1,0 +1,8 @@
+<app-black-modal (close)="onClose()"></app-black-modal>
+<div class="modal">
+  <app-products-grid
+    [products]="products"
+    (productSelected)="onProductSelected($event)"
+  >
+  </app-products-grid>
+</div>

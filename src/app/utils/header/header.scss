@@ -1,0 +1,19 @@
+header {
+  position: fixed;
+  display: flex;
+  border-bottom: 1px solid #b8c4c2;
+  z-index: 3;
+  width: 100%;
+  //justify-content: space-between;
+  gap: 4em;
+  padding: 0 var(--general-padding);
+  align-items: center;
+  background: var(--header);
+  color: var(--main-text);
+  height: var(--header-height);
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
