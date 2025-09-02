@@ -71,22 +71,25 @@ body {
   //background: var(--bg);
   background: linear-gradient(135deg, #f8faf9 0%, #e8f0e6 100%);
 }
-
 a {
   text-decoration: none;
   color: var(--main-text);
   outline: none;
 }
-
 ul {
   list-style: none;
 }
-
-
 .padding10-l-r {
   padding: 0 10rem;
 }
-
 .dummy-component {
   //border: 1px solid #9f9f9f;
+}
+
+@media (max-width: 1200px) {
+
+  .padding10-l-r {
+    padding: 0 0.3em;
+  }
+
 }

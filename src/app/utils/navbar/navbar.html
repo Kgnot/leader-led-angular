@@ -1,8 +1,27 @@
 <nav>
-  <ul class="navbar-ul">
-    <li><a href="/">Home</a></li>
-    <li><a href="/products">Productos</a></li>
-    <li><a href="/services">Servicios</a></li>
-    <li><a href="/contact">Contacto</a></li>
+  <!-- Menú hamburguesa (solo visible en móvil) -->
+  <button
+    class="menu-toggle"
+    (click)="toggleMenu()"
+    [class.active]="isMenuOpen"
+    aria-label="Abrir menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menú de navegación -->
+  <ul class="navbar-ul" [class.open]="isMenuOpen">
+    <li><a href="/" (click)="closeMenu()">Home</a></li>
+    <li><a href="/products" (click)="closeMenu()">Productos</a></li>
+    <li><a href="/services" (click)="closeMenu()">Servicios</a></li>
+    <li><a href="/contact" (click)="closeMenu()">Contacto</a></li>
   </ul>
+
+  <!-- Overlay para cerrar el menú al hacer clic fuera -->
+  <div
+    class="menu-overlay"
+    [class.open]="isMenuOpen"
+    (click)="closeMenu()">
+  </div>
 </nav>

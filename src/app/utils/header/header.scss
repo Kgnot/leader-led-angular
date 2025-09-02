@@ -2,9 +2,8 @@ header {
   position: fixed;
   display: flex;
   border-bottom: 1px solid #b8c4c2;
-  z-index: 3;
-  width: 100%;
-  //justify-content: space-between;
+  z-index: 100;
+  width: 100dvw;
   gap: 4em;
   padding: 0 var(--general-padding);
   align-items: center;
@@ -15,5 +14,15 @@ header {
   img {
     height: 100%;
     object-fit: cover;
+  }
+}
+
+// Media query para móviles
+@media (max-width: 768px) {
+  header {
+    //width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 0;
   }
 }
