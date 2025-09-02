@@ -4,11 +4,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 1em 0 1em;
+  //padding: 0 1em 0 1em;
   background: var(--banner-color);
   margin: 2.5em 0;
   gap: 0.3em;
-  width: 90%;
+  max-width: 90%;
+
 
   h3 {
     margin: 0;
@@ -32,4 +33,12 @@
   color: #ffffff;
   margin: 1rem 0 2rem 0.5em;
   font-weight: 400;
+}
+
+@media (max-width: 600px) {
+    .banner-component{
+      h1{
+        font-size: 2.5em;
+      }
+    }
 }
