@@ -2,7 +2,7 @@ import {Component, inject, OnInit, signal} from '@angular/core';
 import {SectionSelectorComponent} from '../section-selector/section-selector.component';
 import {Application, Category, SectionType} from '../../models';
 import {ItemsGridComponent} from '../items-grid/items-grid.component';
-import {PresentationComponent} from '../../home/presentation/presentation.component';
+import {PresentationComponent} from '../../utils/presentation/presentation.component';
 import {ProductsModalComponent} from '../modal/products-modal.component';
 import {Product} from '../../models/product';
 import {

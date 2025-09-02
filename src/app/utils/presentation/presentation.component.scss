@@ -5,14 +5,14 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  max-height: 20em;
+  max-height: 25em;
   div{
-    flex: 4;
+    flex: 4 1 0;
   }
   img {
-    width: 100%;
-    flex: 3;
-    object-fit: cover;
+    flex: 3 1 0; /* grow:3, shrink:1, basis:0 */
+    width: 30%;
+    object-fit: contain;
   }
 
 }

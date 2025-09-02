@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {PresentationComponent} from '../../home/presentation/presentation.component';
+import {PresentationComponent} from '../../utils/presentation/presentation.component';
 import {ListServiceCard} from '../list-service-card/list-service-card';
 
 @Component({
