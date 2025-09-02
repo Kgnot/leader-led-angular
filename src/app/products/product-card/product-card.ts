@@ -13,7 +13,9 @@ import {DecimalPipe} from '@angular/common';
 export class ProductCard {
   @Input() product: Product | undefined;
   @Output() productSelected = new EventEmitter<Product>();
+
   getFirstImage(): string {
+    console.log(this.product?.images)
     return this.product?.images?.[0] || '/assets/images/placeholder.jpg';
   }
 
