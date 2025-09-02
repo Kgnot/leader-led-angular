@@ -14,6 +14,7 @@ import {
   MockApplicationService,
   MockCategoryService
 } from '../../services';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-products-page',
@@ -32,6 +33,10 @@ import {
   styleUrl: './products-page.component.scss'
 })
 export class ProductsPageComponent implements OnInit {
+  // SEO
+  private meta = inject(Meta);
+  private title = inject(Title);
+
   // inject both services to use:
   private applicationService: ApplicationService;
   private categoryService: CategoryService;
@@ -61,7 +66,42 @@ export class ProductsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadData();
+    // more than log data:
+    this.title.setTitle('Productos LED Bogotá | Paneles, Drivers, Luminarias - LeaderLed');
+
+    this.meta.updateTag({
+      name: 'description',
+      content: 'Catálogo completo de productos LED: paneles, drivers, bombillos, spots, plafones. Aplicaciones para oficinas, almacenes, exteriores. Marcas Tecnolite, Mean Well, Lutron.'
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: 'paneles LED, drivers LED, bombillos LED, spots LED, plafones LED, luminarias comerciales, programación DALI, Tecnolite Bogotá, Mean Well Colombia'
+    });
+
+    // Product Schema
+    this.addProductCatalogSchema();
+
   }
+
+  //seo:
+
+  private addProductCatalogSchema() {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Catálogo Productos LED LeaderLed",
+      "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
+      "numberOfItems": this.productService.getTotalProducts(),
+      "itemListElement": this.productService.getProducts()
+    });
+    document.head.appendChild(script);
+  }
+
+
+  //
 
 
   onSectionChanged(section: SectionType) {

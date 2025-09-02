@@ -8,7 +8,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    title: 'HomePage'
+    title: 'LeaderLed - Iluminación LED Bogotá | Soluciones Personalizadas +15 Años'
   },
   {
     path: 'contact',

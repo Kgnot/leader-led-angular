@@ -6,6 +6,9 @@ import {Product} from '../../models/product';
   providedIn: 'root'
 })
 export class RealProductsService implements ProductService{
+  getTotalProducts(): number {
+      return 0;
+  }
   getProducts(): Product[] {
     return [];
   }

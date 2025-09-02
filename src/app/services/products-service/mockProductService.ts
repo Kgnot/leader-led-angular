@@ -9,6 +9,7 @@ import {adapterProductArray} from '../../adapter/adapter-product';
 })
 export class MockProductService implements ProductService {
 
+
   private dataProducts: Product[] = adapterProductArray(data);
 
 
@@ -16,6 +17,9 @@ export class MockProductService implements ProductService {
     return this.dataProducts;
   }
 
+  getTotalProducts(): number {
+    return this.dataProducts.length;
+  }
 
   getProductById(id: number): Product | null {
     return this.dataProducts
