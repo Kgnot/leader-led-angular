@@ -4,7 +4,6 @@
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: 1px solid #e9ecef;
   height: 100%;
   display: flex;
@@ -12,13 +11,10 @@
   position: relative;
 
   &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(134, 134, 134, 0.05);
-
     .image-overlay {
       opacity: 1;
       transform: translateY(0);
     }
-
     .product-image img {
       transform: scale(1.05);
     }

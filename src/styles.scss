@@ -1,4 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
+//font:
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 // colors:
 $color-dark-header: #000;
 $color-dark-bg: #393939;
@@ -16,9 +17,12 @@ $header-height: 5em; //55px
 //banner
 $banner-color: rgba(104, 114, 99, 0.85);
 $banner-solid-color: rgb(104, 114, 99);
+// cards:
+$contact-card-header: #5c8141;
+$contact-card-color: #fff;
 
-//font:
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+$contact-card-bg: #fff;
+$contact-card-bg-color: #333;
 
 
 @mixin theme($header, $bg, $main-text) {
@@ -37,6 +41,13 @@ $banner-solid-color: rgb(104, 114, 99);
   --header-height: #{$header-height};
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
+  //cards:
+  --contact-card-header: #5c8141;
+  --contact-card-header-color: #fff;
+  --contact-card-bg: #fff;
+  --contact-card-bg-color: #333;
+
+  --contact-card-bg-strong-color: #5c8141;
 }
 
 :root.dark {
@@ -49,6 +60,13 @@ $banner-solid-color: rgb(104, 114, 99);
   --header-height: #{$header-height};
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
+  //cards:
+  --contact-card-header: #5c8141;
+  --contact-card-header-color: #fff;
+  --contact-card-bg: #fff;
+  --contact-card-bg-color: #333;
+  --contact-card-bg-strong-color: #5c8141;
+
 }
 
 main {
