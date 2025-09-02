@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   padding: 1em 0;
-  //background-image: url("/home-fondo.jpg");
   background-size: cover;
   background-position: center;
   width: 100%;
+  max-height: 20em;
   div{
     flex: 4;
   }
@@ -15,4 +15,12 @@
     object-fit: cover;
   }
 
+}
+
+@media (max-width: 900px) {
+  .presentation-component {
+    img{
+      display: none;
+    }
+  }
 }
