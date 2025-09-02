@@ -10,3 +10,5 @@ export * from './category-service/category.service'
 export * from './products-service/real-products.service'
 export * from './products-service/mockProductService'
 export * from './products-service/interfaceProductService'
+//message whatsapp
+export * from './message-wsp-service/msg-wsp'
