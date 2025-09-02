@@ -1,0 +1,81 @@
+.contact-card {
+  width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--contact-card-bg);
+  color: var(--color-main-text);
+  margin: 20px auto;
+  border: 1px solid #dcdcdc; // podrías pasarlo también a variable si quieres
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-contact-header {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--contact-card-header);
+  color: var(--contact-card-header-color);
+}
+
+.card-contact-header h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.card-tagline {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  color: var(--contact-card-header-color);
+}
+
+/* Content styles */
+.card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-content p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-main-text);
+}
+
+.card-content strong {
+  color: var(--contact-card-header);
+}
+
+.card-content a {
+  color: var(--contact-card-bg-strong-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-content a:hover {
+  text-decoration: underline;
+  color: var(--contact-card-bg-strong-color);
+}
+
+.card-contact-footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--color-header);
+  border-top: 1px solid #e6e6e6;
+}
+
+.contact-button {
+  padding: 10px 25px;
+  border: 1px solid var(--contact-card-header);
+  border-radius: 5px;
+  background-color: var(--contact-card-header);
+  color: var(--contact-card-header-color);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: var(--contact-card-bg-color);
+  border-color: var(--contact-card-bg-color);
+}

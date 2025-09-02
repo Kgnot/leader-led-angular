@@ -123,7 +123,7 @@
     "lumens": 320,
     "desc": "Panel Sobreponer Cuadrado Led Integrado 3000K",
     "images": [
-      "/inventory/6PTLLEDC30MVB-PT02.jpg"
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/6PTLLEDC30MVB-PT02.jpg?context=bWFzdGVyfGltYWdlc3wxOTIxNDR8aW1hZ2UvanBlZ3xhRGN6TDJnNU9DOHhNVEV4TnpNME56UTNNVE01TUM4MlVGUk1URVZFUXpNd1RWWkNYMUJVTURJdWFuQm58ZWNlZjAxYTI0YWViOGMzMzgwNDlkNWIzMDFiZmQ0ODkzNmY5OGUzYjM1Yzk1NWU2MjI0YWRiOGEzNzMwMjU1Yw"
     ],
     "technologies": [
       {
@@ -152,7 +152,7 @@
     "lumens": 320,
     "desc": "Panel Sobreponer Redondo Led Integrado 3000K",
     "images": [
-      "/inventory/6PTLLEDR30MVB-PT02.jpg"
+      "https://media.falabella.com/sodimacCO/725345/w=1036,h=832,f=webp,fit=contain,q=85"
     ],
     "technologies": [
       {
@@ -180,7 +180,9 @@
     "power": 40,
     "lumens": 3800,
     "desc": "Panel Incrustar Cuadrado Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/40BKLED65MVB-PT02.jpg?context=bWFzdGVyfGltYWdlc3w0ODE2MXxpbWFnZS9qcGVnfGFHWTJMMmhtWmk4eE1URTBOVFE1TkRBMk9USTNPQzgwTUVKTFRFVkVOalZOVmtKZlVGUXdNaTVxY0djfDk5ZGEyMzA0ZmFiNGNlNGE4MjY3ZGI0MWVlMDgyMWQ5NjkyODAxYmRkZTBiOWVjNGY1MjRmNTg2ZjhjMzI4MGM"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -207,7 +209,9 @@
     "power": 100,
     "lumens": 10000,
     "desc": "Industrial Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/100UFOLED65MVN-PT02.jpg?context=bWFzdGVyfGltYWdlc3w1Mjg4Nzh8aW1hZ2UvanBlZ3xhREkzTDJoaE5pOHhNVEV5TlRjd05UYzJPRGs1TUM4eE1EQlZSazlNUlVRMk5VMVdUbDlRVkRBeUxtcHdad3w4YTc3NTUyMzE2MjRmNWY4ZTM3MzJmNTc2Y2I3M2M4MjRjYmVmYzE4NWFhNDFlYWMxOGU4OTFjOWRiNmEyM2Qx"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -238,7 +242,9 @@
     "power": 9,
     "lumens": 800,
     "desc": "Bombillo A19 Led Integrado 3000K",
-    "images": [],
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_882191-MCO78590074719_082024-O.webp"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -269,7 +275,9 @@
     "power": 6,
     "lumens": 550,
     "desc": "Bombillo GU10 Led Integrado 3000K",
-    "images": [],
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_609337-MCO89757297746_082025-O.webp"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -296,7 +304,9 @@
     "power": 9,
     "lumens": 850,
     "desc": "Bombillo PAR30 Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_712299-MLU78444782359_082024-O.webp"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -323,7 +333,9 @@
     "power": 20,
     "lumens": 1800,
     "desc": "Bombillo LHB Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_940615-MCO89757159010_082025-O.webp "
+    ],
     "technologies": [
       {
         "name": "Halógena",
@@ -354,7 +366,9 @@
     "power": 9,
     "lumens": 800,
     "desc": "Tubo T8 Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/09T8LED60MV65C-PT01.jpg?context=bWFzdGVyfGltYWdlc3wxNTc5NHxpbWFnZS9qcGVnfGFEWTVMMmczTVM4eE1UQXdNell5TURneE9EazNOQzh3T1ZRNFRFVkVOakJOVmpZMVExOVFWREF4TG1wd1p3fDIxYzNiNGRjNjE0NWZjOTdmYmVhNDY0MDcxZmFhMzRmNDNkYWFmMTc5M2M5ZWIwMThkZGUxYzJiMTEyNjJlODQ"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -381,7 +395,9 @@
     "power": 10,
     "lumens": 1000,
     "desc": "Reflector Piso Led Integrado 3000K",
-    "images": [],
+    "images": [
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/10LQLEDY30MVN-PT01.jpg?context=bWFzdGVyfGltYWdlc3wxMTQ4NTZ8aW1hZ2UvanBlZ3xhRFZpTDJneU15OHhNRE14TXpBek16Z3dPVGsxTUM4eE1FeFJURVZFV1RNd1RWWk9YMUJVTURFdWFuQm58OGZjZGM5NTZiNDhjZTZmM2QyMmE0MTNmMTA5NWVmNWMyZjFlMjQ3N2NmMTY2NGU1NGEyNTUwZjI4MTczMDhhZg"
+    ],
     "technologies": [
       {
         "name": "LED",
@@ -408,7 +424,9 @@
     "power": 13,
     "lumens": 1250,
     "desc": "Bombillo PAR38 Led Integrado 6500K",
-    "images": [],
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_798910-MLM32861301012_112019-O.webp"
+    ],
     "technologies": [
       {
         "name": "Inducción",
