@@ -21,17 +21,21 @@ import {ProductTagsComponent} from './product-tags/product-tags.component';
 export class ProductCard {
   @Input() product: Product | undefined;
   @Output() productSelected = new EventEmitter<Product>();
-  // primero nos suscribimos
 
+  showCheck = false;
   constructor(
     private cartService: CartService
   ) {
   }
 
   addToCart() {
-    this.cartService.addItem(this.product!);
-  }
+    if (!this.product) return;
+    this.cartService.addItem(this.product);
+    this.showCheck = true;
 
+    // Ocultar el chulo después de 1 segundo
+    setTimeout(() => (this.showCheck = false), 1000);
+  }
 
   getFirstImage(): string {
     console.log(this.product?.images)

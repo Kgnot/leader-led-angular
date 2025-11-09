@@ -753,6 +753,10 @@
       {
         "name": "Lineal",
         "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -782,6 +786,10 @@
       {
         "name": "Lineal",
         "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -811,6 +819,10 @@
       {
         "name": "Lineal",
         "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -838,8 +850,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -867,8 +883,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -896,8 +916,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -925,8 +949,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -954,8 +982,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
@@ -983,8 +1015,12 @@
     ],
     "categories": [
       {
-        "name": "Driver",
-        "idCategory": 5
+        "name": "Lineal",
+        "idCategory": 10
+      },
+      {
+        "name": "Colgante",
+        "idCategory": 9
       }
     ]
   },
