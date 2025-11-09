@@ -19,12 +19,21 @@ header {
   }
 }
 
+@media (max-width: 1000px) {
+  header {
+    //width: 100%;
+    justify-content: space-between;
+    gap: 0;
+    padding: 0 2em;
+  }
+}
+
 // Media query para móviles
 @media (max-width: 768px) {
   header {
     //width: 100%;
     justify-content: space-between;
     gap: 0;
-    padding: 0 0;
+    padding: 0 2em;
   }
 }
