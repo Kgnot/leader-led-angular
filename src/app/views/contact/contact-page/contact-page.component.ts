@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {ContactCard} from '../contact-card/contact-card';
 import {PresentationComponent} from '../../../utils/presentation/presentation.component';
 import {Meta, Title} from '@angular/platform-browser';
+import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 
 @Component({
   selector: 'app-contact-page',
@@ -15,6 +16,11 @@ import {Meta, Title} from '@angular/platform-browser';
 export class ContactPageComponent implements OnInit {
   private meta = inject(Meta);
   private title = inject(Title);
+
+  constructor(private seoSchema:SeoSchemaService) {
+
+  }
+
 
   ngOnInit() {
     this.title.setTitle('Contacto LeaderLed Bogotá | Henry Ricaurte | Tel: 281 6903');
@@ -34,9 +40,7 @@ export class ContactPageComponent implements OnInit {
   }
 
   private addContactSchema() {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
+    this.seoSchema.addJsonLd({
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Contacto LeaderLed",
@@ -55,7 +59,6 @@ export class ContactPageComponent implements OnInit {
           "addressCountry": "CO"
         }
       }
-    });
-    document.head.appendChild(script);
+    })
   }
 }

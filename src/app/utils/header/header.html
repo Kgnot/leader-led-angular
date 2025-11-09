@@ -1,5 +1,13 @@
 <header>
   <img src="/leaderled-logo-colorized.svg" alt="Logo">
-  <app-navbar/>
-  <app-carrito-compras/>
+  <app-navbar></app-navbar>
+  <app-carrito-compras
+    [viewSidebarCart]="showSidebarCart"
+    (toggleSidebar)="toggleSidebarCart()">
+  </app-carrito-compras>
 </header>
+
+<app-sidebar-cart
+  [visible]="showSidebarCart"
+  (close)="showSidebarCart = false">
+</app-sidebar-cart>

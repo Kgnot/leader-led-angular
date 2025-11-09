@@ -4,6 +4,7 @@ import {BrandCarousel} from '../brand-carousel/brand-carousel.component';
 import {MapComponent} from '../map/map.component';
 import {ContextEnterpriseComponent} from '../context-enterprise/context-enterprise.component';
 import {Meta, Title} from '@angular/platform-browser';
+import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +17,10 @@ export class HomePageComponent implements OnInit {
   private meta = inject(Meta)
   private title = inject(Title)
 
+  constructor(private seoSchema: SeoSchemaService) {
+  }
+
+
   ngOnInit() {
     this.title.setTitle('LeaderLed - Iluminación LED Bogotá | Soluciones Personalizadas +15 Años');
     this.meta.updateTag({
@@ -23,13 +28,11 @@ export class HomePageComponent implements OnInit {
       content: 'LeaderLed: Distribuidor de iluminación LED en Bogotá. Paneles, drivers, programación DALI. Soluciones personalizadas para oficinas, almacenes y exteriores. +15 años de experiencia.'
     });
 
-    // Keywords:
-    // Keywords
     this.meta.updateTag({
       name: 'keywords',
       content: 'iluminación LED Bogotá, drivers LED, programación DALI, paneles LED, luminarias comerciales, iluminación residencial, LeaderLed'
     });
-    // Open Graph
+
     this.meta.updateTag({property: 'og:title', content: 'LeaderLed - Especialistas en Iluminación LED Bogotá'});
     this.meta.updateTag({
       property: 'og:description',
@@ -38,14 +41,12 @@ export class HomePageComponent implements OnInit {
     this.meta.updateTag({property: 'og:type', content: 'website'});
     this.meta.updateTag({property: 'og:url', content: 'https://leaderled.com.co'});
     this.meta.updateTag({property: 'og:image', content: 'https://leaderled.com.co/LdLd3d_sinfondo.png'});
-
     this.addLocalBusinessSchema();
   }
 
+
   private addLocalBusinessSchema() {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
+    this.seoSchema.addJsonLd({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "LeaderLed",
@@ -75,8 +76,7 @@ export class HomePageComponent implements OnInit {
         },
         "geoRadius": "50000"
       }
-    });
-    document.head.appendChild(script);
+    })
   }
 
 }

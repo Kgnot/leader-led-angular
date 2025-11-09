@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {PresentationComponent} from '../../../utils/presentation/presentation.component';
 import {ListServiceCard} from '../list-service-card/list-service-card';
 import {Meta, Title} from '@angular/platform-browser';
+import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 
 @Component({
   selector: 'app-company-services-page',
@@ -16,6 +17,10 @@ export class CompanyServicesPageComponent implements OnInit {
 
   private meta = inject(Meta);
   private title = inject(Title);
+
+
+  constructor(private seoSchema:SeoSchemaService) {
+  }
 
   ngOnInit() {
     this.title.setTitle('Servicios LED Bogotá | Programación Drivers DALI, Soluciones Personalizadas');
@@ -35,9 +40,7 @@ export class CompanyServicesPageComponent implements OnInit {
   }
 
   private addServiceSchema() {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
+    this.seoSchema.addJsonLd({
       "@context": "https://schema.org",
       "@type": "Service",
       "name": "Servicios de Iluminación LED LeaderLed",
@@ -57,7 +60,6 @@ export class CompanyServicesPageComponent implements OnInit {
         "Diseño luminarias personalizadas",
         "Consultoría técnica iluminación"
       ]
-    });
-    document.head.appendChild(script);
+    })
   }
 }

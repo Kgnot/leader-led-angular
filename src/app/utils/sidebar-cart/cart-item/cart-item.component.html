@@ -1,0 +1,29 @@
+<div class="cart-item">
+  <div class="item-image">
+    <img [src]="getMainImage()" [alt]="item.product.marketName"/>
+  </div>
+
+  <div class="item-details">
+    <h3 class="item-name">{{ item.product.marketName }}</h3>
+    <p class="item-reference">Ref: {{ item.product.reference }}</p>
+    <p class="item-specs">{{ item.product.power }}W • {{ item.product.lumens }} lm</p>
+
+    <div class="quantity-controls">
+      <button class="btn-quantity" (click)="onRemove()">−</button>
+      <span class="quantity">{{ item.quantity }}</span>
+      <button class="btn-quantity" (click)="onAdd()">+</button>
+    </div>
+  </div>
+
+  <div class="item-info">
+    @if (item.product.technologies.length > 0) {
+      <div class="technologies">
+        @for (tech of item.product.technologies; track tech.id) {
+          <span class="tech-badge">
+            {{ tech.name }}
+          </span>
+        }
+      </div>
+    }
+  </div>
+</div>

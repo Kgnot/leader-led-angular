@@ -15,6 +15,7 @@ import {
   MockCategoryService
 } from '../../../services';
 import {Meta, Title} from '@angular/platform-browser';
+import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 
 @Component({
   selector: 'app-products-page',
@@ -52,7 +53,9 @@ export class ProductsPageComponent implements OnInit {
   //products:
   protected products = signal<Product[]>([] as Product[]);
 
-  constructor() {
+  constructor(
+    private seoSchema: SeoSchemaService
+  ) {
     this.applicationService = inject(ApplicationService);
     this.categoryService = inject(CategoryService);
     this.productService = inject(RealProductsService)
@@ -87,17 +90,15 @@ export class ProductsPageComponent implements OnInit {
   //seo:
 
   private addProductCatalogSchema() {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Catálogo Productos LED LeaderLed",
-      "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
-      "numberOfItems": this.productService.getTotalProducts(),
-      "itemListElement": this.productService.getProducts()
-    });
-    document.head.appendChild(script);
+    this.seoSchema.addJsonLd({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Catálogo Productos LED LeaderLed",
+        "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
+        "numberOfItems": this.productService.getTotalProducts(),
+        "itemListElement": this.productService.getProducts()
+      }
+    );
   }
 
 
