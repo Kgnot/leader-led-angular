@@ -1,47 +1,33 @@
-<!-- product-card.component.html -->
 @if (product) {
   <div class="product-card">
+
+    <button (click)="addToCart()">Añadir a carrito</button>
+
     <div class="card-header">
-      <div class="product-image">
-        <img [src]="getFirstImage()" [alt]="product?.marketName" loading="lazy"/>
-      </div>
+      <app-product-image
+        [image]="getFirstImage()"
+        [alt]="product?.marketName"
+      />
     </div>
+
     <div class="card-body">
-      <div class="product-title">
-        <h3>{{ product?.marketName }}</h3>
-        <span class="product-reference">{{ product?.reference }}</span>
-      </div>
+      <app-product-info
+        [name]="product?.marketName"
+        [reference]="product?.reference"
+      />
 
-      <div class="product-specs">
-        <div class="spec-item">
-          <div class="spec-icon power-icon"></div>
-          <div class="spec-details">
-            <span class="spec-value">{{ product?.power }}W</span>
-            <span class="spec-label">Potencia</span>
-          </div>
-        </div>
-
-        <div class="spec-item">
-          <div class="spec-icon lumens-icon"></div>
-          <div class="spec-details">
-            <span class="spec-value">{{ product?.lumens | number }}</span>
-            <span class="spec-label">Lúmenes</span>
-          </div>
-        </div>
-      </div>
+      <app-product-specs
+        [power]="product?.power"
+        [lumens]="product?.lumens"
+      />
 
       <div class="card-footer">
-        @if (product.technologies?.length) {
-          <div class="tech-count">
-            <span>{{ product?.technologies?.length }} tecnologías</span>
-          </div>
-        }
-        @if (product.applications?.length) {
-          <div class="app-count">
-            <span>{{ product?.applications?.length }} aplicaciones</span>
-          </div>
-        }
+        <app-product-tags
+          [technologies]="product?.technologies"
+          [applications]="product?.applications"
+        />
       </div>
     </div>
+
   </div>
 }
