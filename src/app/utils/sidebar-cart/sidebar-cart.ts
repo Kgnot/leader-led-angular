@@ -5,6 +5,7 @@ import { CartService } from '../../services/cart-service/cart.service';
 import { Observable } from 'rxjs';
 import { CartItemComponent } from './cart-item/cart-item.component';
 import { AsyncPipe } from '@angular/common';
+import {MsgWsp} from '../../services';
 
 @Component({
   selector: 'app-sidebar-cart',
@@ -23,7 +24,10 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
 
   items$!: Observable<BuyConcept[]>;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private msgWsp: MsgWsp
+  ) {}
 
   ngOnInit() {
     this.items$ = this.cartService.items$;
@@ -66,7 +70,40 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
     return items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
+  getTotalPower(items: BuyConcept[]): number {
+    return items.reduce((sum, item) => sum + (item.product.power * item.quantity), 0);
+  }
+
   onConsult() {
+    const items = this.cartService.getItems();
+
+    if (items.length === 0) {
+      return;
+    }
+
+    const message = this.buildWhatsAppMessage(items);
+    this.msgWsp.sendMessage(message);
     this.consult.emit();
+  }
+
+  private buildWhatsAppMessage(items: BuyConcept[]): string {
+    let message = '¡Hola! Me interesa consultar sobre los siguientes productos:\n\n';
+
+    items.forEach((item, index) => {
+      message += `${index + 1}. ${item.product.marketName}\n`;
+      message += `   • Referencia: ${item.product.reference}\n`;
+      message += `   • Cantidad: ${item.quantity}\n`;
+      message += `   • Potencia: ${item.product.power}W\n\n`;
+    });
+
+    const totalItems = this.getTotalItems(items);
+    const totalPower = this.getTotalPower(items);
+
+    message += `Resumen:\n`;
+    message += `Total de productos: ${totalItems}\n`;
+    message += `Potencia total: ${totalPower}W\n\n`;
+    message += `¿Podrían brindarme más información?`;
+
+    return message;
   }
 }
