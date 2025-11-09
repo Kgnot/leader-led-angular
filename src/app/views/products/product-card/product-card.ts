@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Product} from '../../../models/product';
-import {DecimalPipe} from '@angular/common';
-import {Observable} from 'rxjs';
 import {CartService} from '../../../services/cart-service/cart.service';
 import {ProductImageComponent} from './product-image/product-image.component';
 import {ProductInfoComponent} from './product-info/product-info.component';

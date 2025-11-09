@@ -1,0 +1,48 @@
+<div class="sidebar-cart" [class.open]="visible">
+  <div class="cart-header">
+    <h2>Carrito de Productos</h2>
+    <button class="btn-close" (click)="closeSidebar()">✕</button>
+  </div>
+
+  @if (items$ | async; as items) {
+    <div class="cart-content">
+
+      @if (items.length > 0) {
+        <div class="cart-summary">
+          <div class="summary-item">
+            <span class="summary-label">Productos:</span>
+            <span class="summary-value">{{ getTotalItems(items) }}</span>
+          </div>
+        </div>
+      }
+
+      @if (items.length > 0) {
+        <div class="items-list">
+          @for (item of items; track item.product.id) {
+            <app-cart-item
+              [item]="item"
+              (add)="onAddItem(item.product)"
+              (remove)="onRemoveItem(item.product)">
+            </app-cart-item>
+          }
+        </div>
+      } @else {
+        <div class="empty-cart">
+          <div class="empty-icon">🛒</div>
+          <p>Tu carrito está vacío</p>
+          <span>Agrega productos para comenzar tu consulta</span>
+        </div>
+      }
+
+      @if (items.length > 0) {
+        <div class="cart-footer">
+          <button class="btn-consult" (click)="onConsult()">
+            <span>Consultar Productos</span>
+            <span class="consult-count">{{ items.length }}</span>
+          </button>
+        </div>
+      }
+
+    </div>
+  }
+</div>

@@ -1,7 +1,8 @@
 @if (product) {
   <div class="product-card">
 
-    <button (click)="addToCart()">Añadir a carrito</button>
+    <button id="button-to-add"
+      (click)="addToCart()">Añadir a carrito</button>
 
     <div class="card-header">
       <app-product-image

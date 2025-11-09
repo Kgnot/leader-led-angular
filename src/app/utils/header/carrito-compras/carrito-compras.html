@@ -1,4 +1,4 @@
-<button class="cart-button" aria-label="Ver carrito">
+<button class="cart-button" aria-label="Ver carrito" (click)="onToggleSidebar()">
   <svg
     class="cart-icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -12,9 +12,7 @@
     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
   </svg>
   <span class="cart-text">Carrito</span>
-  @if (getLength()>0) {
-    <span class="cart-badge">
-      {{ getLength() }}
-    </span>
+  @if (getLength() > 0) {
+    <span class="cart-badge">{{ getLength() }}</span>
   }
 </button>
