@@ -48,5 +48,10 @@
     "idCategory": 10,
     "name": "Lineal",
     "image": "/products/category/lineal.jpg"
+  },
+  {
+    "idCategory": 11,
+    "name": "HIGH BAY",
+    "image": "/products/category/high-bay.webp"
   }
 ]

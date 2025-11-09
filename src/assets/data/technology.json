@@ -1,0 +1,18 @@
+[{
+  "idtechnology": 1,
+  "name": "LED"
+}, {
+  "idtechnology": 2,
+  "name": "Halógena"
+}, {
+  "idtechnology": 3,
+  "name": "Inducción"
+}, {
+  "idtechnology": 4,
+  "name": "Smart"
+},
+  {
+    "idtechnology": 5,
+    "name": "DALI"
+  }
+]

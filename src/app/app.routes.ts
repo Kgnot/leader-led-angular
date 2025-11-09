@@ -1,28 +1,34 @@
 import {Routes} from '@angular/router'
-import {HomePageComponent} from './home/home-page/home-page.component';
-import {ContactPageComponent} from './contact/contact-page/contact-page.component';
-import {ProductsPageComponent} from './products/products-page/products-page.component';
-import {CompanyServicesPageComponent} from './company-services/company-services-page/company-services-page.component';
 
+
+// Esto me dice que solo carga las paginas cuando se necesitan ya que estoy viendo un tema de rendimiento bajo
 export const routes: Routes = [
   {
     path: '',
-    component: HomePageComponent,
+    loadComponent: () =>
+      import('./views/home/home-page/home-page.component')
+        .then(m => m.HomePageComponent),
     title: 'LeaderLed - Iluminación LED Bogotá | Soluciones Personalizadas +15 Años'
   },
   {
     path: 'contact',
-    component: ContactPageComponent,
+    loadComponent: () =>
+      import('./views/contact/contact-page/contact-page.component')
+        .then(m => m.ContactPageComponent),
     title: 'ContactPage'
   },
   {
     path: 'products',
-    component: ProductsPageComponent,
+    loadComponent: () =>
+      import('./views/products/products-page/products-page.component')
+        .then(m => m.ProductsPageComponent),
     title: 'ProductsPage'
   },
   {
     path: 'services',
-    component: CompanyServicesPageComponent,
+    loadComponent: () =>
+      import('./views/company-services/company-services-page/company-services-page.component')
+        .then(m => m.CompanyServicesPageComponent),
     title: 'CompanyServicesPage'
   }
 ];

@@ -12,4 +12,12 @@ export class BlackModalComponent {
   onClick() {
     this.close.emit();
   }
+
+  ngOnInit() {
+    document.body.classList.add('no-scroll');
+  }
+
+  ngOnDestroy() {
+    document.body.classList.remove('no-scroll');
+  }
 }

@@ -450,20 +450,24 @@
       }
     ]
   },
-{
+  {
     "idInventory": 16,
     "marketName": "HIGH BAY",
     "reference": "BY698X LED300 CW",
     "power": 230,
     "lumens": 29000,
-    "desc": "Luminaria high bay de 230w DALI, 65k",
+    "desc": "Luminaria high bay de 230w DALI, 6500K",
     "images": [
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.assets.signify.com%2Fis%2Fcontent%2FPhilipsLighting%2Ffp911401826297-pss-global&psig=AOvVaw2bH4MHiRMtT1m1cwoPoTkF&ust=1762536756214000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiDjLKH3pADFQAAAAAdAAAAABAE"
+      "https://s.alicdn.com/@sc04/kf/H26e5250844754fe0a378843f10a7aa11Q.jpg_960x960q80.jpg"
     ],
     "technologies": [
       {
         "name": "DALI",
-        "idTechnology": 4
+        "idTechnology": 5
+      },
+      {
+        "name": "LED",
+        "idTechnology": 1
       },
       {
         "name": "LED",
@@ -474,12 +478,20 @@
       {
         "type": "Interior",
         "idApplication": 1
+      },
+      {
+        "type": "Industrial",
+        "idApplication": 7
       }
     ],
     "categories": [
       {
         "name": "HIGH BAY",
-        "idCategory": 9
+        "idCategory": 11
+      },
+      {
+        "name": "Plafón",
+        "idCategory": 7
       }
     ]
   }
