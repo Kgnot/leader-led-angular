@@ -494,5 +494,272 @@
         "idCategory": 7
       }
     ]
-  }
+  },
+  [
+    {
+      "idInventory": 16,
+      "marketName": "FOCUS SUSPENDIDO",
+      "reference": "CO8120BBCA",
+      "power": 15,
+      "lumens": 1300,
+      "desc": "Luminaria suspendida blanca, ópticas incluidas (24°, 36°, 60°), IP20.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_967460-MCO92675101069_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 17,
+      "marketName": "FOCUS SUSPENDIDO",
+      "reference": "CO8120NBCA",
+      "power": 15,
+      "lumens": 1300,
+      "desc": "Versión negra, ópticas incluidas (24°,36°,60°), IP20.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26796/ff46fe2eefddb5d981ad70e4995be3df.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 18,
+      "marketName": "FOCUS SUSPENDIDO",
+      "reference": "CO8121BBCA",
+      "power": 30,
+      "lumens": 2600,
+      "desc": "Modelo 30 W blanco con ópticas 24°/36°/60°.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_967460-MCO92675101069_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 19,
+      "marketName": "FOCUS SUSPENDIDO",
+      "reference": "CO8122NBNA",
+      "power": 45,
+      "lumens": 4000,
+      "desc": "Modelo 45 W negro, IP20, con ópticas intercambiables.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26826/5a2fc7d64fff23095deccf8130797627.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 20,
+      "marketName": "AURORA",
+      "reference": "RE8065BCCA",
+      "power": 40,
+      "lumens": 5000,
+      "desc": "Suspensión blanca IP40, alta eficiencia 125 lm/W.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_870982-MCO92668102005_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 21,
+      "marketName": "AURORA",
+      "reference": "RE8065NCCA",
+      "power": 40,
+      "lumens": 5000,
+      "desc": "Versión negra 40 W IP40, óptica 125 lm/W.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26838/96f983177f79b4d0e09780e0ea4e4b06.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 22,
+      "marketName": "AURORA",
+      "reference": "RE8066BCCA",
+      "power": 60,
+      "lumens": 7500,
+      "desc": "Modelo blanco 60 W IP40 alto flujo.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26844/b4106ee5a829d85b5193cd978d314933.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 23,
+      "marketName": "AURORA",
+      "reference": "RE8066NCCA",
+      "power": 60,
+      "lumens": 7500,
+      "desc": "Versión negra 60 W IP40.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26847/2c356d642b2566ff7fd235db8b1c9ebf.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 24,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "OF4250BBCA",
+      "power": 38,
+      "lumens": 4000,
+      "desc": "Línea empotrable blanca, accesorios se venden por separado.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_642097-MCO78359232734_082024-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 25,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "OF4250NBCA",
+      "power": 38,
+      "lumens": 4000,
+      "desc": "Versión negra empotrable.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_782513-MCO97008706222_112025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 26,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "OF4253NBCA",
+      "power": 21,
+      "lumens": 2500,
+      "desc": "Negro, para empotrar/sobreponer/suspender.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_871919-MCO93287498003_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 27,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC4251NBCA",
+      "power": 15,
+      "lumens": 1600,
+      "desc": "Accesorio lineal negro 15 W.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26519/951fab308358ac51a9e0a3cbf827e236.png"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Sobrepuesto", "idApplication": 5}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 28,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC4252NBCA",
+      "power": 11.5,
+      "lumens": 1200,
+      "desc": "Accesorio negro 11.5 W.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_950741-MCO92261006700_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Sobrepuesto", "idApplication": 5}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 29,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC4253NBCA",
+      "power": 7.5,
+      "lumens": 800,
+      "desc": "Accesorio negro 7.5 W.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_908735-MCO92268184414_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Sobrepuesto", "idApplication": 5}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 30,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC4256S",
+      "power": 0,
+      "lumens": 0,
+      "desc": "Accesorio para sobreponer, satinado.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_719753-MCO92286189352_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Sobrepuesto", "idApplication": 5}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 31,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC8254S",
+      "power": 0,
+      "lumens": 0,
+      "desc": "Accesorio para suspensión satinado.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_678066-MCO93310103491_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Suspensión", "idApplication": 3}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 32,
+      "marketName": "VECTOR SYSTEM PRO",
+      "reference": "AC1255S",
+      "power": 0,
+      "lumens": 0,
+      "desc": "Accesorio para empotrar satinado.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_664329-MCO92681624749_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Driver", "idCategory": 5}]
+    },
+    {
+      "idInventory": 33,
+      "marketName": "NAGOYA II",
+      "reference": "40DLFCLED1282V40B",
+      "power": 40,
+      "lumens": 4500,
+      "desc": "Luminaria lineal 120 cm blanca, 40 W.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_876196-MCO92268612412_092025-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 34,
+      "marketName": "NAGOYA II",
+      "reference": "40DLFCLED1282V40N",
+      "power": 40,
+      "lumens": 4500,
+      "desc": "Luminaria negra lineal 120 cm, 40 W.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_800188-MCO80800307299_112024-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Empotrado", "idApplication": 4}],
+      "categories": [{"name": "Lineal", "idCategory": 10}]
+    },
+    {
+      "idInventory": 35,
+      "marketName": "SATÉLITE II",
+      "reference": "PTLLED-005/30/N",
+      "power": 25,
+      "lumens": 1800,
+      "desc": "Plafón LED negro 25 W, luz cálida.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_794750-MCO78590075617_082024-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Interior", "idApplication": 1}],
+      "categories": [{"name": "Plafón", "idCategory": 7}]
+    },
+    {
+      "idInventory": 36,
+      "marketName": "AUSTRAL",
+      "reference": "PTLLED/012/30",
+      "power": 12,
+      "lumens": 700,
+      "desc": "Plafón LED 12 W blanco cálido.",
+      "images": ["https://http2.mlstatic.com/D_NQ_NP_713274-MCO78590077251_082024-O.webp"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Interior", "idApplication": 1}],
+      "categories": [{"name": "Plafón", "idCategory": 7}]
+    },
+    {
+      "idInventory": 37,
+      "marketName": "AUSTRAL",
+      "reference": "PTLLED/012/65",
+      "power": 12,
+      "lumens": 800,
+      "desc": "Plafón LED 12 W blanco frío.",
+      "images": ["https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26468/91ceafcb329c6b8615be8545ccbf289f.jpg"],
+      "technologies": [{"name": "LED", "idTechnology": 1}],
+      "applications": [{"type": "Interior", "idApplication": 1}],
+      "categories": [{"name": "Plafón", "idCategory": 7}]
+    }
+  ]
+
 ]
