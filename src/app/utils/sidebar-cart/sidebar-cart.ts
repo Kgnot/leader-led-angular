@@ -1,24 +1,21 @@
-import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnInit, OnDestroy } from '@angular/core';
-import { BuyConcept } from '../../models/cart/buy-concept';
-import { Product } from '../../models/product';
+import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser, AsyncPipe } from '@angular/common';
 import { CartService } from '../../services/cart-service/cart.service';
 import { Observable } from 'rxjs';
 import { CartItemComponent } from './cart-item/cart-item.component';
-import { AsyncPipe } from '@angular/common';
-import {MsgWsp} from '../../services';
+import { MsgWsp } from '../../services';
+import { BuyConcept } from '../../models/cart/buy-concept';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-sidebar-cart',
   standalone: true,
   templateUrl: './sidebar-cart.html',
-  imports: [
-    CartItemComponent,
-    AsyncPipe
-  ],
+  imports: [CartItemComponent, AsyncPipe],
   styleUrl: './sidebar-cart.scss'
 })
 export class SidebarCart implements OnInit, OnChanges, OnDestroy {
-  @Input() visible: boolean = false;
+  @Input() visible = false;
   @Output() close = new EventEmitter<void>();
   @Output() consult = new EventEmitter<void>();
 
@@ -26,7 +23,8 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
 
   constructor(
     private cartService: CartService,
-    private msgWsp: MsgWsp
+    private msgWsp: MsgWsp,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
@@ -41,11 +39,12 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // por si se destruye con el sidebar abierto
     this.toggleBodyScroll(false);
   }
 
   private toggleBodyScroll(disable: boolean) {
+    if (!isPlatformBrowser(this.platformId)) return; // ⛔ proteger SSR
+
     const body = document.body;
     if (disable) {
       body.classList.add('no-scroll');
@@ -71,15 +70,12 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
   }
 
   getTotalPower(items: BuyConcept[]): number {
-    return items.reduce((sum, item) => sum + (item.product.power * item.quantity), 0);
+    return items.reduce((sum, item) => sum + item.product.power * item.quantity, 0);
   }
 
   onConsult() {
     const items = this.cartService.getItems();
-
-    if (items.length === 0) {
-      return;
-    }
+    if (items.length === 0) return;
 
     const message = this.buildWhatsAppMessage(items);
     this.msgWsp.sendMessage(message);

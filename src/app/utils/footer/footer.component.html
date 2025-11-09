@@ -1,41 +1,50 @@
-<footer id="main_footer">
+<footer id="main_footer" class="footer" role="contentinfo">
   <div class="footer-content">
+
     <!-- Sección "Acerca de" -->
-    <div class="footer-section about">
-      <h3>Transformamos Espacios</h3>
-      <p>En LeaderLed, nos especializamos en iluminar tus espacios de manera innovadora.</p>
-    </div>
+    <section class="footer-section about">
+      <h3 class="footer-title">Transformamos Espacios</h3>
+      <p>
+        En <strong>LeaderLed</strong> nos especializamos en iluminar tus espacios con soluciones LED innovadoras, sostenibles y eficientes.
+      </p>
+      <address>
+        <p>Bogotá, Colombia</p>
+        <a href="mailto:contacto@leaderled.com.co">contacto&#64;leaderled.com.co</a>
+      </address>
+    </section>
 
     <!-- Sección de enlaces -->
-    <div class="footer-section links">
-      <h3>Explora</h3>
+    <nav class="footer-section links" aria-label="Navegación inferior">
+      <h3 class="footer-title">Explora</h3>
       <ul>
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/products">Productos</a></li>
-        <li><a href="/services">Servicios</a></li>
-        <li><a href="/contact">Contáctenos</a></li>
-        <li><a href="/cart">Carrito</a></li>
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/products">Productos</a></li>
+        <li><a routerLink="/services">Servicios</a></li>
+        <li><a routerLink="/contact">Contáctenos</a></li>
+        <li><a routerLink="/cart">Carrito</a></li>
       </ul>
-    </div>
+    </nav>
 
-    <!-- Sección de redes sociales -->
-    <div class="footer-section social">
-      <h3>Síguenos</h3>
+    <!-- Redes sociales -->
+    <section class="footer-section social">
+      <h3 class="footer-title">Síguenos</h3>
       <div class="social-links">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-facebook-f"></i>
+        <a href="https://facebook.com/leaderled" target="_blank">
+          <fa-icon [icon]="['fab', 'facebook-f']"></fa-icon>
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-twitter"></i>
+        <a href="https://instagram.com/leaderled" target="_blank">
+          <fa-icon [icon]="['fab', 'instagram']"></fa-icon>
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <i class="fab fa-instagram"></i>
+        <a href="https://linkedin.com/company/leaderled" target="_blank">
+          <fa-icon [icon]="['fab', 'linkedin-in']"></fa-icon>
         </a>
       </div>
-    </div>
+
+    </section>
+
   </div>
 
   <div class="footer-bottom">
-    LeaderLed | Todos los derechos reservados
+    <small>&copy; 2025 - LeaderLed — Todos los derechos reservados.</small>
   </div>
 </footer>
