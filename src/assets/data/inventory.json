@@ -75,8 +75,8 @@
     ],
     "applications": [
       {
-        "type": "Muro",
-        "idApplication": 2
+        "type": "Interior",
+        "idApplication": 1
       }
     ],
     "categories": [
@@ -104,8 +104,8 @@
     ],
     "applications": [
       {
-        "type": "Suspensión",
-        "idApplication": 3
+        "type": "Interior",
+        "idApplication": 1
       }
     ],
     "categories": [
@@ -133,8 +133,8 @@
     ],
     "applications": [
       {
-        "type": "Suspensión",
-        "idApplication": 3
+        "type": "Interior",
+        "idApplication": 1
       }
     ],
     "categories": [
@@ -164,6 +164,10 @@
       {
         "type": "Empotrado",
         "idApplication": 4
+      },
+      {
+        "type": "Interior",
+        "idApplication": 1
       }
     ],
     "categories": [
@@ -193,6 +197,10 @@
       {
         "type": "Sobrepuesto",
         "idApplication": 5
+      },
+      {
+        "type": "Interior",
+        "idApplication": 1
       }
     ],
     "categories": [
