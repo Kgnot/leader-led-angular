@@ -49,8 +49,8 @@ export class ContactPageComponent implements OnInit {
         "@type": "LocalBusiness",
         "name": "LeaderLed",
         "founder": "Henry Ricaurte Rodriguez",
-        "telephone": ["281 6903", "+57 313 205 6541"],
-        "email": "leaderled@hotmail.com",
+        "telephone": ["+57 313 205 6541"],
+        "email": "comercial@leaderledsas.com",
         "url": "https://leaderled.com.co",
         "address": {
           "@type": "PostalAddress",
