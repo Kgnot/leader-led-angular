@@ -1,4 +1,9 @@
 <div class="product-title">
   <h3>{{ name }}</h3>
+  <div>
+    @for (brand of brandArray; track brand.idbrand) {
+      <img [src]="brand.imageUrl" alt="brand" loading="lazy" class="brand-image-product">
+    }
+  </div>
   <span class="product-reference">{{ reference }}</span>
 </div>

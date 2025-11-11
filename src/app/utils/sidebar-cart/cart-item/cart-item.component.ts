@@ -20,10 +20,6 @@ export class CartItemComponent {
     this.remove.emit();
   }
 
-  getSubtotal(): number {
-    return this.item.product.power * this.item.quantity;
-  }
-
   getMainImage(): string {
     return this.item.product.images && this.item.product.images.length > 0
       ? this.item.product.images[0]

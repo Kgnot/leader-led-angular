@@ -33,5 +33,10 @@
     "idbrand": 7,
     "name": "Americanlite",
     "imageUrl": "https://americanlite.com/mt-content/uploads/2018/02/logo-1360x468-pixels.jpg"
+  },
+  {
+    "idBrand": 8,
+    "name": "Philips",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_(2013).svg/330px-Philips_shield_(2013).svg.png"
   }
 ]

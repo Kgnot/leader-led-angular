@@ -1,24 +1,3 @@
-#button-to-add {
-  top: 0.75rem;
-  left: 0.75rem;
-  background-color: #e9ecef; /* gris claro neutro */
-  border: 1px solid #ced4da; /* borde suave */
-  color: #212529; /* texto oscuro legible */
-  font-weight: 500;
-  border-radius: 15px;
-  padding: 0.4rem 0.8rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-#button-to-add:hover {
-  background-color: #dee2e6;
-  border-color: #adb5bd;
-}
-
-
-/* product-card.component.scss */
 .product-card {
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   border-radius: 16px;
@@ -56,37 +35,41 @@
     color: #6c757d;
   }
 
-  /* Botón */
   .add-btn {
     position: absolute;
     top: 0.75rem;
-    left: 0.75rem;
-    background: linear-gradient(135deg, #007bff, #00b4d8);
-    border: none;
-    color: #fff;
+    right: 0;
+    background-color: #f1f3f5; /* gris neutro elegante */
+    border: 1px solid #dee2e6;
+    color: #1a1a1a;
     font-weight: 600;
-    border-radius: 8px;
-    padding: 0.45rem 0.9rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 0.9rem;
-    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.25);
-    transition: all 0.25s ease;
+    transition: background-color 0.3s ease, border-color 0.2s ease;
+    z-index: 5;
 
     &:hover {
-      background: linear-gradient(135deg, #0056b3, #0077b6);
-      transform: scale(1.05);
-      box-shadow: 0 3px 10px rgba(0, 123, 255, 0.35);
+      background-color: #e9ecef;
+      border-color: #ced4da;
     }
 
     &:active {
-      transform: scale(0.98);
+      background-color: #a3b9a2; /* verde suave */
+      border-color: #89b458;
+      color: #fff;
+      transform: translateX(-2px) scale(0.98);
     }
   }
+
+
   .added-check {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    background-color: #206237; /* verde tailwind: emerald-500 */
+    background-color: #206237;
     color: white;
     font-size: 1.5rem;
     border-radius: 50%;
@@ -117,40 +100,5 @@
       opacity: 0;
       transform: translateY(10px);
     }
-  }
-}
-
-/* Estados */
-.product-card.featured {
-  border: 2px solid #28a745;
-
-  &::before {
-    content: 'Destacado';
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: #28a745;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    font-weight: 600;
-  }
-}
-
-.product-card.new {
-  border: 2px solid #ff6b35;
-
-  &::before {
-    content: 'Nuevo';
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background: #ff6b35;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.7rem;
-    font-weight: 600;
   }
 }

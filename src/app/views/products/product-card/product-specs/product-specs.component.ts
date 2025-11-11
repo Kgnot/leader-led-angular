@@ -10,7 +10,7 @@ import {DecimalPipe} from '@angular/common';
   styleUrl: './product-specs.component.scss'
 })
 export class ProductSpecsComponent {
-  @Input() power?: number;
+  @Input() powerArray?: number[];
   @Input() lumens?: number;
 
 }

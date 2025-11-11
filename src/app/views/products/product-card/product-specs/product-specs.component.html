@@ -1,9 +1,11 @@
 <div class="product-specs">
-  @if (power) {
+  @if (powerArray) {
     <div class="spec-item">
       <div class="spec-icon power-icon"></div>
       <div class="spec-details">
-        <span class="spec-value">{{ power }}W</span>
+        @for (power of powerArray; track power) {
+          <span class="spec-value">{{ power }}W</span>
+        }
         <span class="spec-label">Potencia</span>
       </div>
     </div>

@@ -16,6 +16,8 @@ import {
 } from '../../../services';
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
+import { ReactiveFormsModule} from '@angular/forms';
+
 
 @Component({
   selector: 'app-products-page',
@@ -23,8 +25,10 @@ import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
     SectionSelectorComponent,
     ItemsGridComponent,
     PresentationComponent,
-    ProductsModalComponent
+    ProductsModalComponent,
+    ReactiveFormsModule,
   ],
+
   providers: [
     {provide: ApplicationService, useClass: MockApplicationService}, //  use the mock service
     {provide: CategoryService, useClass: MockCategoryService}, // use the mock service

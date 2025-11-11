@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Brand} from '../../../../models';
 
 @Component({
   selector: 'app-product-info',
@@ -7,6 +8,7 @@ import {Component, Input} from '@angular/core';
   styleUrl: './product-info.component.scss'
 })
 export class ProductInfoComponent {
-  @Input() name!: string|undefined;
-  @Input() reference!: string|undefined;
+  @Input() name!: string | undefined;
+  @Input() brandArray!: Brand[] | undefined;
+  @Input() reference!: string | undefined;
 }

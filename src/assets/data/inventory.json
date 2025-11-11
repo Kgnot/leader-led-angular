@@ -3,9 +3,10 @@
     "idInventory": 1,
     "marketName": "Panel BRIGHTON VI",
     "reference": "6YDLED431MV30B",
-    "power": 6,
+    "power": [6],
     "lumens": 320,
     "desc": "Panel Incrustar Cuadrado Led Integrado 3000K",
+    "subDesc": "Este es un panel que se usa generalmente en sitios como oficinas",
     "images": [
       "/inventory/panel-brighton-vi-1.png"
     ],
@@ -26,15 +27,23 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 2,
     "marketName": "Panel BUCARAMANGA IV",
     "reference": "6YDLED430MV65B",
-    "power": 6,
+    "power": [6],
     "lumens": 320,
     "desc": "Panel Incrustar Redondo Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "/inventory/6YDLED430MV65B.jpg"
     ],
@@ -55,15 +64,23 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 3,
     "marketName": "Panel BUCARAMANGA VI",
     "reference": "18YDLED430MV30B",
-    "power": 18,
+    "power":[18],
     "lumens": 1200,
     "desc": "Panel Incrustar Redondo Led Integrado 3000K",
+    "subDesc": "",
     "images": [
       "/inventory/18YDLED430MV30B.jpg"
     ],
@@ -84,15 +101,23 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 4,
     "marketName": "Panel BUCARAMANGA IX",
     "reference": "24YDLED430MV65B",
-    "power": 24,
+    "power": [24],
     "lumens": 1600,
     "desc": "Panel Incrustar Redondo Led Integrado 6500K",
+    "subDesc": " ",
     "images": [
       "/inventory/24YDLED430MV65B.webp"
     ],
@@ -113,17 +138,25 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 5,
     "marketName": "Panel ALGEDI I",
     "reference": "6PTLLEDC30MVB",
-    "power": 6,
+    "power": [6],
     "lumens": 320,
     "desc": "Panel Sobreponer Cuadrado Led Integrado 3000K",
+    "subDesc": "",
     "images": [
-      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/6PTLLEDC30MVB-PT02.jpg?context=bWFzdGVyfGltYWdlc3wxOTIxNDR8aW1hZ2UvanBlZ3xhRGN6TDJnNU9DOHhNVEV4TnpNME56UTNNVE01TUM4MlVGUk1URVZFUXpNd1RWWkNYMUJVTURJdWFuQm58ZWNlZjAxYTI0YWViOGMzMzgwNDlkNWIzMDFiZmQ0ODkzNmY5OGUzYjM1Yzk1NWU2MjI0YWRiOGEzNzMwMjU1Yw"
+      "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/6PTLLEDC30MVB-PT02.jpg?context=bWFzdGVyfGltYWdlc3wxOTIxNDR8aW1hZ2UvanBlZ3xhRGN6TDJnNU9DOHhNVEV4TnpNME56QTRNVE01TUM4MlVGUk1URVZFUXpNd1RWWkNYMUJVTURJdWFuQm58ZWNlZjAxYTI0YWViOGMzMzgwNDlkNWIzMDFiZmQ0ODkzNmY5OGUzYjM1Yzk1NWU2MjI0YWRiOGEzNzMwMjU1Yw"
     ],
     "technologies": [
       {
@@ -142,15 +175,23 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 6,
     "marketName": "Panel ANKAA I",
     "reference": "6PTLLEDR30MVB",
-    "power": 6,
+    "power": [6],
     "lumens": 320,
     "desc": "Panel Sobreponer Redondo Led Integrado 3000K",
+    "subDesc": "",
     "images": [
       "https://media.falabella.com/sodimacCO/725345/w=1036,h=832,f=webp,fit=contain,q=85"
     ],
@@ -162,12 +203,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
       },
       {
-        "type": "Interior",
-        "idApplication": 1
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -175,15 +216,23 @@
         "name": "Bala",
         "idCategory": 2
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 7,
     "marketName": "Panel ACRUX",
     "reference": "40BKLED65MVB",
-    "power": 40,
+    "power": [40],
     "lumens": 3800,
     "desc": "Panel Incrustar Cuadrado Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/40BKLED65MVB-PT02.jpg?context=bWFzdGVyfGltYWdlc3w0ODE2MXxpbWFnZS9qcGVnfGFHWTJMMmhtWmk4eE1URTBOVFE1TkRBMk9USTNPQzgwTUVKTFRFVkVOalZOVmtKZlVGUXdNaTVxY0djfDk5ZGEyMzA0ZmFiNGNlNGE4MjY3ZGI0MWVlMDgyMWQ5NjkyODAxYmRkZTBiOWVjNGY1MjRmNTg2ZjhjMzI4MGM"
     ],
@@ -208,15 +257,23 @@
         "name": "Panel",
         "idCategory": 1
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 8,
     "marketName": "REGOR I",
     "reference": "100UFOLED65MVN",
-    "power": 100,
+    "power": [100],
     "lumens": 10000,
     "desc": "Industrial Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/100UFOLED65MVN-PT02.jpg?context=bWFzdGVyfGltYWdlc3w1Mjg4Nzh8aW1hZ2UvanBlZ3xhREkzTDJoaE5pOHhNVEV5TlRjd05UYzJPRGs1TUM4eE1EQlZSazlNUlVRMk5VMVdUbDlRVkRBeUxtcHdad3w4YTc3NTUyMzE2MjRmNWY4ZTM3MzJmNTc2Y2I3M2M4MjRjYmVmYzE4NWFhNDFlYWMxOGU4OTFjOWRiNmEyM2Qx"
     ],
@@ -232,8 +289,8 @@
     ],
     "applications": [
       {
-        "type": "Dirigible",
-        "idApplication": 6
+        "type": "Industrial",
+        "idApplication": 7
       }
     ],
     "categories": [
@@ -241,15 +298,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 9,
     "marketName": "HIDRUS I",
     "reference": "A19-LED/010/30",
-    "power": 9,
+    "power": [9],
     "lumens": 800,
     "desc": "Bombillo A19 Led Integrado 3000K",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_882191-MCO78590074719_082024-O.webp"
     ],
@@ -265,8 +330,8 @@
     ],
     "applications": [
       {
-        "type": "Dirigible",
-        "idApplication": 6
+        "type": "General",
+        "idApplication": 10
       }
     ],
     "categories": [
@@ -274,15 +339,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 10,
     "marketName": "PYXIES IV",
     "reference": "GU10L-LED/001/30",
-    "power": 6,
+    "power": [6],
     "lumens": 550,
     "desc": "Bombillo GU10 Led Integrado 3000K",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_609337-MCO89757297746_082025-O.webp"
     ],
@@ -294,8 +367,8 @@
     ],
     "applications": [
       {
-        "type": "Industrial",
-        "idApplication": 7
+        "type": "General",
+        "idApplication": 10
       }
     ],
     "categories": [
@@ -303,15 +376,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 11,
     "marketName": "PEGASUS I",
     "reference": "8PAR30LED65MV25",
-    "power": 9,
+    "power": [9],
     "lumens": 850,
     "desc": "Bombillo PAR30 Led Integrado 6500K",
+    "subDesc": "  ",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_712299-MLU78444782359_082024-O.webp"
     ],
@@ -332,15 +413,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 12,
     "marketName": "LICH I",
     "reference": "20LHBLEDT65MV200",
-    "power": 20,
+    "power": [20],
     "lumens": 1800,
     "desc": "Bombillo LHB Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_940615-MCO89757159010_082025-O.webp "
     ],
@@ -356,8 +445,8 @@
     ],
     "applications": [
       {
-        "type": "Solar",
-        "idApplication": 9
+        "type": "General",
+        "idApplication": 10
       }
     ],
     "categories": [
@@ -365,15 +454,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 13,
     "marketName": "OGMA III",
     "reference": "09T8LED60MV65C",
-    "power": 9,
+    "power": [9],
     "lumens": 800,
     "desc": "Tubo T8 Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/09T8LED60MV65C-PT01.jpg?context=bWFzdGVyfGltYWdlc3wxNTc5NHxpbWFnZS9qcGVnfGFEWTVMMmczTVM4eE1UQXdNell5TURneE9EazNOQzh3T1ZRNFRFVkVOakJOVmpZMVExOVFWREF4TG1wd1p3fDIxYzNiNGRjNjE0NWZjOTdmYmVhNDY0MDcxZmFhMzRmNDNkYWFmMTc5M2M5ZWIwMThkZGUxYzJiMTEyNjJlODQ"
     ],
@@ -385,8 +482,8 @@
     ],
     "applications": [
       {
-        "type": "Solar",
-        "idApplication": 9
+        "type": "General",
+        "idApplication": 10
       }
     ],
     "categories": [
@@ -394,15 +491,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 14,
     "marketName": "SANSUNA I",
     "reference": "10LQLEDY30MVN",
-    "power": 10,
-    "lumens": 1000,
+    "power": [200],
+    "lumens": 20000,
     "desc": "Reflector Piso Led Integrado 3000K",
+    "subDesc":"",
     "images": [
       "https://api-p1.tecnolite.mx/cdn-cgi/image/width=515,f=auto/medias/10LQLEDY30MVN-PT01.jpg?context=bWFzdGVyfGltYWdlc3wxMTQ4NTZ8aW1hZ2UvanBlZ3xhRFZpTDJneU15OHhNRE14TXpBek16Z3dPVGsxTUM4eE1FeFJURVZFV1RNd1RWWk9YMUJVTURFdWFuQm58OGZjZGM5NTZiNDhjZTZmM2QyMmE0MTNmMTA5NWVmNWMyZjFlMjQ3N2NmMTY2NGU1NGEyNTUwZjI4MTczMDhhZg"
     ],
@@ -414,8 +519,8 @@
     ],
     "applications": [
       {
-        "type": "Solar",
-        "idApplication": 9
+        "type": "Industrial",
+        "idApplication": 7
       }
     ],
     "categories": [
@@ -423,15 +528,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 15,
     "marketName": "AQUILA",
     "reference": "13PAR38LED65MV25",
-    "power": 13,
+    "power": [13],
     "lumens": 1250,
     "desc": "Bombillo PAR38 Led Integrado 6500K",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_798910-MLM32861301012_112019-O.webp"
     ],
@@ -447,8 +560,8 @@
     ],
     "applications": [
       {
-        "type": "Solar",
-        "idApplication": 9
+        "type": "General",
+        "idApplication": 10
       }
     ],
     "categories": [
@@ -456,15 +569,23 @@
         "name": "Bombillo",
         "idCategory": 3
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 16,
     "marketName": "HIGH BAY",
     "reference": "BY698X LED300 CW",
-    "power": 230,
+    "power": [230],
     "lumens": 29000,
     "desc": "Luminaria high bay de 230w DALI, 6500K",
+    "subDesc": "",
     "images": [
       "https://s.alicdn.com/@sc04/kf/H26e5250844754fe0a378843f10a7aa11Q.jpg_960x960q80.jpg"
     ],
@@ -484,10 +605,6 @@
     ],
     "applications": [
       {
-        "type": "Interior",
-        "idApplication": 1
-      },
-      {
         "type": "Industrial",
         "idApplication": 7
       }
@@ -501,34 +618,17 @@
         "name": "Plafón",
         "idCategory": 7
       }
-    ]
-  },
-  {
-    "idInventory": 16,
-    "marketName": "FOCUS SUSPENDIDO",
-    "reference": "CO8120BBCA",
-    "power": 15,
-    "lumens": 1300,
-    "desc": "Luminaria suspendida blanca, ópticas incluidas (24°, 36°, 60°), IP20.",
-    "images": [
-      "https://http2.mlstatic.com/D_NQ_NP_967460-MCO92675101069_092025-O.webp"
     ],
-    "technologies": [
+    "brands": [
       {
-        "name": "LED",
-        "idTechnology": 1
-      }
-    ],
-    "applications": [
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      },
       {
-        "type": "Suspensión",
-        "idApplication": 3
-      }
-    ],
-    "categories": [
-      {
-        "name": "Lineal",
-        "idCategory": 10
+        "idBrand": 8,
+        "name": "Philips",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_(2013).svg/330px-Philips_shield_(2013).svg.png"
       }
     ]
   },
@@ -536,9 +636,10 @@
     "idInventory": 17,
     "marketName": "FOCUS SUSPENDIDO",
     "reference": "CO8120NBCA",
-    "power": 15,
+    "power": [15],
     "lumens": 1300,
     "desc": "Versión negra, ópticas incluidas (24°,36°,60°), IP20.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26796/ff46fe2eefddb5d981ad70e4995be3df.png"
     ],
@@ -559,15 +660,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 18,
     "marketName": "FOCUS SUSPENDIDO",
     "reference": "CO8121BBCA",
-    "power": 30,
+    "power": [30],
     "lumens": 2600,
     "desc": "Modelo 30 W blanco con ópticas 24°/36°/60°.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_967460-MCO92675101069_092025-O.webp"
     ],
@@ -588,15 +697,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 19,
     "marketName": "FOCUS SUSPENDIDO",
     "reference": "CO8122NBNA",
-    "power": 45,
+    "power": [45],
     "lumens": 4000,
     "desc": "Modelo 45 W negro, IP20, con ópticas intercambiables.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26826/5a2fc7d64fff23095deccf8130797627.png"
     ],
@@ -617,15 +734,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 20,
     "marketName": "AURORA",
     "reference": "RE8065BCCA",
-    "power": 40,
+    "power": [40],
     "lumens": 5000,
     "desc": "Suspensión blanca IP40, alta eficiencia 125 lm/W.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_870982-MCO92668102005_092025-O.webp"
     ],
@@ -646,15 +771,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 21,
     "marketName": "AURORA",
     "reference": "RE8065NCCA",
-    "power": 40,
+    "power": [40],
     "lumens": 5000,
     "desc": "Versión negra 40 W IP40, óptica 125 lm/W.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26838/96f983177f79b4d0e09780e0ea4e4b06.png"
     ],
@@ -675,15 +808,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 22,
     "marketName": "AURORA",
     "reference": "RE8066BCCA",
-    "power": 60,
+    "power": [60],
     "lumens": 7500,
     "desc": "Modelo blanco 60 W IP40 alto flujo.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26844/b4106ee5a829d85b5193cd978d314933.png"
     ],
@@ -704,15 +845,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 23,
     "marketName": "AURORA",
     "reference": "RE8066NCCA",
-    "power": 60,
+    "power": [60],
     "lumens": 7500,
     "desc": "Versión negra 60 W IP40.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26847/2c356d642b2566ff7fd235db8b1c9ebf.png"
     ],
@@ -733,15 +882,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 24,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "OF4250BBCA",
-    "power": 38,
+    "power": [38],
     "lumens": 4000,
     "desc": "Línea empotrable blanca, accesorios se venden por separado.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_642097-MCO78359232734_082024-O.webp"
     ],
@@ -753,8 +910,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -766,15 +927,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 25,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "OF4250NBCA",
-    "power": 38,
+    "power": [38],
     "lumens": 4000,
     "desc": "Versión negra empotrable.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_782513-MCO97008706222_112025-O.webp"
     ],
@@ -786,8 +955,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -799,15 +972,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 26,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "OF4253NBCA",
-    "power": 21,
+    "power": [21],
     "lumens": 2500,
     "desc": "Negro, para empotrar/sobreponer/suspender.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_871919-MCO93287498003_092025-O.webp"
     ],
@@ -819,8 +1000,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -832,15 +1017,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 27,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC4251NBCA",
-    "power": 15,
+    "power": [15],
     "lumens": 1600,
     "desc": "Accesorio lineal negro 15 W.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26519/951fab308358ac51a9e0a3cbf827e236.png"
     ],
@@ -854,6 +1047,10 @@
       {
         "type": "Sobrepuesto",
         "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -865,15 +1062,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 28,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC4252NBCA",
-    "power": 11.5,
+    "power": [11.5],
     "lumens": 1200,
     "desc": "Accesorio negro 11.5 W.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_950741-MCO92261006700_092025-O.webp"
     ],
@@ -898,15 +1103,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 29,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC4253NBCA",
-    "power": 7.5,
+    "power": [7.5],
     "lumens": 800,
     "desc": "Accesorio negro 7.5 W.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_908735-MCO92268184414_092025-O.webp"
     ],
@@ -931,15 +1144,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 30,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC4256S",
-    "power": 0,
+    "power": [0],
     "lumens": 0,
     "desc": "Accesorio para sobreponer, satinado.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_719753-MCO92286189352_092025-O.webp"
     ],
@@ -964,15 +1185,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 31,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC8254S",
-    "power": 0,
+    "power": [0],
     "lumens": 0,
     "desc": "Accesorio para suspensión satinado.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_678066-MCO93310103491_092025-O.webp"
     ],
@@ -997,15 +1226,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 32,
     "marketName": "VECTOR SYSTEM PRO",
     "reference": "AC1255S",
-    "power": 0,
+    "power": [0],
     "lumens": 0,
     "desc": "Accesorio para empotrar satinado.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_664329-MCO92681624749_092025-O.webp"
     ],
@@ -1017,8 +1254,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -1030,15 +1271,23 @@
         "name": "Colgante",
         "idCategory": 9
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 33,
     "marketName": "NAGOYA II",
     "reference": "40DLFCLED1282V40B",
-    "power": 40,
+    "power": [40],
     "lumens": 4500,
     "desc": "Luminaria lineal 120 cm blanca, 40 W.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_876196-MCO92268612412_092025-O.webp"
     ],
@@ -1050,8 +1299,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -1059,15 +1312,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 34,
     "marketName": "NAGOYA II",
     "reference": "40DLFCLED1282V40N",
-    "power": 40,
+    "power": [40],
     "lumens": 4500,
     "desc": "Luminaria negra lineal 120 cm, 40 W.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_800188-MCO80800307299_112024-O.webp"
     ],
@@ -1079,8 +1340,12 @@
     ],
     "applications": [
       {
-        "type": "Empotrado",
-        "idApplication": 4
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Suspensión",
+        "idApplication": 3
       }
     ],
     "categories": [
@@ -1088,15 +1353,23 @@
         "name": "Lineal",
         "idCategory": 10
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 35,
     "marketName": "SATÉLITE II",
     "reference": "PTLLED-005/30/N",
-    "power": 25,
+    "power": [25],
     "lumens": 1800,
     "desc": "Plafón LED negro 25 W, luz cálida.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_794750-MCO78590075617_082024-O.webp"
     ],
@@ -1117,15 +1390,23 @@
         "name": "Plafón",
         "idCategory": 7
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 36,
     "marketName": "AUSTRAL",
     "reference": "PTLLED/012/30",
-    "power": 12,
+    "power": [12],
     "lumens": 700,
     "desc": "Plafón LED 12 W blanco cálido.",
+    "subDesc": "",
     "images": [
       "https://http2.mlstatic.com/D_NQ_NP_713274-MCO78590077251_082024-O.webp"
     ],
@@ -1146,15 +1427,23 @@
         "name": "Plafón",
         "idCategory": 7
       }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
     ]
   },
   {
     "idInventory": 37,
     "marketName": "AUSTRAL",
     "reference": "PTLLED/012/65",
-    "power": 12,
+    "power": [12],
     "lumens": 800,
     "desc": "Plafón LED 12 W blanco frío.",
+    "subDesc": "",
     "images": [
       "https://multimedia01.s3.us-east-2.amazonaws.com/Produccion/tiendas/172/productos/26468/91ceafcb329c6b8615be8545ccbf289f.jpg"
     ],
@@ -1174,6 +1463,95 @@
       {
         "name": "Plafón",
         "idCategory": 7
+      }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
+    ]
+  },
+  {
+    "idInventory": 38,
+    "marketName": "TANIA II",
+    "reference": "18hled123mv30n",
+    "power": [18],
+    "lumens": 1800,
+    "desc": "Aplique muro dirigible sobreponer",
+    "subDesc": "",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_908986-MCO92265215020_092025-O.webp"
+    ],
+    "technologies": [
+      {
+        "name": "LED",
+        "idTechnology": 1
+      }
+    ],
+    "applications": [
+      {
+        "type": "Muro",
+        "idApplication": 2
+      },
+      {
+        "type": "Sobrepuesto",
+        "idApplication": 5
+      },
+      {
+        "type": "Dirigible",
+        "idApplication": 6
+      }
+    ],
+    "categories": [
+      {
+        "name": "Aplique",
+        "idCategory": 8
+      }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+      }
+    ]
+  },
+  {
+    "idInventory": 39,
+    "marketName": "FOCUS SUSPENDIDO",
+    "reference": "CO8120BBCA",
+    "power": [15],
+    "lumens": 1300,
+    "desc": "Luminaria suspendida blanca, ópticas incluidas (24°, 36°, 60°), IP20.",
+    "subDesc": "",
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_967460-MCO92675101069_092025-O.webp"
+    ],
+    "technologies": [
+      {
+        "name": "LED",
+        "idTechnology": 1
+      }
+    ],
+    "applications": [
+      {
+        "type": "Suspensión",
+        "idApplication": 3
+      }
+    ],
+    "categories": [
+      {
+        "name": "Lineal",
+        "idCategory": 10
+      }
+    ],
+    "brands": [
+      {
+        "idBrand": 1,
+        "name": "Tecnolite",
+        "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
       }
     ]
   }

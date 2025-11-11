@@ -69,8 +69,8 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
     return items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
-  getTotalPower(items: BuyConcept[]): number {
-    return items.reduce((sum, item) => sum + item.product.power * item.quantity, 0);
+  getTotalPower(items: BuyConcept[]): number[][] {
+    return items.map(item => item.product.power);
   }
 
   onConsult() {
@@ -93,7 +93,7 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
     });
 
     const totalItems = this.getTotalItems(items);
-    const totalPower = this.getTotalPower(items);
+    const totalPower:number[][] = this.getTotalPower(items);
 
     message += `Resumen:\n`;
     message += `Total de productos: ${totalItems}\n`;

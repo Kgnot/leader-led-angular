@@ -1,6 +1,6 @@
 import {ApiProduct} from '../dto/api-product.dto';
 import {Product} from '../models/product';
-import {adapterApplicationArray, adapterCategoryArray} from './adapter-functions';
+import {adapterApplicationArray, adapterBrandArray, adapterCategoryArray} from './adapter-functions';
 import {adapterTechnologyArray} from './adapter-technology';
 
 export function adapterProduct(product: ApiProduct): Product {
@@ -12,10 +12,12 @@ export function adapterProduct(product: ApiProduct): Product {
     lumens: product.lumens,
     reference: product.reference,
     desc: product.desc,
+    subDesc: product.subDesc,
     images: product.images,
     technologies: adapterTechnologyArray(product.technologies),
     applications: adapterApplicationArray(product.applications),
-    categories: adapterCategoryArray(product.categories)
+    categories: adapterCategoryArray(product.categories),
+    brands: adapterBrandArray(product.brands)
   }
 }
 

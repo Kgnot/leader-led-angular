@@ -43,5 +43,10 @@
     "idApplication": 9,
     "type": "Solar",
     "image": "/products/application/solar.avif"
+  },
+  {
+    "idApplication": 10,
+    "type": "General",
+    "image": "https://www.aglighting.mx/wp-content/uploads/2019/07/perfiles-iluminacion-configurables_3-800x500.jpg"
   }
 ]
