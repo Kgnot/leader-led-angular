@@ -7,7 +7,7 @@
   {
     "idbrand": 2,
     "name": "Mean Well",
-    "imageUrl": "https://www.meanwell.com/styles/images/logo2.png"
+    "imageUrl": "https://static.wixstatic.com/media/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg/v1/fill/w_200,h_118,al_c,q_80,enc_avif,quality_auto/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg%201x,%20https://static.wixstatic.com/media/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg/v1/fill/w_280,h_165,al_c,lg_1,q_80,enc_avif,quality_auto/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg%202x"
   },
   {
     "idbrand": 3,
@@ -38,5 +38,15 @@
     "idBrand": 8,
     "name": "Philips",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_(2013).svg/330px-Philips_shield_(2013).svg.png"
+  },
+  {
+    "idBrand": 9,
+    "name": "Roy Alpha",
+    "imageUrl": "https://www.royalpha.com/wp-content/uploads/2022/12/logo-white.png"
+  },
+   {
+    "idBrand": 10,
+    "name": "Ledvance",
+    "imageUrl": "https://ledvance.com/build/static/img/ledvance-logo.d723d0c25f66901a007661d578f6d5e0.svg"
   }
 ]
