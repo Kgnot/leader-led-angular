@@ -1,8 +1,41 @@
-.brand-carousel-home{
-  position: relative;
+.brand-carousel-home {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  justify-content: center;
-  gap: 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+
+  app-brand-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+// Tablet
+@media (min-width: 640px) {
+  .brand-carousel-home {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+// Desktop
+@media (min-width: 1024px) {
+  .brand-carousel-home {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem 2rem;
+  }
+}
+
+// Desktop grande
+@media (min-width: 1440px) {
+  .brand-carousel-home {
+    max-width: 1400px;
+    gap: 3rem;
+  }
 }

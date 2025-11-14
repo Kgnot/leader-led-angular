@@ -149,8 +149,18 @@ ul {
 }
 
 // extra
+
+html.no-scroll, body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100%;
+}
+
+
 .no-scroll {
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 100vh;
 }
 
 html, body { height: 100%; }

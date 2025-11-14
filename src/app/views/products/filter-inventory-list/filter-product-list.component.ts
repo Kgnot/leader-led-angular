@@ -2,11 +2,13 @@ import {Component, HostListener, inject, signal, WritableSignal} from '@angular/
 import {Product} from '../../../models/product';
 import {MockProductService, ProductService, RealProductsService} from '../../../services';
 import {ProductCard} from '../product-card/product-card';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-filter-inventory-list',
   imports: [
-    ProductCard
+    ProductCard,
+    FormsModule,
   ],
   templateUrl: './filter-product-list.component.html',
   styleUrl: './filter-product-list.component.scss',
@@ -26,18 +28,29 @@ export class FilterProductListComponent {
   }
 
   onSearchChange(event: Event): void {
-    if (!this.isModalOpen()) this.isModalOpen.set(true);
-    const value:string = (event.target as HTMLInputElement).value;
-    const products: Product[] = this.productService.getProductsByLetter(value);
-    this.filterProductList.set(products);
+    if (!this.isModalOpen()) this.openModal();
+
+    const value = (event.target as HTMLInputElement).value;
+    this.filterProductList.set(
+      this.productService.getProductsByLetter(value)
+    );
   }
 
-  //Para cerrar con el escape jeje
-  @HostListener('document:keydown.escape')
+  openModal() {
+    this.isModalOpen.set(true);
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+  }
+
   closeModal() {
     this.isModalOpen.set(false);
+    this.filterProductList.set([]);
+    document.body.classList.remove('no-scroll');
+    document.documentElement.classList.remove('no-scroll');
   }
 
-
-  protected readonly HTMLInputElement = HTMLInputElement;
+  @HostListener('document:keydown.escape')
+  onEscape() {
+    this.closeModal();
+  }
 }
