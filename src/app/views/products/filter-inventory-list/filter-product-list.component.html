@@ -1,0 +1,25 @@
+<div class="search-container" [class.active]="isModalOpen()">
+  <input
+    type="text"
+    placeholder="Buscar productos..."
+    (input)="onSearchChange($event)"
+    (focus)="isModalOpen.set(true)"
+  >
+</div>
+
+@if (isModalOpen()) {
+<!--  Puede servir el otro modal, pero tendria que maniobrar xd-->
+  <div class="overlay" (click)="closeModal()"></div>
+
+  <div class="modal">
+    @if (filterProductList().length === 0) {
+      <p class="empty-message">No hay productos encontrados.</p>
+    }
+
+    <div class="results-grid">
+      @for (product of filterProductList(); track product.id) {
+        <app-product-card [product]="product"/>
+      }
+    </div>
+  </div>
+}

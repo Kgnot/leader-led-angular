@@ -43,4 +43,9 @@ export class MockProductService implements ProductService {
       .filter(product => product.applications
         .find(application => application.id === applicationId));
   }
+
+  getProductsByLetter(name: string): Product[] {
+    return this.dataProducts
+      .filter(product => product.marketName.toLowerCase().includes(name.toLowerCase()));
+  }
 }

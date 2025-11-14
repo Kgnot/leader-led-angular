@@ -5,26 +5,26 @@
     <div class="card-header">
       <app-product-image
         [image]="getFirstImage()"
-        [alt]="product?.marketName"
+        [alt]="product.marketName"
       />
     </div>
 
     <div class="card-body">
       <app-product-info
-        [name]="product?.marketName"
-        [brandArray]="product?.brands"
-        [reference]="product?.reference"
+        [name]="product.marketName"
+        [brandArray]="product.brands"
+        [reference]="product.reference"
       />
 
       <app-product-specs
-        [powerArray]="product?.power"
-        [lumens]="product?.lumens"
+        [powerArray]="product.power"
+        [lumens]="product.lumens"
       />
 
       <div class="card-footer">
         <app-product-tags
-          [technologies]="product?.technologies"
-          [applications]="product?.applications"
+          [technologies]="product.technologies"
+          [applications]="product.applications"
         />
       </div>
     </div>

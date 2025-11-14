@@ -17,6 +17,7 @@ import {
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 import { ReactiveFormsModule} from '@angular/forms';
+import {FilterProductListComponent} from '../filter-inventory-list/filter-product-list.component';
 
 
 @Component({
@@ -27,6 +28,7 @@ import { ReactiveFormsModule} from '@angular/forms';
     PresentationComponent,
     ProductsModalComponent,
     ReactiveFormsModule,
+    FilterProductListComponent,
   ],
 
   providers: [

@@ -5,12 +5,13 @@ import {Product} from '../../models/product';
 @Injectable({
   providedIn: 'root'
 })
-export class RealProductsService implements ProductService{
+export class RealProductsService implements ProductService {
   getTotalProducts(): number {
-      return 0;
+    return 0;
   }
+
   getProducts(): Product[] {
-    return [];
+    return [] as Product[];
   }
 
   getProductById(id: number): Product | null {
@@ -18,14 +19,18 @@ export class RealProductsService implements ProductService{
   }
 
   getProductsByCategory(categoryId: number): Product[] {
-    return [];
+    return [] as Product[];
   }
 
   getProductsByTechnology(technologyId: number): Product[] {
-    return [];
+    return [] as Product[];
   }
 
   getProductsByApplication(applicationId: number): Product[] {
-    return [];
+    return [] as Product[];
+  }
+
+  getProductsByLetter(name: string) {
+    return [] as Product[];
   }
 }

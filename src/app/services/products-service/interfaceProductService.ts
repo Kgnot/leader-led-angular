@@ -6,6 +6,7 @@ export interface ProductService {
   getProductsByCategory: (categoryId: number) => Product[]
   getProductsByTechnology: (technologyId: number) => Product[]
   getProductsByApplication: (applicationId: number) => Product[]
+  getProductsByLetter: (name: string) => Product[]
 
   //
   getTotalProducts(): number
