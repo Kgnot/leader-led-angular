@@ -1,11 +1,12 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {SectionType} from '../../../models';
 
 @Component({
   selector: 'app-section-selector',
   imports: [],
   templateUrl: './section-selector.component.html',
-  styleUrl: './section-selector.component.scss'
+  styleUrl: './section-selector.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SectionSelectorComponent {
   @Input() currentSection: SectionType = SectionType.APPLICATION;
