@@ -16,8 +16,9 @@ export class SemanticSearchService {
 
     this.wasmReady = (async () => {
 
+      // Ignorar resolución del import en build
       // @ts-ignore
-      const wasmModule = await import('/wasm/semantic_search_wasm.js');
+      const wasmModule = await import(/* @vite-ignore */ '/wasm/semantic_search_wasm.js');
       await wasmModule.default('/wasm/semantic_search_wasm_bg.wasm');
 
       window.semanticSearchWasm = wasmModule;
