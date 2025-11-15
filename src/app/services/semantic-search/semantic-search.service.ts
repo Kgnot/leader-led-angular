@@ -16,13 +16,9 @@ export class SemanticSearchService {
 
     this.wasmReady = (async () => {
 
-      const wasmModule = await import(
-        '../../../assets/pkg/semantic_search_wasm.js'
-        );
-
-      await wasmModule.default(
-        '/assets/pkg/semantic_search_wasm_bg.wasm'
-      );
+      // @ts-ignore
+      const wasmModule = await import('/wasm/semantic_search_wasm.js');
+      await wasmModule.default('/wasm/semantic_search_wasm_bg.wasm');
 
       window.semanticSearchWasm = wasmModule;
 
