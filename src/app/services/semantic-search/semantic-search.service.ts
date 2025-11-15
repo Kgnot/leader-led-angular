@@ -16,13 +16,13 @@ export class SemanticSearchService {
 
     this.wasmReady = (async () => {
 
-      // ⬅️ IMPORT DINÁMICO REAL (funciona en Angular y Vercel)
-      const wasmModule = await import('../../../../public/semantic_search/semantic_search_wasm.js');
+      // @ts-ignore
+      const wasmModule = await import('/semantic_search/semantic_search_wasm.js');
 
-      // ⬅️ Inicializar con default (el __wbg_init)
+      // Inicializar con default (el __wbg_init)
       await wasmModule.default('/semantic_search/semantic_search_wasm_bg.wasm');
 
-      // ⬅️ Guardar en window para acceso fácil
+      // Guardar en window para acceso fácil
       window.semanticSearchWasm = wasmModule;
 
     })();
