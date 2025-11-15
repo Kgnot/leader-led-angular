@@ -30,11 +30,13 @@ export class SemanticSearchService {
   // --- API WASM ---------------------
 
   async search(query: string, jsonString: string) {
+    if (typeof window === 'undefined') return;
     await this.initWasm();
     return window.semanticSearchWasm.find_best_items(query, jsonString);
   }
 
   async topN(query: string, itemsJson: string, limit: number) {
+    if (typeof window === 'undefined') return;
     await this.initWasm();
     return window.semanticSearchWasm.find_best_items_top_n(
       query,
