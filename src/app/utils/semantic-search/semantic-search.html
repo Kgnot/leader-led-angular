@@ -1,8 +1,11 @@
-<input [(ngModel)]="question" placeholder="Haz una pregunta..." />
+<button (click)="test()">Probar WASM</button>
+<pre>{{ result | json }}</pre>
 
-<button (click)="submit()">Preguntar</button>
+<hr>
+<button (click)="testTopN()">Probar Top N</button>
+@if (result) {
+  <div>
+    <strong>{{ result.length }} resultados recibidos</strong>
+  </div>
 
-<div style="margin-top:20px">
-  <h3>Respuesta:</h3>
-  <pre>{{ answer }}</pre>
-</div>
+}
