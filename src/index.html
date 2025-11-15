@@ -11,7 +11,7 @@
   <script>
     window.semanticSearchWasmReady = (async () => {
       // Cargar el módulo JS generado por wasm-pack
-      const module = await import('/assets/pkg/semantic_search_wasm.js');
+      const module = await import('/assets/pkg/semantic_search_wasm');
       await module.default('/assets/pkg/semantic_search_wasm_bg.wasm');
 
       // Exponerlo globalmente
