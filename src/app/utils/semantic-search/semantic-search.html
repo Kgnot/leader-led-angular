@@ -1,11 +1,36 @@
-<button (click)="test()">Probar WASM</button>
-<pre>{{ result | json }}</pre>
+<div class="chat-launcher" (click)="toggleChat()">
+  <img ngSrc="assets/images/chat/chat-ico.svg" alt="chat" height="348" width="348"/>
+</div>
 
-<hr>
-<button (click)="testTopN()">Probar Top N</button>
-@if (result) {
-  <div>
-    <strong>{{ result.length }} resultados recibidos</strong>
+@if (open) {
+  <div class="chat-container">
+    <div class="chat-header">
+      <strong>Asistente de Productos</strong>
+      <button class="close-btn" (click)="toggleChat()">✕</button>
+    </div>
+
+    <div class="chat-body">
+      <div class="messages">
+        @for (m of messages; track m) {
+          <div [class.user]="m.role === 'user'" [class.bot]="m.role === 'bot'">
+            {{ m.text }}
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input [(ngModel)]="query" placeholder="Pregunta algo..." />
+      <button (click)="send()">Enviar</button>
+    </div>
+
+    @if (result.length > 0) {
+      <div class="results">
+        <p><strong>{{ result.length }} resultados</strong></p>
+        @for (p of result; track p) {
+          <app-product-card  [product]="p"></app-product-card>
+        }
+      </div>
+    }
   </div>
-
 }

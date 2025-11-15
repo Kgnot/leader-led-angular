@@ -20,7 +20,7 @@ export class SemanticSearchService {
     return find_best_items(query, jsonString);
   }
 
-  async topN(query:string, items:string, limit:number){ // el items es un json
+  async topN(query:string, items:string, limit:number)/*:Promise<Map<string,any>>*/{ // el items es un json
     await this.wasmReady;
     return find_best_items_top_n(query,items,limit);
   }
