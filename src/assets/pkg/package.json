@@ -1,0 +1,15 @@
+{
+  "name": "semantic-search-wasm",
+  "type": "module",
+  "version": "0.1.0",
+  "files": [
+    "semantic_search_wasm_bg.wasm",
+    "semantic_search_wasm.js",
+    "semantic_search_wasm.d.ts"
+  ],
+  "main": "semantic_search_wasm.js",
+  "types": "semantic_search_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}

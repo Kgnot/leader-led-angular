@@ -8,6 +8,18 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    window.semanticSearchWasmReady = (async () => {
+      // Cargar el módulo JS generado por wasm-pack
+      const module = await import('/assets/pkg/semantic_search_wasm.js');
+      await module.default('/assets/pkg/semantic_search_wasm_bg.wasm');
+
+      // Exponerlo globalmente
+      window.semanticSearchWasm = module;
+    })();
+  </script>
+
+
 </head>
 <body>
   <app-root></app-root>

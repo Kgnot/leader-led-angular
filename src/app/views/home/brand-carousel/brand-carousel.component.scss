@@ -1,11 +1,13 @@
 .brand-carousel-home {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(1, 1fr); // Móvil por defecto
   gap: 1.5rem;
+
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  box-sizing: border-box;
 
   app-brand-item {
     display: flex;
@@ -14,27 +16,28 @@
   }
 }
 
-// Tablet
+/* Tablet */
 @media (min-width: 640px) {
   .brand-carousel-home {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     padding: 2.5rem 1.5rem;
   }
 }
 
-// Desktop
+/* Desktop */
 @media (min-width: 1024px) {
   .brand-carousel-home {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
     padding: 3rem 2rem;
   }
 }
 
-// Desktop grande
+/* Desktop grande */
 @media (min-width: 1440px) {
   .brand-carousel-home {
+    grid-template-columns: repeat(5, 1fr);
     max-width: 1400px;
     gap: 3rem;
   }

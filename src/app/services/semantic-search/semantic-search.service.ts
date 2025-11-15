@@ -1,14 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+
+declare global {
+  interface Window {
+    semanticSearchWasmReady: Promise<void>;
+    semanticSearchWasm: any;
+  }
+}
 
 @Injectable({ providedIn: 'root' })
 export class SemanticSearchService {
 
-  constructor(private http: HttpClient) {}
+  private async ensureReady() {
+    if (typeof window === 'undefined') return; // SSR safe
+    await window.semanticSearchWasmReady;
+  }
 
-  ///return this.http.post('http://localhost:3000/api/groq', { question });
-  ask(question: string): Observable<any> {
-    return this.http.post('http://localhost:3000/ask', { question });
+  async search(query: string, jsonString: string) {
+    await this.ensureReady();
+    return window.semanticSearchWasm.find_best_items(query, jsonString);
+  }
+
+  async topN(query: string, itemsJson: string, limit: number) {
+    await this.ensureReady();
+    return window.semanticSearchWasm.find_best_items_top_n(
+      query,
+      itemsJson,
+      limit
+    );
   }
 }
