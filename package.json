@@ -36,6 +36,7 @@
     "@assemblyscript/loader": "^0.28.9",
     "@fortawesome/angular-fontawesome": "^3.0.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@netlify/angular-runtime": "^3.0.1",
     "express": "^5.1.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"

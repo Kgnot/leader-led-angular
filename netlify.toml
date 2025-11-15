@@ -1,0 +1,9 @@
+[build]
+  command = "ng build"
+  publish = "dist/LeaderLedAngular/browser"
+
+[functions]
+  directory = "dist/LeaderLedAngular/server"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
