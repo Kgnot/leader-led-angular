@@ -1,28 +1,44 @@
 import { Injectable } from '@angular/core';
 
-import initWasm, {
-  find_best_items,
-  find_best_items_direct,
-  find_best_items_direct_top_n, find_best_items_top_n
-} from '../../../assets/pkg/semantic_search_wasm';
-import {Product} from '../../models/product';
-
-
+declare global {
+  interface Window {
+    semanticSearchWasm: any;
+  }
+}
 
 @Injectable({ providedIn: 'root' })
 export class SemanticSearchService {
 
-  private wasmReady = initWasm('/assets/pkg/semantic_search_wasm_bg.wasm');
+  private wasmReady: Promise<void> | null = null;
 
+  private initWasm(): Promise<void> {
+    if (this.wasmReady) return this.wasmReady;
+
+    this.wasmReady = (async () => {
+
+      // ⬅️ IMPORT DINÁMICO REAL (funciona en Angular y Vercel)
+      const wasmModule = await import('../../../../public/semantic_search/semantic_search_wasm.js');
+
+      // ⬅️ Inicializar con default (el __wbg_init)
+      await wasmModule.default('/semantic_search/semantic_search_wasm_bg.wasm');
+
+      // ⬅️ Guardar en window para acceso fácil
+      window.semanticSearchWasm = wasmModule;
+
+    })();
+
+    return this.wasmReady;
+  }
+
+  // --- API WASM ---------------------
 
   async search(query: string, jsonString: string) {
-    await initWasm();
-    return find_best_items(query, jsonString);
+    await this.initWasm();
+    return window.semanticSearchWasm.find_best_items(query, jsonString);
   }
 
-  async topN(query:string, items:string, limit:number)/*:Promise<Map<string,any>>*/{ // el items es un json
-    await this.wasmReady;
-    return find_best_items_top_n(query,items,limit);
+  async topN(query: string, itemsJson: string, limit: number) {
+    await this.initWasm();
+    return window.semanticSearchWasm.find_best_items_top_n(query, itemsJson, limit);
   }
-
 }
