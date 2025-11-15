@@ -1,13 +1,9 @@
 <div class="padding10-l-r home-page">
-  <app-presentation
-    [h3Text]="'Bienvenido a'"
-    [h1Text]="'Leader Led'"
-    [description]="'Soluciones profesionales en iluminación LED sostenible'"
-    [logoImgProduct]="'/LdLd3d_sinfondo.png'"
-    [bannerImg]="'/home-fondo.webp'"
+  <section class = "banner-home-welcome">
+    <app-leaderled-welcome/>
+    <app-brands-general/>
 
-  />
-  <app-brand-carousel/>
-  <app-context-enterprise/>
+  </section>
   <app-map/>
+  <app-context-enterprise/>
 </div>

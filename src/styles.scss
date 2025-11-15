@@ -1,9 +1,6 @@
-
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
+/* -------------------------------------------------------
+   ANGULAR MATERIAL THEME
+------------------------------------------------------- */
 @use '@angular/material' as mat;
 
 html {
@@ -17,151 +14,204 @@ html {
   ));
 }
 
+/* -------------------------------------------------------
+   BASE BODY
+------------------------------------------------------- */
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
   color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
   margin: 0;
 }
-//font:
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-// colors:
-$color-dark-header: #000;
-$color-dark-bg: #393939;
-$color-dark-main-text: #fff;
 
+/* -------------------------------------------------------
+   FONTS
+------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* -------------------------------------------------------
+   COLOR VARIABLES (LIGHT & DARK)
+------------------------------------------------------- */
+
+
+/* Light theme colors */
 $color-light-header: #f5f5f5;
 $color-light-bg: #fff;
 $color-light-main-text: #000;
 
-// general padding:
-$padding: 10em;
+/* Dark theme colors */
+$color-dark-header: #000;
+$color-dark-bg: #393939;
+$color-dark-main-text: #fff;
 
-// header height:
-$header-height: 5em; //55px
-//banner
+/* Banner & cards */
 $banner-color: rgba(104, 114, 99, 0.85);
 $banner-solid-color: rgb(104, 114, 99);
-// cards:
 $contact-card-header: #5c8141;
 $contact-card-color: #fff;
-
 $contact-card-bg: #fff;
 $contact-card-bg-color: #333;
 
+/* Layout variables */
+$padding: 10em;
+$header-height: 5em; // 55px
 
+/* Mixin para aplicar colores de tema */
 @mixin theme($header, $bg, $main-text) {
   --header: #{$header};
   --bg: #{$bg};
   --main-text: #{$main-text};
 }
 
+/* -------------------------------------------------------
+   ROOT LIGHT THEME
+------------------------------------------------------- */
 :root {
   @include theme(
       $color-light-header,
       $color-light-bg,
       $color-light-main-text
   );
+
+  //Extra colors:
+  --color-1:  #D2DCB6;
+  --color-2:  #F1F3E0;
+  --color-3:  #A1BC98;
+  --color-4:  #778873;
+  --color-5:  #6FA4AF;
+  --color-6:  #B8C4A9;
+  --color-7:  #F4E9D7;
+  --color-8:  #D6A99D;
+  --color-9:  #FBF3D5;
+  --color-10: #D6DAC8;
+  --color-11: #FFFFFF;
+
+
   --general-padding: #{$padding};
   --header-height: #{$header-height};
+
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
-  //cards:
-  --contact-card-header: #5c8141;
-  --contact-card-header-color: #fff;
-  --contact-card-bg: #fff;
-  --contact-card-bg-color: #333;
 
-  --contact-card-bg-strong-color: #5c8141;
+  --contact-card-header: #{$contact-card-header};
+  --contact-card-header-color: #{$contact-card-color};
+  --contact-card-bg: #{$contact-card-bg};
+  --contact-card-bg-color: #{$contact-card-bg-color};
+  --contact-card-bg-strong-color: #{$contact-card-header};
+
+  --border-radius-common:15px;
 }
 
+/* -------------------------------------------------------
+   ROOT DARK THEME
+------------------------------------------------------- */
 :root.dark {
   @include theme(
       $color-dark-header,
       $color-dark-bg,
       $color-dark-main-text
   );
+
   --general-padding: #{$padding};
   --header-height: #{$header-height};
+
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
-  //cards:
-  --contact-card-header: #5c8141;
-  --contact-card-header-color: #fff;
-  --contact-card-bg: #fff;
-  --contact-card-bg-color: #333;
-  --contact-card-bg-strong-color: #5c8141;
 
+  --contact-card-header: #{$contact-card-header};
+  --contact-card-header-color: #{$contact-card-color};
+  --contact-card-bg: #{$contact-card-bg};
+  --contact-card-bg-color: #{$contact-card-bg-color};
+  --contact-card-bg-strong-color: #{$contact-card-header};
 }
 
+/* -------------------------------------------------------
+   MAIN LAYOUT
+------------------------------------------------------- */
 main {
   position: relative;
   display: flex;
   top: var(--header-height);
-
 }
 
+/* -------------------------------------------------------
+   BODY BACKGROUND
+------------------------------------------------------- */
 body {
   position: relative;
-  //display: flex;
-  //align-content: center;
-  //justify-content: center;
   margin: 0;
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-
   height: 100%;
-  //background: var(--bg);
-  background: linear-gradient(135deg, #f8faf9 0%, #e8f0e6 100%);
+  background-image: url("/background/LeaderLED fondo.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+/* -------------------------------------------------------
+   GENERIC ELEMENTS
+------------------------------------------------------- */
 a {
   text-decoration: none;
   color: var(--main-text);
   outline: none;
 }
+
 ul {
   list-style: none;
 }
+
 .padding10-l-r {
-  padding: 0 10rem;
+  padding: 0 8rem;
 }
+
 .dummy-component {
   //border: 1px solid #9f9f9f;
 }
 
-@media (max-width: 1200px) {
 
+h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #333;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------
+   MEDIA QUERIES
+------------------------------------------------------- */
+@media (max-width: 1200px) {
   .padding10-l-r {
     padding: 0 0.3em;
   }
-
 }
 
-// extra
-
-html.no-scroll, body.no-scroll {
+/* -------------------------------------------------------
+   SCROLL LOCK UTILS
+------------------------------------------------------- */
+html.no-scroll,
+body.no-scroll {
   overflow: hidden !important;
   height: 100vh !important;
   position: fixed !important;
   width: 100%;
 }
 
-
 .no-scroll {
   overflow: hidden !important;
   height: 100vh;
 }
 
+/* Angular Material default */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

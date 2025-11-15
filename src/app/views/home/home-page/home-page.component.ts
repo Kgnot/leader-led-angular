@@ -5,10 +5,12 @@ import {MapComponent} from '../map/map.component';
 import {ContextEnterpriseComponent} from '../context-enterprise/context-enterprise.component';
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
+import {BrandsGeneralComponent} from '../brands-general/brands-general.component';
+import {LeaderledWelcomeComponent} from '../leaderled-welcome/leaderled-welcome.component';
 
 @Component({
   selector: 'app-home',
-  imports: [PresentationComponent, BrandCarousel, MapComponent, ContextEnterpriseComponent],
+  imports: [PresentationComponent, BrandCarousel, MapComponent, ContextEnterpriseComponent, BrandsGeneralComponent, LeaderledWelcomeComponent],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
