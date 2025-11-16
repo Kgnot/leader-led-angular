@@ -11,7 +11,17 @@
   height: 55em;
   display: flex;
   overflow: hidden;
+  background:linear-gradient(0deg,#ab3a0d, #4b6571);
+  //filter: blur(20px);
+  //opacity: 0;
+  //transition: opacity .4s ease, filter 0.4s ease;
 }
+
+.background-image .loaded {
+  opacity: 1;
+  //filter: blur(0);
+}
+
 
 /* Imagen de fondo */
 .background-image {

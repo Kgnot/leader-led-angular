@@ -11,4 +11,8 @@ import {LeaderledWelcomeComponent} from '../leaderled-welcome/leaderled-welcome.
 })
 export class PrincipalBannerComponent {
 
+  onBannerLoad(event: Event) {
+    (event.target as HTMLImageElement).classList.add('loaded');
+  }
+
 }
