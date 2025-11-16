@@ -1,44 +1,69 @@
-.brand-carousel-home {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr); // Móvil por defecto
-  gap: 1.5rem;
-
+:host{
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.brand-carousel-home {
+  position: relative;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* centra los items */
+  align-items: center;
+  gap: 1.5em;
+  padding: 2em;
   box-sizing: border-box;
+}
 
-  app-brand-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Cada item */
+.brand-carousel-home app-brand-item {
+  flex: 1 1 80px;
+  max-width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ============================
+   RESPONSIVE - Tablets
+   ============================ */
+@media (max-width: 1024px) {
+  .brand-carousel-home {
+    gap: 1.2em;
+    padding: 1.5em;
+  }
+
+  .brand-carousel-home app-brand-item {
+    flex: 1 1 120px;
+    max-width: 160px;
   }
 }
 
-/* Tablet */
-@media (min-width: 640px) {
+
+/* ============================
+   RESPONSIVE - Móviles
+   ============================ */
+@media (max-width: 768px) {
   .brand-carousel-home {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 2.5rem 1.5rem;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  .brand-carousel-home app-brand-item {
+    flex: 1 1 100px;
+    max-width: 130px;
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .brand-carousel-home {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem;
-    padding: 3rem 2rem;
-  }
-}
 
-/* Desktop grande */
-@media (min-width: 1440px) {
-  .brand-carousel-home {
-    grid-template-columns: repeat(5, 1fr);
-    max-width: 1400px;
-    gap: 3rem;
+/* ============================
+   EXTRA SMALL
+   ============================ */
+@media (max-width: 480px) {
+  .brand-carousel-home app-brand-item {
+    flex: 1 1 90px;
+    max-width: 110px;
   }
 }

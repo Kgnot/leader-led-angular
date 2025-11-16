@@ -1,0 +1,170 @@
+.banner-iot {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.info-banner-iot {
+  flex: 0 0 20%; // 20% del ancho
+  padding: 2rem;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a365d;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+    margin-bottom: 2rem;
+  }
+}
+
+.buttons-iot {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #1a365d;
+    background-color: transparent;
+    color: #1a365d;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+
+    &:hover {
+      background-color: #1a365d;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 54, 93, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.image-banner-iot {
+  flex: 0 0 80%; // 80% del ancho
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+// Responsive para tablets
+@media (max-width: 768px) {
+  .banner-iot {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .info-banner-iot {
+    flex: none;
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .image-banner-iot {
+    flex: none;
+    width: 100%;
+    height: 60vh;
+  }
+
+
+  .image-banner-iot img.loaded {
+    opacity: 1;
+  }
+
+
+  .buttons-iot {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    button {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+  }
+}
+
+// Responsive para móviles
+@media (max-width: 480px) {
+  .info-banner-iot {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 0.875rem;
+    }
+  }
+
+  .buttons-iot {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+    }
+  }
+}
+// Agregado:
+
+/* ————————————————
+   Crossfade para transición suave
+   ———————————————— */
+
+.image-banner-iot {
+  position: relative; // necesario para superponer capas
+}
+
+.base-img,
+.fade-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fade-img {
+  animation: fadeIn 0.7s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

@@ -1,0 +1,17 @@
+.pregunta-por {
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 5em;
+  align-items: start;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  background-color: var(--color-5);
+  border-radius: var(--border-radius-common);
+  color: whitesmoke;
+  transition: background-color 0.25s ease-out;
+  &:hover{
+    background-color: var(--color-4);
+  }
+}

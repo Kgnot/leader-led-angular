@@ -1,0 +1,34 @@
+.informative-category-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+
+  img {
+    flex: 5;
+    transition: filter 0.3s ease-in-out;
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    min-height: 10em;
+    cursor: pointer;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    width: 100%;
+    p{
+      width: 50%;
+    }
+  }
+}
+
+.informative-category-item:hover {
+  img {
+    filter: brightness(1.3);
+  }
+}

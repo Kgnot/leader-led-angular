@@ -1,9 +1,6 @@
-
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
+/* -------------------------------------------------------
+   ANGULAR MATERIAL THEME
+------------------------------------------------------- */
 @use '@angular/material' as mat;
 
 html {
@@ -17,140 +14,353 @@ html {
   ));
 }
 
-body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
-  color-scheme: light;
+/* -------------------------------------------------------
+   FONTS
+------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
+/* -------------------------------------------------------
+   FONT VARIABLES
+------------------------------------------------------- */
+$font-primary: "Julius Sans One", sans-serif;
+$font-secondary: 'Nunito', sans-serif;
+$font-accent: 'Poppins', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+/* Font weights */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* Font sizes */
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+
+/* Line heights */
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+
+/* -------------------------------------------------------
+   BASE BODY
+------------------------------------------------------- */
+
+html {
+  overflow-y: scroll;
+  //overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    position: absolute;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+body {
+  color-scheme: light;
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
   margin: 0;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
 }
-//font:
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-// colors:
+
+/* -------------------------------------------------------
+   COLOR VARIABLES (LIGHT & DARK)
+------------------------------------------------------- */
+
+/* Light theme colors */
+$color-light-header: #ffffff;
+$color-light-bg: #fff;
+$color-light-main-text: #000;
+
+/* Dark theme colors */
 $color-dark-header: #000;
 $color-dark-bg: #393939;
 $color-dark-main-text: #fff;
 
-$color-light-header: #f5f5f5;
-$color-light-bg: #fff;
-$color-light-main-text: #000;
-
-// general padding:
-$padding: 10em;
-
-// header height:
-$header-height: 5em; //55px
-//banner
+/* Banner & cards */
 $banner-color: rgba(104, 114, 99, 0.85);
 $banner-solid-color: rgb(104, 114, 99);
-// cards:
 $contact-card-header: #5c8141;
 $contact-card-color: #fff;
-
 $contact-card-bg: #fff;
 $contact-card-bg-color: #333;
 
+/* Layout variables */
+$padding: 10em;
+$header-height: 8em; // 55px
 
+/* Mixin para aplicar colores de tema */
 @mixin theme($header, $bg, $main-text) {
   --header: #{$header};
   --bg: #{$bg};
   --main-text: #{$main-text};
 }
 
+/* -------------------------------------------------------
+   ROOT LIGHT THEME
+------------------------------------------------------- */
 :root {
   @include theme(
       $color-light-header,
       $color-light-bg,
       $color-light-main-text
   );
+
+  // Font variables
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+  --font-accent: #{$font-accent};
+  --font-body: #{$font-body};
+
+  // Font sizes
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+
+  // Font weights
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // Line heights
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+
+  //Extra colors:
+  --color-1:  #D2DCB6;
+  --color-2:  #ABB7BA;
+  --color-3:  #A1BC98;
+  --color-4:  #778873;
+  --color-5:  #6FA4AF;
+  --color-6:  #B8C4A9;
+  --color-7:  #F4E9D7;
+  --color-8:  #D6A99D;
+  --color-9:  #FBF3D5;
+  --color-10: #D6DAC8;
+  --color-11: #FFFFFF;
+
   --general-padding: #{$padding};
   --header-height: #{$header-height};
+
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
-  //cards:
-  --contact-card-header: #5c8141;
-  --contact-card-header-color: #fff;
-  --contact-card-bg: #fff;
-  --contact-card-bg-color: #333;
 
-  --contact-card-bg-strong-color: #5c8141;
+  --contact-card-header: #{$contact-card-header};
+  --contact-card-header-color: #{$contact-card-color};
+  --contact-card-bg: #{$contact-card-bg};
+  --contact-card-bg-color: #{$contact-card-bg-color};
+  --contact-card-bg-strong-color: #{$contact-card-header};
+
+  --border-radius-common:15px;
 }
 
+/* -------------------------------------------------------
+   ROOT DARK THEME
+------------------------------------------------------- */
 :root.dark {
   @include theme(
       $color-dark-header,
       $color-dark-bg,
       $color-dark-main-text
   );
+
+  // Font variables (same as light theme)
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+  --font-accent: #{$font-accent};
+  --font-body: #{$font-body};
+
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+
   --general-padding: #{$padding};
   --header-height: #{$header-height};
+
   --banner-color: #{$banner-color};
   --banner-solid-color: #{$banner-solid-color};
-  //cards:
-  --contact-card-header: #5c8141;
-  --contact-card-header-color: #fff;
-  --contact-card-bg: #fff;
-  --contact-card-bg-color: #333;
-  --contact-card-bg-strong-color: #5c8141;
 
+  --contact-card-header: #{$contact-card-header};
+  --contact-card-header-color: #{$contact-card-color};
+  --contact-card-bg: #{$contact-card-bg};
+  --contact-card-bg-color: #{$contact-card-bg-color};
+  --contact-card-bg-strong-color: #{$contact-card-header};
 }
 
+/* -------------------------------------------------------
+   TYPOGRAPHY UTILITY CLASSES
+------------------------------------------------------- */
+.font-primary { font-family: var(--font-primary); }
+.font-secondary { font-family: var(--font-secondary); }
+.font-accent { font-family: var(--font-accent); }
+.font-body { font-family: var(--font-body); }
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+.font-light { font-weight: var(--font-weight-light); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+
+/* -------------------------------------------------------
+   MAIN LAYOUT
+------------------------------------------------------- */
 main {
   position: relative;
   display: flex;
-  top: var(--header-height);
-
+  top: 2em;//var(--header-height);
+  font-family: var(--font-primary);
 }
 
+/* -------------------------------------------------------
+   BODY BACKGROUND
+------------------------------------------------------- */
 body {
   position: relative;
-  //display: flex;
-  //align-content: center;
-  //justify-content: center;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-style: normal;
-
-  height: 100%;
-  //background: var(--bg);
-  background: linear-gradient(135deg, #f8faf9 0%, #e8f0e6 100%);
+  height: auto;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
+
+/* -------------------------------------------------------
+   GENERIC ELEMENTS
+------------------------------------------------------- */
 a {
   text-decoration: none;
   color: var(--main-text);
   outline: none;
+  font-family: var(--font-primary);
 }
+
 ul {
   list-style: none;
 }
+
 .padding10-l-r {
-  padding: 0 10rem;
+  padding: 0 8rem;
 }
+
 .dummy-component {
   //border: 1px solid #9f9f9f;
 }
 
-@media (max-width: 1200px) {
+h3 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+  color: #333;
+  font-family: var(--font-primary);
+}
 
+h1 {
+  margin: 0;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+/* -------------------------------------------------------
+   MEDIA QUERIES
+------------------------------------------------------- */
+@media (max-width: 1200px) {
   .padding10-l-r {
     padding: 0 0.3em;
   }
-
 }
 
-// extra
-
-html.no-scroll, body.no-scroll {
+/* -------------------------------------------------------
+   SCROLL LOCK UTILS
+------------------------------------------------------- */
+html.no-scroll,
+body.no-scroll {
   overflow: hidden !important;
   height: 100vh !important;
   position: fixed !important;
@@ -163,5 +373,13 @@ html.no-scroll, body.no-scroll {
   height: 100vh;
 }
 
-html, body { height: 100%; }
+/* Angular Material default */
+//html, body { height: 100%; }
+html, body {
+  overflow-x: hidden;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.none{
+  display: none;
+}

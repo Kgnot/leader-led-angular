@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { Navbar } from '../navbar/navbar';
 import { CarritoCompras } from './carrito-compras/carrito-compras';
 import { SidebarCart } from '../sidebar-cart/sidebar-cart';
+import {Navbar} from '../navbar/navbar';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    Navbar,
     CarritoCompras,
-    SidebarCart
+    SidebarCart,
+    Navbar
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss'

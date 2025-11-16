@@ -1,13 +1,25 @@
-<div class="padding10-l-r home-page">
-  <app-presentation
-    [h3Text]="'Bienvenido a'"
-    [h1Text]="'Leader Led'"
-    [description]="'Soluciones profesionales en iluminación LED sostenible'"
-    [logoImgProduct]="'/LdLd3d_sinfondo.png'"
-    [bannerImg]="'/home-fondo.webp'"
-
-  />
+<div class="home-page"> <!--padding10-l-r-->
+  <section class="banner-home-welcome">
+    <app-principal-banner/>
+  </section>
   <app-brand-carousel/>
+  <section class="difItems">
+    <app-informative-category-item
+      [description]="'Iluminación versátil para todo tipo de espacios y aplicaciones generales'"
+      [imgUlr]="'/products/application/iluminacionInteriores.webp'"
+      [titleCat]="'Iluminación General'"/>
+    <app-informative-category-item
+      [description]="'Sistemas de suspensión modernos para techos altos y espacios comerciales'"
+      [imgUlr]="'/products/application/suspencion.webp'"
+      [titleCat]="'Luminarias Suspendidas'"/>
+    <app-informative-category-item
+      [description]="'Ambientes empresariales con luminaria moderna y personalizada de ser necesario'"
+      [imgUlr]="'/products/application/interior.webp'"
+      [titleCat]="'Iluminación Interior'"/>
+  </section>
+  <!--  Otro banner -->
+  <app-banner-iot/>
   <app-context-enterprise/>
   <app-map/>
+
 </div>

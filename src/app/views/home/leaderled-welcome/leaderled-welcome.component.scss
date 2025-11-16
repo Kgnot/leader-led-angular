@@ -1,0 +1,84 @@
+.content-wrapper {
+  position: relative;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0), #000);
+  height: 100%;
+  //width: 45em;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5em 2em;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* ------------------------- SALUDO ------------------------- */
+.saludo-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+
+  h1 {
+    font-size: 4.2em;               /* ↓ menos infantil, más elegante */
+    font-weight: 700;
+    line-height: 0.95;              /* compacto y moderno */
+    letter-spacing: -0.02em;        /* ajuste profesional */
+    color: white;
+    margin: 0;
+  }
+}
+
+/* ------------------------- DESCUBRE MÁS ------------------------- */
+.descubre-mas-content-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  padding: 1.2em 2.4em;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  &:hover{
+    background-color: #333333;
+  }
+}
+
+/* ------------------------- ASSISTANT BUTTON ------------------------- */
+.assistant-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 1.1em 1.5em;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all .18s ease;
+  color: white;
+
+  img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.9;
+    transition: opacity .2s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.02);
+    background: rgba(255, 255, 255, 0.20);
+
+    img {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
