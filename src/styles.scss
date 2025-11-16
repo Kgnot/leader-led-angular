@@ -280,7 +280,6 @@ main {
   position: relative;
   display: block;
   top: 2em;//var(--header-height);
-  font-family: var(--font-primary);
 }
 
 /* -------------------------------------------------------
@@ -290,8 +289,6 @@ body {
   position: relative;
   margin: 0;
   font-family: var(--font-primary);
-  font-optical-sizing: auto;
-  font-style: normal;
   height: auto;
   background-color: white;
   display: flex;
@@ -315,6 +312,7 @@ ul {
 
 .padding10-l-r {
   padding: 0 8rem;
+  //padding: 0 !important;
 }
 
 .dummy-component {
@@ -371,14 +369,16 @@ body.no-scroll {
 
 .no-scroll {
   overflow: hidden !important;
-  height: 100vh;
 }
+
 
 /* Angular Material default */
 //html, body { height: 100%; }
-html, body {
+html, body, app-root {
+  min-width: 100dvw;
   overflow-x: hidden;
 }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .none{

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SemanticSearchUIService} from '../../../services/semantic-search-ui-service/semantic-search-uiservice';
 
 @Component({
   selector: 'app-leaderled-welcome',
@@ -8,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class LeaderledWelcomeComponent {
 
+
+  constructor(private semanticUI: SemanticSearchUIService) {}
+
+  openAssistant() {
+    this.semanticUI.open();
+  }
 }

@@ -4,39 +4,38 @@ import { SemanticSearchService } from '../../services/semantic-search/semantic-s
 import { ProductCard } from '../../views/products/product-card/product-card';
 import { adapterProductArray } from '../../adapter/adapter-product';
 import data from '../../../assets/data/inventory.json';
-import {NgOptimizedImage} from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
+import { BlackModalComponent } from '../black-modal/black-modal.component';
+import {SemanticSearchUIService} from '../../services/semantic-search-ui-service/semantic-search-uiservice';
 
 @Component({
   selector: 'app-semantic-search',
   standalone: true,
-  imports: [FormsModule, ProductCard, NgOptimizedImage],
+  imports: [FormsModule, ProductCard, NgOptimizedImage, BlackModalComponent],
   templateUrl: './semantic-search.html',
   styleUrls: ['./semantic-search.scss']
 })
 export class SemanticSearchComponent {
+
   open = false;
   query = '';
   result: any[] = [];
 
   messages: { role: 'user' | 'bot', text: string }[] = [];
 
-  constructor(private semantic: SemanticSearchService) {}
+  constructor(
+    private semantic: SemanticSearchService,
+    private semanticUI: SemanticSearchUIService
+  ) {}
 
-  toggleChat() {
-    this.open = !this.open;
+  ngOnInit() {
+    this.semanticUI.isOpen$.subscribe(isOpen => {
+      this.open = isOpen;
+    });
   }
 
-  /**
-   * Testeable desde afuera si deseas hacer consultas rápidas
-   */
-  testTopN(q: string) {
-    return this.semantic.topN(q, JSON.stringify(data), 5)
-      .then(r => {
-        const mapped = r.map((m: Map<string, any>) => Object.fromEntries(m));
-        this.result = adapterProductArray(mapped);
-        return this.result;
-      })
-      .catch(e => console.error('Error WASM topN:', e));
+  toggleChat() {
+    this.semanticUI.toggle();
   }
 
   send() {
@@ -46,11 +45,13 @@ export class SemanticSearchComponent {
     this.messages.push({ role: 'user', text: userQuery });
     this.query = '';
 
-    this.testTopN(userQuery)
-      .then(res => {
+    this.semantic.topN(userQuery, JSON.stringify(data), 5)
+      .then(r => {
+        const mapped = r.map((m: Map<string, any>) => Object.fromEntries(m));
+        this.result = adapterProductArray(mapped);
         this.messages.push({
           role: 'bot',
-          text: `Encontré ${res?.length} productos relacionados.`
+          text: `Encontré ${this.result.length} productos relacionados.`
         });
       })
       .catch(() => {
