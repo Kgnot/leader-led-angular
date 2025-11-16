@@ -3,7 +3,16 @@
   width: 100%;
 }
 .product-page-component{
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
+
+.product-page-component * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+

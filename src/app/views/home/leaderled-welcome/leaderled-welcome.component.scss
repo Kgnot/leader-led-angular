@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.32);
   padding: 1.1em 1.5em;
   border-radius: 16px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -82,3 +82,10 @@
     transform: scale(0.98);
   }
 }
+
+//@media (max-width: 800px) {
+//  .content-wrapper{
+//    height: 100%;
+//    //gap: 5em;
+//  }
+//}

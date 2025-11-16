@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, Inject, PLATFORM_ID } from '@angular/core';
+import {Component, EventEmitter, Output, Inject, PLATFORM_ID, OnInit, OnDestroy} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
@@ -7,8 +7,9 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './black-modal.component.html',
   styleUrl: './black-modal.component.scss'
 })
-export class BlackModalComponent {
+export class BlackModalComponent implements OnInit, OnDestroy{
   @Output() close = new EventEmitter<void>();
+  private scrollPosition = 0;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -18,13 +19,25 @@ export class BlackModalComponent {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.add('no-scroll');
+      // Guardar la posición actual del scroll
+      this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Fijar el body en esa posición
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${this.scrollPosition}px`;
+      document.body.style.width = '100%';
     }
   }
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
-      document.body.classList.remove('no-scroll');
+      // Restaurar el body
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+
+      // Volver a la posición donde estaba
+      window.scrollTo(0, this.scrollPosition);
     }
   }
 }

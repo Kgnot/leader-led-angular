@@ -16,10 +16,23 @@
   display: block;
 }
 
+@media (max-width: 80em) {   /* ~960px */
+  .map-container {
+    height: 32em;
+    max-width: 80em;
+  }
+
+  .map-container iframe {
+    width: 50em; /* Reducido para tablets */
+  }
+}
+
+
+
 @media (max-width: 60em) {   /* ~960px */
   .map-container {
     height: 32em;
-    max-width: 50em;
+    max-width: 60em;
   }
 
   .map-container iframe {
@@ -41,7 +54,7 @@
 @media (max-width: 30em) {   /* ~480px */
   .map-container {
     height: 22em;
-    max-width: 10em;
+    max-width: 30em;
     border-radius: 0.5em;
   }
 
