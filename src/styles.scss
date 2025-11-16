@@ -15,28 +15,95 @@ html {
 }
 
 /* -------------------------------------------------------
+   FONTS
+------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* -------------------------------------------------------
+   FONT VARIABLES
+------------------------------------------------------- */
+$font-primary: "Julius Sans One", sans-serif;
+$font-secondary: 'Nunito', sans-serif;
+$font-accent: 'Poppins', sans-serif;
+$font-body: 'Open Sans', sans-serif;
+
+/* Font weights */
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* Font sizes */
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+
+/* Line heights */
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+
+/* -------------------------------------------------------
    BASE BODY
 ------------------------------------------------------- */
+
+html {
+  overflow-y: scroll;
+  //overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    position: absolute;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
+
 body {
   color-scheme: light;
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   margin: 0;
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-normal;
 }
-
-/* -------------------------------------------------------
-   FONTS
-------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 /* -------------------------------------------------------
    COLOR VARIABLES (LIGHT & DARK)
 ------------------------------------------------------- */
 
-
 /* Light theme colors */
-$color-light-header: #f5f5f5;
+$color-light-header: #ffffff;
 $color-light-bg: #fff;
 $color-light-main-text: #000;
 
@@ -55,7 +122,7 @@ $contact-card-bg-color: #333;
 
 /* Layout variables */
 $padding: 10em;
-$header-height: 5em; // 55px
+$header-height: 8em; // 55px
 
 /* Mixin para aplicar colores de tema */
 @mixin theme($header, $bg, $main-text) {
@@ -74,9 +141,37 @@ $header-height: 5em; // 55px
       $color-light-main-text
   );
 
+  // Font variables
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+  --font-accent: #{$font-accent};
+  --font-body: #{$font-body};
+
+  // Font sizes
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+
+  // Font weights
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  // Line heights
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+
   //Extra colors:
   --color-1:  #D2DCB6;
-  --color-2:  #F1F3E0;
+  --color-2:  #ABB7BA;
   --color-3:  #A1BC98;
   --color-4:  #778873;
   --color-5:  #6FA4AF;
@@ -86,7 +181,6 @@ $header-height: 5em; // 55px
   --color-9:  #FBF3D5;
   --color-10: #D6DAC8;
   --color-11: #FFFFFF;
-
 
   --general-padding: #{$padding};
   --header-height: #{$header-height};
@@ -113,6 +207,31 @@ $header-height: 5em; // 55px
       $color-dark-main-text
   );
 
+  // Font variables (same as light theme)
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+  --font-accent: #{$font-accent};
+  --font-body: #{$font-body};
+
+  --font-size-xs: #{$font-size-xs};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+
+  --font-weight-light: #{$font-weight-light};
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  --line-height-tight: #{$line-height-tight};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+
   --general-padding: #{$padding};
   --header-height: #{$header-height};
 
@@ -127,12 +246,40 @@ $header-height: 5em; // 55px
 }
 
 /* -------------------------------------------------------
+   TYPOGRAPHY UTILITY CLASSES
+------------------------------------------------------- */
+.font-primary { font-family: var(--font-primary); }
+.font-secondary { font-family: var(--font-secondary); }
+.font-accent { font-family: var(--font-accent); }
+.font-body { font-family: var(--font-body); }
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+.font-light { font-weight: var(--font-weight-light); }
+.font-regular { font-weight: var(--font-weight-regular); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+.leading-tight { line-height: var(--line-height-tight); }
+.leading-normal { line-height: var(--line-height-normal); }
+.leading-relaxed { line-height: var(--line-height-relaxed); }
+
+/* -------------------------------------------------------
    MAIN LAYOUT
 ------------------------------------------------------- */
 main {
   position: relative;
   display: flex;
-  top: var(--header-height);
+  top: 2em;//var(--header-height);
+  font-family: var(--font-primary);
 }
 
 /* -------------------------------------------------------
@@ -141,15 +288,14 @@ main {
 body {
   position: relative;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-primary);
   font-optical-sizing: auto;
   font-style: normal;
-  height: 100%;
-  background-image: url("/background/LeaderLED fondo.svg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
+  height: auto;
+  background-color: white;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 /* -------------------------------------------------------
@@ -159,6 +305,7 @@ a {
   text-decoration: none;
   color: var(--main-text);
   outline: none;
+  font-family: var(--font-primary);
 }
 
 ul {
@@ -173,18 +320,31 @@ ul {
   //border: 1px solid #9f9f9f;
 }
 
-
 h3 {
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
   color: #333;
+  font-family: var(--font-primary);
 }
 
 h1 {
   margin: 0;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-primary);
+}
+
+h2 {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
 }
 
 /* -------------------------------------------------------
@@ -207,11 +367,19 @@ body.no-scroll {
   width: 100%;
 }
 
+
 .no-scroll {
   overflow: hidden !important;
   height: 100vh;
 }
 
 /* Angular Material default */
-html, body { height: 100%; }
+//html, body { height: 100%; }
+html, body {
+  overflow-x: hidden;
+}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.none{
+  display: none;
+}

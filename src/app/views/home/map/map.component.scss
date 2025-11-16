@@ -1,15 +1,51 @@
 .map-container {
   position: relative;
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 56.25%;
+  width: 100%;
+  max-width: 90em;
+  height: 40em;
+  margin: 2em auto;
+  border-radius: 1em;
+  overflow: hidden;
+  box-shadow: 0 1em 3em rgba(0, 0, 0, 0.2);
 }
 
 .map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 80em; /* Grande en desktop */
   height: 100%;
-  border: 0;
+  border: none;
+  display: block;
+}
+
+@media (max-width: 60em) {   /* ~960px */
+  .map-container {
+    height: 32em;
+    max-width: 50em;
+  }
+
+  .map-container iframe {
+    width: 50em; /* Reducido para tablets */
+  }
+}
+
+@media (max-width: 48em) {   /* ~768px */
+  .map-container {
+    height: 28em;
+    max-width: 30em;
+  }
+
+  .map-container iframe {
+    width: 30em; /* Reducido para móviles grandes */
+  }
+}
+
+@media (max-width: 30em) {   /* ~480px */
+  .map-container {
+    height: 22em;
+    max-width: 10em;
+    border-radius: 0.5em;
+  }
+
+  .map-container iframe {
+    width: 100%; /* En móviles pequeños que ocupe todo */
+  }
 }

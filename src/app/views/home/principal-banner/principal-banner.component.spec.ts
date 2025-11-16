@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BrandsGeneralComponent } from './brands-general.component';
+import { PrincipalBannerComponent } from './principal-banner.component';
 
 describe('BradnsGeneral', () => {
-  let component: BrandsGeneralComponent;
-  let fixture: ComponentFixture<BrandsGeneralComponent>;
+  let component: PrincipalBannerComponent;
+  let fixture: ComponentFixture<PrincipalBannerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrandsGeneralComponent]
+      imports: [PrincipalBannerComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BrandsGeneralComponent);
+    fixture = TestBed.createComponent(PrincipalBannerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

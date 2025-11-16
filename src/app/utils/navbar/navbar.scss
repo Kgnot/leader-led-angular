@@ -1,10 +1,18 @@
+/* ===========================
+   NAV PRINCIPAL
+   =========================== */
+
 nav {
   display: flex;
   align-items: center;
   width: 100%;
+  position: relative;
+  z-index: 2000; // El nav está por encima del contenido base
 }
 
-// Botón hamburguesa (oculto en desktop)
+/* ===========================
+   BOTÓN HAMBURGUESA (MÓVIL)
+   =========================== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -39,7 +47,9 @@ nav {
   }
 }
 
-// Menú de navegación
+/* ===========================
+   MENÚ NORMAL (DESKTOP)
+   =========================== */
 .navbar-ul {
   position: relative;
   display: flex;
@@ -47,47 +57,41 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
-  z-index: 1000;
+  z-index: 2100; // Sobre el overlay
 
-  li {
-    a {
-      position: relative;
-      text-decoration: none;
-      color: inherit;
+  li a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    padding-bottom: 4px;
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 2px;
-        background: currentColor;
-        transition: width 0.4s ease;
-      }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: currentColor;
+      transition: width 0.4s ease;
+    }
 
-      &:hover::after {
-        animation: leftToRight 0.4s forwards;
-      }
+    &:hover::after {
+      width: 100%;
     }
   }
 }
 
-// Overlay para cerrar menú (oculto en desktop)
+/* ===========================
+   OVERLAY (PARA MÓVIL)
+   =========================== */
 .menu-overlay {
-  display: none;
+  display: none; // Oculto en desktop
 }
 
-@keyframes leftToRight {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-// Media query para móviles
+/* ===========================
+   RESPONSIVE - MÓVILES
+   =========================== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
@@ -97,7 +101,7 @@ nav {
     position: fixed;
     top: var(--header-height);
     right: 0;
-    width: 250px;
+    width: 260px;
     height: calc(100vh - var(--header-height));
     background: var(--header);
     flex-direction: column;
@@ -107,6 +111,7 @@ nav {
     transition: transform 0.3s ease;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     border-left: 1px solid #b8c4c2;
+    z-index: 2200; // Sobre el overlay
 
     &.open {
       transform: translateX(0);
@@ -121,17 +126,19 @@ nav {
         padding: 1rem 2rem;
         border-bottom: 1px solid rgba(184, 196, 194, 0.3);
 
-        &:hover {
-          background: rgba(184, 196, 194, 0.1);
+        /* Quitar animación subrayado en móvil */
+        &::after {
+          display: none;
         }
 
-        &::after {
-          display: none; // Desactivar animación en móvil
+        &:hover {
+          background: rgba(184, 196, 194, 0.1);
         }
       }
     }
   }
 
+  /* Overlay */
   .menu-overlay {
     display: block;
     position: fixed;
@@ -139,11 +146,11 @@ nav {
     left: 0;
     width: 100vw;
     height: calc(100vh - var(--header-height));
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.45);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 998;
+    z-index: 2100; // Debajo del menú, sobre el contenido
 
     &.open {
       opacity: 1;

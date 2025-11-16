@@ -1,10 +1,15 @@
 <header>
-  <img src="/utils/leaderled-logo-colorized.svg" alt="Logo">
-  <app-navbar></app-navbar>
-  <app-carrito-compras
-    [viewSidebarCart]="showSidebarCart"
-    (toggleSidebar)="toggleSidebarCart()">
-  </app-carrito-compras>
+  <section class="presentation-container-header">
+    <img class="img-mgng-srch" src="/utils/magnifying_glass_search.svg" alt="Logo">
+    <img class="img-logo-header" src="/utils/leaderled-logo-colorized.svg" alt="Logo">
+    <app-carrito-compras
+      [viewSidebarCart]="showSidebarCart"
+      (toggleSidebar)="toggleSidebarCart()">
+    </app-carrito-compras>
+  </section>
+  <section class="nav-bar-header">
+    <app-navbar/>
+  </section>
 </header>
 
 <app-sidebar-cart

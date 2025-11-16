@@ -1,0 +1,37 @@
+<section class="banner-iot">
+  <div class="info-banner-iot">
+    <h3>Introducción</h3>
+    <h1>IoT - Dimmer</h1>
+    <p>
+      Controla inteligentemente tus luminarias con nuestro sistema IoT.
+      Gestiona individualmente cada bombilla y crea ambientes perfectos.
+    </p>
+    <div class="buttons-iot">
+      <button (click)="apagarTodas()">Apagar todas</button>
+      <button (click)="prenderBombilla1()">Prender bombilla 1</button>
+      <button (click)="prenderBombilla2()">Prender bombilla 2</button>
+      <button (click)="prenderBombilla3()">Prender bombilla 3</button>
+      <button (click)="prenderBombilla4()">Prender bombilla 4</button>
+    </div>
+  </div>
+
+  <div class="image-banner-iot">
+    <!-- Imagen base -->
+    <img
+      class="base-img"
+      [src]="currentImageUrl"
+      alt="imagen actual"
+    >
+
+    <!-- Imagen que se desvanece -->
+    @if (fadeImageUrl) {
+      <img
+        class="fade-img"
+        [src]="fadeImageUrl"
+        alt="imagen transicion"
+        (animationend)="finishFade()"
+      >
+    }
+
+  </div>
+</section>

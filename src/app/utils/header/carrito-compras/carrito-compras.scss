@@ -8,8 +8,9 @@
   border-radius: 8px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  font-weight: 500;
+  //font-weight: 500;
   cursor: pointer;
+  font-family: var(--font-primary);
   transition: background-color 0.25s ease;
   position: relative;
 
@@ -29,9 +30,6 @@
     display: inline-block;
   }
 
-  &:hover .cart-icon {
-    transform: rotate(-10deg);
-  }
 
   .cart-badge {
     position: absolute;

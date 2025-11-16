@@ -1,0 +1,64 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.brands-general {
+  position: relative;
+  width: 100%;
+  height: 55em;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Imagen de fondo */
+.background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.brands-general app-leaderled-welcome {
+  width: 40%;              /* fija proporción */
+  position: relative;
+  z-index: 1;
+}
+
+
+// Responsive:
+/* ============================
+   RESPONSIVE - MÓVILES
+   ============================ */
+@media (max-width: 768px) {
+
+  .brands-general {
+    height: 35em; /* más compacto */
+    flex-direction: column; /* apila contenido */
+  }
+  .brands-general app-leaderled-welcome{
+    width: 100%;
+  }
+
+  .background-image {
+    object-position: center;
+    opacity: 0.8; /* más suave para que el texto destaque */
+  }
+}
+
+
+/* ============================
+   RESPONSIVE EXTRA SMALL
+   ============================ */
+@media (max-width: 480px) {
+
+  .brands-general {
+    height: 28em;
+  }
+}
+
+

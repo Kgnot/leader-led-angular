@@ -1,9 +1,25 @@
-<div class="padding10-l-r home-page">
-  <section class = "banner-home-welcome">
-    <app-leaderled-welcome/>
-    <app-brands-general/>
-
+<div class="home-page"> <!--padding10-l-r-->
+  <section class="banner-home-welcome">
+    <app-principal-banner/>
   </section>
-  <app-map/>
+  <app-brand-carousel/>
+  <section class="difItems">
+    <app-informative-category-item
+      [description]="'Iluminación versátil para todo tipo de espacios y aplicaciones generales'"
+      [imgUlr]="'/products/application/iluminacionInteriores.webp'"
+      [titleCat]="'Iluminación General'"/>
+    <app-informative-category-item
+      [description]="'Sistemas de suspensión modernos para techos altos y espacios comerciales'"
+      [imgUlr]="'/products/application/suspencion.webp'"
+      [titleCat]="'Luminarias Suspendidas'"/>
+    <app-informative-category-item
+      [description]="'Ambientes empresariales con luminaria moderna y personalizada de ser necesario'"
+      [imgUlr]="'/products/application/interior.webp'"
+      [titleCat]="'Iluminación Interior'"/>
+  </section>
+  <!--  Otro banner -->
+  <app-banner-iot/>
   <app-context-enterprise/>
+  <app-map/>
+
 </div>
