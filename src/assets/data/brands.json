@@ -2,51 +2,51 @@
   {
     "idbrand": 1,
     "name": "Tecnolite",
-    "imageUrl": "https://http2.mlstatic.com/storage/mshops-appearance-api/images/74/553901274/logo-2024110812233996950.png"
+    "imageUrl": "/brands/tecnolite.png"
   },
   {
     "idbrand": 2,
     "name": "Mean Well",
-    "imageUrl": "https://static.wixstatic.com/media/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg/v1/fill/w_200,h_118,al_c,q_80,enc_avif,quality_auto/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg%201x,%20https://static.wixstatic.com/media/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg/v1/fill/w_280,h_165,al_c,lg_1,q_80,enc_avif,quality_auto/c7798a_f533a994a3544934b9fc5fb5aca2b4d4~mv2.jpg%202x"
+    "imageUrl": "/brands/mean well.jpg"
   },
   {
     "idbrand": 3,
     "name": "Lutron",
-    "imageUrl": "https://www.lutron.com/themes/custom/lutron/logo-black.svg"
+    "imageUrl": "/brands/lutron.jpg"
   },
   {
     "idbrand": 4,
     "name": "Inventronic",
-    "imageUrl": "https://www.inventronics-co.com/wp-content/uploads/2023/04/inventronics-logo-web.png"
+    "imageUrl": "/brands/inventronics.png"
   },
   {
     "idbrand": 5,
     "name": "Leviton",
-    "imageUrl": "https://es.leviton.com/content/dam/leviton/lvt-logo.svg"
+    "imageUrl": "/brands/leviton.png"
   },
   {
     "idbrand": 6,
     "name": "Osram",
-    "imageUrl": "https://acdn-us.mitiendanube.com/stores/001/415/037/themes/common/logo-467738990-1620943061-79480fd9abfc3c764f011caff87f40a01620943062-480-0.webp"
+    "imageUrl": "/brands/osram.webp"
   },
   {
     "idbrand": 7,
     "name": "Americanlite",
-    "imageUrl": "https://americanlite.com/mt-content/uploads/2018/02/logo-1360x468-pixels.jpg"
+    "imageUrl": "/brands/americanlite.jpg"
   },
   {
     "idBrand": 8,
     "name": "Philips",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Philips_shield_(2013).svg/330px-Philips_shield_(2013).svg.png"
+    "imageUrl": "/brands/philips.png"
   },
   {
     "idBrand": 9,
     "name": "Roy Alpha",
-    "imageUrl": "https://www.dielco.co/hs-fs/hubfs/Roy-Alpha---Ilumina-el-progreso.jpg?width=1200&name=Roy-Alpha---Ilumina-el-progreso.jpg"
+    "imageUrl": "/brands/roy alpha.webp"
   },
    {
     "idBrand": 10,
     "name": "Ledvance",
-    "imageUrl": "https://ledvance.com/build/static/img/ledvance-logo.d723d0c25f66901a007661d578f6d5e0.svg"
+    "imageUrl": "/brands/ledvance.png"
   }
 ]
