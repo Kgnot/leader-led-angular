@@ -23,6 +23,7 @@ function getBaseUrl(): string {
   // En el navegador (o fallback general)
   // IMPORTANTE: El navegador no leerá variables de entorno del .env
   // a menos que las inyectes en el index.html o uses ng CLI env files.
+  console.error("API_Indefinida")
   return 'http://localhost:3000';
 }
 
