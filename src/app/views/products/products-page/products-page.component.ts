@@ -5,16 +5,13 @@ import {ItemsGridComponent} from '../items-grid/items-grid.component';
 import {PresentationComponent} from '../../../utils/presentation/presentation.component';
 import {ProductsModalComponent} from '../modal/products-modal.component';
 import {Product} from '../../../models/product';
-import {
-  RealProductsService,
-  ProductService,
-  ApplicationService,
-  CategoryService
-} from '../../../services';
+import {ApplicationService, CategoryService, ProductService, RealProductsService} from '../../../services';
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
-import { ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 import {FilterProductListComponent} from '../filter-inventory-list/filter-product-list.component';
+import {forkJoin} from 'rxjs';
+import {finalize} from 'rxjs/operators';
 
 
 @Component({
@@ -27,8 +24,6 @@ import {FilterProductListComponent} from '../filter-inventory-list/filter-produc
     ReactiveFormsModule,
     FilterProductListComponent,
   ],
-
-
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.scss'
 })
@@ -41,17 +36,18 @@ export class ProductsPageComponent implements OnInit {
   private applicationService: ApplicationService;
   private categoryService: CategoryService;
   private productService: ProductService;
+
   //we have the current section
   protected currentSection: SectionType = SectionType.APPLICATION;
-  protected applications: Application[] = [];
-  protected categories: Category[] = [];
+  protected applications = signal<Application[]>([]);
+  protected categories = signal<Category[]>([]);
   protected selectedItem: Application | Category | null = null;
-  protected isLoading = false;
+  protected isLoading = signal(true);
   //isModalOpen:
   protected isModalOpen: boolean = false
   protected isLoadingProducts: boolean = false;
   //products:
-  protected products = signal<Product[]>([] as Product[]);
+  protected products = signal<Product[]>([]);
 
   constructor(
     private seoSchema: SeoSchemaService
@@ -62,18 +58,33 @@ export class ProductsPageComponent implements OnInit {
   }
 
   private loadData() {
-    this.isLoading = true;
-    this.applicationService.getApplication().subscribe(apps => {
-      this.applications = apps;
-    });
-    this.categoryService.getCategory().subscribe(cats => {
-      this.categories = cats;
+    console.log('🔄 Iniciando carga de datos...');
+    this.isLoading.set(true);
+
+    forkJoin({
+      applications: this.applicationService.getApplication(),
+      categories: this.categoryService.getCategory()
+    }).pipe(
+      finalize(() => {
+        this.isLoading.set(false);
+      })
+    ).subscribe({
+      next: (result) => {
+        this.applications.set(result.applications);
+        this.categories.set(result.categories);
+        console.log('Applications:', this.applications());
+        console.log('Categories:', this.categories());
+      },
+      error: (error) => {
+        console.error("Error al cargar los datos - ",error)
+      }
     });
   }
 
   ngOnInit(): void {
     this.loadData();
-    // more than log data:
+
+    // SEO
     this.title.setTitle('Productos LED Bogotá | Paneles, Drivers, Luminarias - LeaderLed');
 
     this.meta.updateTag({
@@ -88,62 +99,62 @@ export class ProductsPageComponent implements OnInit {
 
     // Product Schema
     this.addProductCatalogSchema();
-
   }
 
-   //seo:
-
-   private addProductCatalogSchema() {
-     // Note: Schema will be updated when data loads
-     this.productService.getTotalProducts().subscribe(total => {
-       this.productService.getProducts().subscribe(products => {
-         this.seoSchema.addJsonLd({
-           "@context": "https://schema.org",
-           "@type": "ItemList",
-           "name": "Catálogo Productos LED LeaderLed",
-           "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
-           "numberOfItems": total,
-           "itemListElement": products
-         });
-       });
-     });
-   }
-
-
-  //
-
+  //seo:
+  private addProductCatalogSchema() {
+    this.productService.getTotalProducts().subscribe(total => {
+      this.productService.getProducts().subscribe(products => {
+        this.seoSchema.addJsonLd({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Catálogo Productos LED LeaderLed",
+          "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
+          "numberOfItems": total,
+          "itemListElement": products
+        });
+      });
+    });
+  }
 
   onSectionChanged(section: SectionType) {
     this.currentSection = section;
     this.selectedItem = null;
   }
 
-
   getCurrentItems() {
     return this.currentSection === SectionType.APPLICATION
-      ? this.applications
-      : this.categories;
+      ? this.applications()
+      : this.categories();
   }
 
   onItemSelected(item: Application | Category) {
     this.selectedItem = item;
     this.isLoadingProducts = true;
-    // Open modal immediately
     this.openModal();
-    // Load products
+
     if (this.currentSection === SectionType.APPLICATION) {
-      this.productService.getProductsByApplication(item.id).subscribe(products => {
-        this.products.set(products);
-        this.isLoadingProducts = false;
+      this.productService.getProductsByApplication(item.id).subscribe({
+        next: (products) => {
+          this.products.set(products);
+          this.isLoadingProducts = false;
+        },
+        error: (error) => {
+          this.isLoadingProducts = false;
+        }
       });
     } else {
-      this.productService.getProductsByCategory(item.id).subscribe(products => {
-        this.products.set(products);
-        this.isLoadingProducts = false;
+      this.productService.getProductsByCategory(item.id).subscribe({
+        next: (products) => {
+          this.products.set(products);
+          this.isLoadingProducts = false;
+        },
+        error: (error) => {
+          this.isLoadingProducts = false;
+        }
       });
     }
   }
-
 
   openModal() {
     this.isModalOpen = true;
@@ -154,5 +165,4 @@ export class ProductsPageComponent implements OnInit {
     this.isLoadingProducts = false;
     this.products.set([]);
   }
-
 }

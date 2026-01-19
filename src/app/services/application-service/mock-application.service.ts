@@ -7,9 +7,13 @@ import {IApplicationService} from './interface-application.service';
   providedIn: 'root'
 })
 export class MockApplicationService implements IApplicationService {
-  // Mock data removed - use real API instead
+  private mockApplications: Application[] = [
+    { id: 1, name: 'Interior', imageUrl: '/products/application/interior.webp' },
+    { id: 2, name: 'Exterior', imageUrl: '/products/application/exterior.webp' },
+    { id: 3, name: 'Industrial', imageUrl: '/products/application/industrial.webp' }
+  ];
 
   getApplication(): Observable<Application[]> {
-    return of([]);
+    return of(this.mockApplications);
   }
 }

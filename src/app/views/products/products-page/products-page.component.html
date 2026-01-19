@@ -2,25 +2,34 @@
   <app-presentation
     [h1Text]="'Productos'"
     [description]="'Mira la diversidad de productos'"
-
     [bannerImg]="'/utils/products.webp'"
   />
+
   <app-filter-inventory-list/>
+
   <app-section-selector
     [currentSection]="currentSection"
     (sectionChanged)="onSectionChanged($event)">
   </app-section-selector>
 
-  <app-items-grid
-    [items]="getCurrentItems()"
-    (itemSelected)="onItemSelected($event)"
-  />
+  @if (isLoading()) {
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <p>Cargando categorías y aplicaciones...</p>
+    </div>
+  } @else {
+    <app-items-grid
+      [items]="getCurrentItems()"
+      (itemSelected)="onItemSelected($event)"
+    />
+  }
 </section>
+
 @if (isModalOpen) {
-   <app-products-modal
-     [products]="products()"
-     [loading]="isLoadingProducts"
-     (close)="closeModal()"
-   >
-   </app-products-modal>
+  <app-products-modal
+    [products]="products()"
+    [loading]="isLoadingProducts"
+    (close)="closeModal()"
+  >
+  </app-products-modal>
 }
