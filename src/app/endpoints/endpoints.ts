@@ -1,17 +1,6 @@
-// endpoints.ts
+import {environment} from '../../environments/environment.prod';
 
-// Función segura para obtener la URL
-function getBaseUrl(): string {
-  // En producción/vercel/netlify, usar variable de entorno
-  if (typeof process !== 'undefined' && process.env && process.env["API_BASE_URL"]) {
-    return process.env["API_BASE_URL"];
-  }
-
-  // Fallback para desarrollo local
-  return 'http://localhost:3000';
-}
-
-const API_BASE_URL = getBaseUrl();
+const API_BASE_URL = environment.apiBaseUrl;
 
 export const BRANDS = {
   GET_ALL: `${API_BASE_URL}/brands`,
