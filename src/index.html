@@ -20,12 +20,28 @@
 
   <script>
     window.semanticSearchWasmReady = (async () => {
-      // Cargar el módulo JS generado por wasm-pack
-      const module = await import('/assets/pkg/semantic_search_wasm.js');
-      await module.default('/assets/pkg/semantic_search_wasm_bg.wasm');
+      try {
+        // Cargar el módulo JS generado por wasm-pack
+        const module = await import('/assets/pkg/semantic_search_wasm.js');
 
-      // Exponerlo globalmente
-      window.semanticSearchWasm = module;
+        // Initialize with modern API if available, fallback to legacy
+        if (module.default && typeof module.default === 'function') {
+          // Try modern initialization
+          if (module.init) {
+            await module.init('/assets/pkg/semantic_search_wasm_bg.wasm');
+          } else {
+            // Fallback to legacy initialization
+            await module.default('/assets/pkg/semantic_search_wasm_bg.wasm');
+          }
+        }
+
+        // Exponerlo globalmente
+        window.semanticSearchWasm = module;
+        console.log('WASM module loaded successfully');
+      } catch (error) {
+        console.warn('WASM module failed to load, continuing without semantic search:', error);
+        window.semanticSearchWasm = null;
+      }
     })();
   </script>
 

@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import {Component, inject, Inject, PLATFORM_ID} from '@angular/core';
+import {isPlatformBrowser} from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SemanticSearchService } from '../../services/semantic-search/semantic-search.service';
 import { ProductCard } from '../../views/products/product-card/product-card';
@@ -7,6 +8,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { BlackModalComponent } from '../black-modal/black-modal.component';
 import {SemanticSearchUIService} from '../../services/semantic-search-ui-service/semantic-search-uiservice';
 import { RealProductsService } from '../../services';
+import {ProductSpecification} from '../../models/product';
 
 @Component({
   selector: 'app-semantic-search',
@@ -28,7 +30,8 @@ export class SemanticSearchComponent {
 
   constructor(
     private semantic: SemanticSearchService,
-    private semanticUI: SemanticSearchUIService
+    private semanticUI: SemanticSearchUIService,
+    @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit() {
@@ -40,6 +43,15 @@ export class SemanticSearchComponent {
     this.productService.getProducts().subscribe(products => {
       this.allProducts = products;
     });
+
+    // Wait for WASM to be ready (only in browser)
+    if (isPlatformBrowser(this.platformId) && (window as any).semanticSearchWasmReady) {
+      (window as any).semanticSearchWasmReady.then(() => {
+        console.log('WASM ready for semantic search');
+      }).catch(() => {
+        console.warn('WASM not available, using fallback search');
+      });
+    }
   }
 
   toggleChat() {
@@ -53,17 +65,42 @@ export class SemanticSearchComponent {
     this.messages.push({ role: 'user', text: userQuery });
     this.query = '';
 
-    this.semantic.topN(userQuery, JSON.stringify(this.allProducts), 5)
-      .then(r => {
-        const mapped = r.map((m: Map<string, any>) => Object.fromEntries(m));
-        this.result = adapterProductArray(mapped);
-        this.messages.push({
-          role: 'bot',
-          text: `Encontré ${this.result.length} productos relacionados.`
+    // Check if WASM is available (only in browser)
+    if (isPlatformBrowser(this.platformId) && (window as any).semanticSearchWasm && this.allProducts.length > 0) {
+      // Use semantic search
+      this.semantic.topN(userQuery, JSON.stringify(this.allProducts), 5)
+        .then(r => {
+          const mapped = r.map((m: Map<string, any>) => Object.fromEntries(m));
+          this.result = adapterProductArray(mapped);
+          this.messages.push({
+            role: 'bot',
+            text: `Encontré ${this.result.length} productos relacionados con búsqueda semántica.`
+          });
+        })
+        .catch(() => {
+          this.fallbackSearch(userQuery);
         });
-      })
-      .catch(() => {
-        this.messages.push({ role: 'bot', text: 'Hubo un error procesando tu búsqueda.' });
-      });
+    } else {
+      // Fallback to simple text search
+      this.fallbackSearch(userQuery);
+    }
+  }
+
+  private fallbackSearch(query: string) {
+    // Simple text-based search as fallback
+    const results = this.allProducts.filter(product =>
+      product.name.toLowerCase().includes(query.toLowerCase()) ||
+      product.description.toLowerCase().includes(query.toLowerCase()) ||
+      product.specifications.some((spec: ProductSpecification) =>
+        spec.attributeName.toLowerCase().includes(query.toLowerCase()) ||
+        spec.value.toLowerCase().includes(query.toLowerCase())
+      )
+    ).slice(0, 5);
+
+    this.result = results;
+    this.messages.push({
+      role: 'bot',
+      text: `Encontré ${results.length} productos relacionados (búsqueda básica).`
+    });
   }
 }

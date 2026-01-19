@@ -1,29 +1,13 @@
 // endpoints.ts
 
-// 1. "Polyfill" simple para evitar el error "process is not defined"
-// Esto es seguro y común en apps modernas que corren en multiple entornos
-declare global {
-  interface Window {
-    process?: any;
-  }
-}
-
-// Si estamos en el navegador y process no existe, lo definimos como un objeto vacío
-if (typeof window !== 'undefined' && typeof (window as any).process === 'undefined') {
-  (window as any).process = { env: {} };
-}
-
-// 2. Función segura para obtener la URL
+// Función segura para obtener la URL
 function getBaseUrl(): string {
-  // En el servidor (Node.js) usa process.env real
+  // En producción/vercel/netlify, usar variable de entorno
   if (typeof process !== 'undefined' && process.env && process.env["API_BASE_URL"]) {
     return process.env["API_BASE_URL"];
   }
 
-  // En el navegador (o fallback general)
-  // IMPORTANTE: El navegador no leerá variables de entorno del .env
-  // a menos que las inyectes en el index.html o uses ng CLI env files.
-  console.error("API_Indefinida")
+  // Fallback para desarrollo local
   return 'http://localhost:3000';
 }
 
