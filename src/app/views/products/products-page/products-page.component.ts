@@ -135,13 +135,11 @@ export class ProductsPageComponent implements OnInit {
       this.productService.getProductsByApplication(item.id).subscribe(products => {
         this.products.set(products);
         this.isLoadingProducts = false;
-        console.log(this.products());
       });
     } else {
       this.productService.getProductsByCategory(item.id).subscribe(products => {
         this.products.set(products);
         this.isLoadingProducts = false;
-        console.log(this.products());
       });
     }
   }

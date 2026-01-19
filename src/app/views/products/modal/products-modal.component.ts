@@ -23,6 +23,6 @@ export class ProductsModalComponent {
   }
 
   onProductSelected($event: Product) {
-    console.log($event)
+    // Handle product selection - currently just logs the event
   }
 }
