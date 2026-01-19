@@ -1,5 +1,5 @@
 export interface ApiApplication {
-  idApplication: number;
-  type: string;
-  image?: string;
+  id: number;
+  name: string;
+  imageUrl?: string;
 }

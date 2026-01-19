@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 import {Product} from '../../models/product';
 import {BuyConcept} from '../../models/cart/buy-concept';
+import {CART, ORDERS} from '../../endpoints/endpoints';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class CartService {
   private _items = new BehaviorSubject<BuyConcept[]>([]);
   items$ = this._items.asObservable();
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
   addItem(product: Product) {
@@ -53,6 +55,20 @@ export class CartService {
 
   getLength(): number {
     return this._items.getValue().length;
+  }
+
+  // API methods (for future use)
+  saveCart(userId: string = 'default'): Observable<any> {
+    const cart = this._items.getValue();
+    return this.http.post(CART.SAVE, { userId, items: cart });
+  }
+
+  loadCart(userId: string = 'default'): Observable<BuyConcept[]> {
+    return this.http.get<BuyConcept[]>(CART.GET(userId));
+  }
+
+  createOrder(orderData: any): Observable<any> {
+    return this.http.post(ORDERS.CREATE, orderData);
   }
 
 }

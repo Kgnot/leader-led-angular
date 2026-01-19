@@ -1,5 +1,5 @@
-import {Component, inject} from '@angular/core';
-import {MockBrandsService} from '../../../services';
+import {Component, inject, signal} from '@angular/core';
+import {BrandsService} from '../../../services';
 import {Brand} from '../../../models';
 import {BrandItemComponent} from '../brand-item/brand-item.component';
 
@@ -13,11 +13,16 @@ import {BrandItemComponent} from '../brand-item/brand-item.component';
 })
 export class BrandCarousel {
 
-  private brandsService: MockBrandsService = inject(MockBrandsService);
-  protected dataBrands:Brand[] = this.brandsService.getBrands();
+  private brandsService: BrandsService = inject(BrandsService);
+  protected dataBrands = signal<Brand[]>([]);
 
-  constructor(brandsService: MockBrandsService) {
+  constructor(brandsService: BrandsService) {
     this.brandsService = brandsService;
   }
 
+  private loadBrands() {
+    this.brandsService.getBrands().subscribe(brands => {
+      this.dataBrands.set(brands);
+    });
+  }
 }

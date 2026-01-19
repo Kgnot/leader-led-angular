@@ -6,13 +6,10 @@ import {PresentationComponent} from '../../../utils/presentation/presentation.co
 import {ProductsModalComponent} from '../modal/products-modal.component';
 import {Product} from '../../../models/product';
 import {
-  MockProductService,
   RealProductsService,
   ProductService,
   ApplicationService,
-  CategoryService,
-  MockApplicationService,
-  MockCategoryService
+  CategoryService
 } from '../../../services';
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
@@ -31,11 +28,7 @@ import {FilterProductListComponent} from '../filter-inventory-list/filter-produc
     FilterProductListComponent,
   ],
 
-  providers: [
-    {provide: ApplicationService, useClass: MockApplicationService}, //  use the mock service
-    {provide: CategoryService, useClass: MockCategoryService}, // use the mock service
-    {provide: RealProductsService, useClass: MockProductService}
-  ],
+
   templateUrl: './products-page.component.html',
   styleUrl: './products-page.component.scss'
 })
@@ -56,6 +49,7 @@ export class ProductsPageComponent implements OnInit {
   protected isLoading = false;
   //isModalOpen:
   protected isModalOpen: boolean = false
+  protected isLoadingProducts: boolean = false;
   //products:
   protected products = signal<Product[]>([] as Product[]);
 
@@ -69,8 +63,12 @@ export class ProductsPageComponent implements OnInit {
 
   private loadData() {
     this.isLoading = true;
-    this.applications = this.applicationService.getApplication();
-    this.categories = this.categoryService.getCategory();
+    this.applicationService.getApplication().subscribe(apps => {
+      this.applications = apps;
+    });
+    this.categoryService.getCategory().subscribe(cats => {
+      this.categories = cats;
+    });
   }
 
   ngOnInit(): void {
@@ -93,19 +91,23 @@ export class ProductsPageComponent implements OnInit {
 
   }
 
-  //seo:
+   //seo:
 
-  private addProductCatalogSchema() {
-    this.seoSchema.addJsonLd({
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Catálogo Productos LED LeaderLed",
-        "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
-        "numberOfItems": this.productService.getTotalProducts(),
-        "itemListElement": this.productService.getProducts()
-      }
-    );
-  }
+   private addProductCatalogSchema() {
+     // Note: Schema will be updated when data loads
+     this.productService.getTotalProducts().subscribe(total => {
+       this.productService.getProducts().subscribe(products => {
+         this.seoSchema.addJsonLd({
+           "@context": "https://schema.org",
+           "@type": "ItemList",
+           "name": "Catálogo Productos LED LeaderLed",
+           "description": "Productos de iluminación LED para aplicaciones comerciales, residenciales e industriales",
+           "numberOfItems": total,
+           "itemListElement": products
+         });
+       });
+     });
+   }
 
 
   //
@@ -125,16 +127,23 @@ export class ProductsPageComponent implements OnInit {
 
   onItemSelected(item: Application | Category) {
     this.selectedItem = item;
-    //this one will be activated a modal with a lot of products which assert with the application or category selected
-    if (this.currentSection === SectionType.APPLICATION) {
-      this.products.set(this.productService.getProductsByApplication(item.id));
-      console.log(this.products())
-    } else {
-      this.products.set(this.productService.getProductsByCategory(item.id))
-      console.log(this.products())
-
-    }
+    this.isLoadingProducts = true;
+    // Open modal immediately
     this.openModal();
+    // Load products
+    if (this.currentSection === SectionType.APPLICATION) {
+      this.productService.getProductsByApplication(item.id).subscribe(products => {
+        this.products.set(products);
+        this.isLoadingProducts = false;
+        console.log(this.products());
+      });
+    } else {
+      this.productService.getProductsByCategory(item.id).subscribe(products => {
+        this.products.set(products);
+        this.isLoadingProducts = false;
+        console.log(this.products());
+      });
+    }
   }
 
 
@@ -144,6 +153,8 @@ export class ProductsPageComponent implements OnInit {
 
   closeModal() {
     this.isModalOpen = false;
+    this.isLoadingProducts = false;
+    this.products.set([]);
   }
 
 }

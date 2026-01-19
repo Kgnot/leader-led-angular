@@ -1,8 +1,8 @@
 <div class="item-card" (click)="onItemClick()">
   <div class="card-image">
-    <img [src]="item.image" [alt]="item.type" loading="lazy" />
+    <img [src]="item.imageUrl" [alt]="item.name" loading="lazy" />
   </div>
   <div class="card-content">
-    <h3>{{ item.type }}</h3>
+    <h3>{{ item.name }}</h3>
   </div>
 </div>

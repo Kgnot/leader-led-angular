@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Application, Category} from '../../../models';
 import {ItemCardComponent} from '../item-card/item-card.component';
 
@@ -8,8 +8,7 @@ import {ItemCardComponent} from '../item-card/item-card.component';
     ItemCardComponent
   ],
   templateUrl: './items-grid.component.html',
-  styleUrl: './items-grid.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './items-grid.component.scss'
 })
 export class ItemsGridComponent {
 

@@ -1,17 +1,15 @@
 import {Injectable} from '@angular/core';
-import data from '../../../assets/data/application_type.json'
+import {Observable, of} from 'rxjs';
 import {Application} from '../../models';
-import {adapterApplicationArray} from '../../adapter/adapter-functions';
+import {IApplicationService} from './interface-application.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MockApplicationService {
-  private applicationData: Application[] = adapterApplicationArray(data);
+export class MockApplicationService implements IApplicationService {
+  // Mock data removed - use real API instead
 
-  getApplication(): Application[] {
-    return this.applicationData;
+  getApplication(): Observable<Application[]> {
+    return of([]);
   }
-
-
 }

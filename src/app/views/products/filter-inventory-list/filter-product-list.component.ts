@@ -1,6 +1,6 @@
 import {Component, HostListener, inject, signal, WritableSignal} from '@angular/core';
 import {Product} from '../../../models/product';
-import {MockProductService, ProductService, RealProductsService} from '../../../services';
+import {ProductService, RealProductsService} from '../../../services';
 import {ProductCard} from '../product-card/product-card';
 import {FormsModule} from '@angular/forms';
 
@@ -12,9 +12,7 @@ import {FormsModule} from '@angular/forms';
   ],
   templateUrl: './filter-product-list.component.html',
   styleUrl: './filter-product-list.component.scss',
-  providers: [
-    {provide: RealProductsService, useClass: MockProductService}
-  ]
+
 })
 export class FilterProductListComponent {
 
@@ -31,9 +29,9 @@ export class FilterProductListComponent {
     if (!this.isModalOpen()) this.openModal();
 
     const value = (event.target as HTMLInputElement).value;
-    this.filterProductList.set(
-      this.productService.getProductsByLetter(value)
-    );
+    this.productService.getProductsByLetter(value).subscribe(products => {
+      this.filterProductList.set(products);
+    });
   }
 
   openModal() {

@@ -1,5 +1,5 @@
 export interface Application{
   id: number;
-  type:string;
-  image?: string;
+  name: string;
+  imageUrl?: string;
 }

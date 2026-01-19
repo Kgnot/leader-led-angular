@@ -1,12 +1,11 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Application, Category} from '../../../models';
 
 @Component({
   selector: 'app-item-card',
   imports: [],
   templateUrl: './item-card.component.html',
-  styleUrl: './item-card.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './item-card.component.scss'
 })
 export class ItemCardComponent {
   @Input() item!: Application | Category;

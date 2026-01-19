@@ -3,7 +3,7 @@ import {Technology} from '../models/technologies';
 
 export function adapterTechnology(technologyDto: ApiTechnology): Technology {
   return {
-    id: technologyDto.idTechnology,
+    id: technologyDto.id,
     name: technologyDto.name
   }
 }

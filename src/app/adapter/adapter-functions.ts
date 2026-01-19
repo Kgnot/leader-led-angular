@@ -5,9 +5,9 @@ import {ApiBrand} from '../dto/api-brand.dto';
 
 export function adapterApplication(data: ApiApplication): Application {
   return {
-    id: data.idApplication,
-    type: data.type,
-    image: data.image,
+    id: data.id,
+    name: data.name,
+    imageUrl: data.imageUrl,
   };
 }
 
@@ -17,9 +17,10 @@ export function adapterApplicationArray(data: ApiApplication[]):Application[] {
 
 export function adaptCategory(data: ApiCategory): Category {
   return {
-    id: data.idCategory,
-    type: data.name,
-    image: data.image,
+    id: data.id,
+    name: data.name,
+    slug: data.slug,
+    imageUrl: data.imageUrl,
   };
 }
 
@@ -30,9 +31,10 @@ export function adapterCategoryArray(data: ApiCategory[]):Category[] {
 // adapter del brands:
 export function adapterBrand(data: ApiBrand): Brand {
   return {
-    idbrand: data.idBrand,
+    id: data.id,
     name: data.name,
-    imageUrl: data.imageUrl
+    imageUrl: data.imageUrl,
+    websiteUrl: data.websiteUrl
   }
 }
 

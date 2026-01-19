@@ -37,9 +37,9 @@ export class ProductCard {
     setTimeout(() => (this.showCheck = false), 1000);
   }
 
-  getFirstImage(): string {
-    console.log(this.product?.images)
-    return this.product?.images?.[0] || '/assets/images/placeholder.jpg';
+  getMainImage(): string {
+    const mainImage = this.product?.images?.find(img => img.isMain);
+    return mainImage?.url || this.product?.images?.[0]?.url || '/assets/images/placeholder.jpg';
   }
 
 }

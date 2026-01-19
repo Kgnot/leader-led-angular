@@ -1,5 +1,6 @@
 export interface ApiCategory {
-  idCategory: number;
+  id: number;
   name: string;
-  image?: string;
+  slug: string;
+  imageUrl?: string;
 }

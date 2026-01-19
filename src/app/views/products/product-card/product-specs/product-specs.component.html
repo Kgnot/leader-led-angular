@@ -1,22 +1,10 @@
 <div class="product-specs">
-  @if (powerArray) {
+  @for (spec of specifications; track spec.attributeName) {
     <div class="spec-item">
-      <div class="spec-icon power-icon"></div>
+      <div class="spec-icon {{ spec.attributeName.toLowerCase().replace(' ', '-') }}-icon"></div>
       <div class="spec-details">
-        @for (power of powerArray; track power) {
-          <span class="spec-value">{{ power }}W</span>
-        }
-        <span class="spec-label">Potencia</span>
-      </div>
-    </div>
-  }
-
-  @if (lumens) {
-    <div class="spec-item">
-      <div class="spec-icon lumens-icon"></div>
-      <div class="spec-details">
-        <span class="spec-value">{{ lumens | number }}</span>
-        <span class="spec-label">Lúmenes</span>
+        <span class="spec-value">{{ spec.value }}{{ spec.unit }}</span>
+        <span class="spec-label">{{ spec.attributeName }}</span>
       </div>
     </div>
   }

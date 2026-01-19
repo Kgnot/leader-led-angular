@@ -1,16 +1,13 @@
 import {Component, Input} from '@angular/core';
-import {DecimalPipe} from '@angular/common';
+import {ProductSpecification} from '../../../../models/product';
 
 @Component({
   selector: 'app-product-specs',
-  imports: [
-    DecimalPipe
-  ],
+  imports: [],
   templateUrl: './product-specs.component.html',
   styleUrl: './product-specs.component.scss'
 })
 export class ProductSpecsComponent {
-  @Input() powerArray?: number[];
-  @Input() lumens?: number;
+  @Input() specifications?: ProductSpecification[];
 
 }

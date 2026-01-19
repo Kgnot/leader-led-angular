@@ -1,4 +1,4 @@
 export interface ApiTechnology{
-  idTechnology: number;
-  name:string
+  id: number;
+  name: string;
 }

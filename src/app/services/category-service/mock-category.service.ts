@@ -1,15 +1,15 @@
 import {Injectable} from '@angular/core';
-import data from '../../../assets/data/category.json'
+import {Observable, of} from 'rxjs';
 import {Category} from '../../models';
-import {adapterCategoryArray} from '../../adapter/adapter-functions';
+import {ICategoryService} from './interface-category.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MockCategoryService {
-  private categoryData: Category[] = adapterCategoryArray(data);
+export class MockCategoryService implements ICategoryService {
+  // Mock data removed - use real API instead
 
-  getCategory(): Category[] {
-    return this.categoryData;
+  getCategory(): Observable<Category[]> {
+    return of([]);
   }
 }

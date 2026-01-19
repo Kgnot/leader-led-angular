@@ -1,5 +1,5 @@
 <div class="brand-carousel-home">
-  @for (brand of dataBrands; track brand.idbrand) {
+  @for (brand of dataBrands(); track brand.id) {
     <app-brand-item [brand]="brand"></app-brand-item>
   }
 </div>

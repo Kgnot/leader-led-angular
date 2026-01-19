@@ -69,8 +69,11 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
     return items.reduce((sum, item) => sum + item.quantity, 0);
   }
 
-  getTotalPower(items: BuyConcept[]): number[][] {
-    return items.map(item => item.product.power);
+  getTotalPower(items: BuyConcept[]): string[] {
+    return items.map(item => {
+      const powerSpec = item.product.specifications.find(s => s.attributeName === 'Potencia');
+      return powerSpec ? powerSpec.value + powerSpec.unit : 'N/A';
+    });
   }
 
   onConsult() {
@@ -86,18 +89,19 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
     let message = '¡Hola! Me interesa consultar sobre los siguientes productos:\n\n';
 
     items.forEach((item, index) => {
-      message += `${index + 1}. ${item.product.marketName}\n`;
+      message += `${index + 1}. ${item.product.name}\n`;
       message += `   • Referencia: ${item.product.reference}\n`;
       message += `   • Cantidad: ${item.quantity}\n`;
-      message += `   • Potencia: ${item.product.power}W\n\n`;
+      const powerSpec = item.product.specifications.find(s => s.attributeName === 'Potencia');
+      message += `   • Potencia: ${powerSpec ? powerSpec.value + powerSpec.unit : 'N/A'}\n\n`;
     });
 
     const totalItems = this.getTotalItems(items);
-    const totalPower:number[][] = this.getTotalPower(items);
+    const totalPowers: string[] = this.getTotalPower(items);
 
     message += `Resumen:\n`;
     message += `Total de productos: ${totalItems}\n`;
-    message += `Potencia total: ${totalPower}W\n\n`;
+    message += `Potencias: ${totalPowers.join(', ')}\n\n`;
     message += `¿Podrían brindarme más información?`;
 
     return message;

@@ -17,9 +17,10 @@
   />
 </section>
 @if (isModalOpen) {
-  <app-products-modal
-    [products]="products()"
-    (close)="closeModal()"
-  >
-  </app-products-modal>
+   <app-products-modal
+     [products]="products()"
+     [loading]="isLoadingProducts"
+     (close)="closeModal()"
+   >
+   </app-products-modal>
 }

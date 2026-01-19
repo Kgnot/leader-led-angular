@@ -21,8 +21,15 @@ export class CartItemComponent {
   }
 
   getMainImage(): string {
-    return this.item.product.images && this.item.product.images.length > 0
-      ? this.item.product.images[0]
-      : 'assets/placeholder.jpg';
+    const mainImage = this.item.product.images?.find(img => img.isMain);
+    return mainImage?.url || this.item.product.images?.[0]?.url || 'assets/placeholder.jpg';
+  }
+
+  getSpecsText(): string {
+    const powerSpec = this.item.product.specifications?.find(s => s.attributeName === 'Potencia');
+    const lumensSpec = this.item.product.specifications?.find(s => s.attributeName === 'Flujo Luminoso');
+    const power = powerSpec ? `${powerSpec.value}${powerSpec.unit}` : '';
+    const lumens = lumensSpec ? `${lumensSpec.value} ${lumensSpec.unit}` : '';
+    return [power, lumens].filter(Boolean).join(' • ');
   }
 }

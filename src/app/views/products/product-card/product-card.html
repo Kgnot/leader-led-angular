@@ -4,21 +4,19 @@
 
     <div class="card-header">
       <app-product-image
-        [image]="getFirstImage()"
-        [alt]="product.marketName"
+        [image]="getMainImage()"
+        [alt]="product.name"
       />
     </div>
 
     <div class="card-body">
       <app-product-info
-        [name]="product.marketName"
-        [brandArray]="product.brands"
+        [name]="product.name"
         [reference]="product.reference"
       />
 
       <app-product-specs
-        [powerArray]="product.power"
-        [lumens]="product.lumens"
+        [specifications]="product.specifications"
       />
 
       <div class="card-footer">

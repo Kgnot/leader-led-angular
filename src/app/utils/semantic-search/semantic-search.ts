@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SemanticSearchService } from '../../services/semantic-search/semantic-search.service';
 import { ProductCard } from '../../views/products/product-card/product-card';
 import { adapterProductArray } from '../../adapter/adapter-product';
-import data from '../../../assets/data/inventory.json';
 import { NgOptimizedImage } from '@angular/common';
 import { BlackModalComponent } from '../black-modal/black-modal.component';
 import {SemanticSearchUIService} from '../../services/semantic-search-ui-service/semantic-search-uiservice';
+import { RealProductsService } from '../../services';
 
 @Component({
   selector: 'app-semantic-search',
@@ -20,8 +20,11 @@ export class SemanticSearchComponent {
   open = false;
   query = '';
   result: any[] = [];
+  private allProducts: any[] = [];
 
   messages: { role: 'user' | 'bot', text: string }[] = [];
+
+  private productService = inject(RealProductsService);
 
   constructor(
     private semantic: SemanticSearchService,
@@ -31,6 +34,11 @@ export class SemanticSearchComponent {
   ngOnInit() {
     this.semanticUI.isOpen$.subscribe(isOpen => {
       this.open = isOpen;
+    });
+
+    // Load all products for semantic search
+    this.productService.getProducts().subscribe(products => {
+      this.allProducts = products;
     });
   }
 
@@ -45,7 +53,7 @@ export class SemanticSearchComponent {
     this.messages.push({ role: 'user', text: userQuery });
     this.query = '';
 
-    this.semantic.topN(userQuery, JSON.stringify(data), 5)
+    this.semantic.topN(userQuery, JSON.stringify(this.allProducts), 5)
       .then(r => {
         const mapped = r.map((m: Map<string, any>) => Object.fromEntries(m));
         this.result = adapterProductArray(mapped);

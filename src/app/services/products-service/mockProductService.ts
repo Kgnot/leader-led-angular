@@ -1,51 +1,41 @@
 import {Injectable} from '@angular/core';
-import data from '../../../assets/data/inventory.json'
+import {Observable, of} from 'rxjs';
 import {Product} from '../../models/product';
 import {ProductService} from './interfaceProductService';
-import {adapterProductArray} from '../../adapter/adapter-product';
 
 @Injectable({
   providedIn: "root"
 })
 export class MockProductService implements ProductService {
 
+  // Mock data removed - use real API instead
 
-  private dataProducts: Product[] = adapterProductArray(data);
 
-
-  getProducts(): Product[] {
-    return this.dataProducts;
+  getProducts(): Observable<Product[]> {
+    return of([]);
   }
 
-  getTotalProducts(): number {
-    return this.dataProducts.length;
+  getTotalProducts(): Observable<number> {
+    return of(0);
   }
 
-  getProductById(id: number): Product | null {
-    return this.dataProducts
-      .find(product => product.id === id) ?? null;
+  getProductById(id: number): Observable<Product | null> {
+    return of(null);
   }
 
-  getProductsByCategory(categoryId: number): Product[] {
-    return this.dataProducts
-      .filter(product => product.categories
-        .find(category => category.id === categoryId));
+  getProductsByCategory(categoryId: number): Observable<Product[]> {
+    return of([]);
   }
 
-  getProductsByTechnology(technologyId: number): Product[] {
-    return this.dataProducts
-      .filter(product => product.technologies
-        .find(technology => technology.id === technologyId));
+  getProductsByTechnology(technologyId: number): Observable<Product[]> {
+    return of([]);
   }
 
-  getProductsByApplication(applicationId: number): Product[] {
-    return this.dataProducts
-      .filter(product => product.applications
-        .find(application => application.id === applicationId));
+  getProductsByApplication(applicationId: number): Observable<Product[]> {
+    return of([]);
   }
 
-  getProductsByLetter(name: string): Product[] {
-    return this.dataProducts
-      .filter(product => product.marketName.toLowerCase().includes(name.toLowerCase()));
+  getProductsByLetter(name: string): Observable<Product[]> {
+    return of([]);
   }
 }

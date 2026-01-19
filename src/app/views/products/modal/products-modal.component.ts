@@ -15,6 +15,7 @@ import {JsonPipe} from '@angular/common';
 })
 export class ProductsModalComponent {
   @Input() products: Product[] | undefined;
+  @Input() loading: boolean = false;
   @Output() close = new EventEmitter<void>();
 
   onClose() {

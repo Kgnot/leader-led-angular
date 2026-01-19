@@ -1,13 +1,14 @@
+import {Observable} from 'rxjs';
 import {Product} from '../../models/product';
 
 export interface ProductService {
-  getProducts: () => Product[]
-  getProductById: (id: number) => Product | null
-  getProductsByCategory: (categoryId: number) => Product[]
-  getProductsByTechnology: (technologyId: number) => Product[]
-  getProductsByApplication: (applicationId: number) => Product[]
-  getProductsByLetter: (name: string) => Product[]
+  getProducts: () => Observable<Product[]>
+  getProductById: (id: number) => Observable<Product | null>
+  getProductsByCategory: (categoryId: number) => Observable<Product[]>
+  getProductsByTechnology: (technologyId: number) => Observable<Product[]>
+  getProductsByApplication: (applicationId: number) => Observable<Product[]>
+  getProductsByLetter: (name: string) => Observable<Product[]>
 
   //
-  getTotalProducts(): number
+  getTotalProducts(): Observable<number>
 }

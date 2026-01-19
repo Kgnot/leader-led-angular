@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {Brand} from '../../../../models';
 
 @Component({
   selector: 'app-product-info',
@@ -9,6 +8,5 @@ import {Brand} from '../../../../models';
 })
 export class ProductInfoComponent {
   @Input() name!: string | undefined;
-  @Input() brandArray!: Brand[] | undefined;
   @Input() reference!: string | undefined;
 }

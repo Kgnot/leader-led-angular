@@ -2,6 +2,7 @@
 <div class="modal">
   <app-products-grid
     [products]="products"
+    [loading]="loading"
     (productSelected)="onProductSelected($event)"
   >
   </app-products-grid>
