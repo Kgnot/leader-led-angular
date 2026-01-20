@@ -1,0 +1,18 @@
+<div class="catalogs-container">
+  <h1>Catálogos de Marcas</h1>
+  <div class="cards-grid">
+    @for (brand of brands; track brand.name) {
+      <app-catalog-card
+        [brand]="brand"
+        (openCatalog)="openCatalog($event)">
+      </app-catalog-card>
+    }
+  </div>
+  @if (selectedBrand) {
+    <app-catalog-viewer-modal
+      [brand]="selectedBrand"
+      [visible]="isSidebarOpen"
+      (close)="closeCatalog()">
+    </app-catalog-viewer-modal>
+  }
+</div>

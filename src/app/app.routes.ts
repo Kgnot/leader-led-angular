@@ -30,5 +30,12 @@ export const routes: Routes = [
       import('./views/company-services/company-services-page/company-services-page.component')
         .then(m => m.CompanyServicesPageComponent),
     title: 'CompanyServicesPage'
+  },
+  {
+    path: 'catalogs',
+    loadComponent: () =>
+      import('./views/catalogs/catalogs-page/catalogs-page.component')
+        .then(m => m.CatalogsPageComponent),
+    title: 'Catálogos de Marcas'
   }
 ];
