@@ -1,0 +1,10 @@
+<div class="card" (click)="onClick()">
+  <img [src]="brand.image" [alt]="brand.name" class="card-image">
+  <div class="card-content">
+    <h3>{{ brand.name }}</h3>
+    <p>{{ brand.description }}</p>
+  </div>
+  <div class="hover-overlay">
+    <span>Ver catálogo</span>
+  </div>
+</div>

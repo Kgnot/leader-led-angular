@@ -1,0 +1,26 @@
+<div class="sidebar-catalog" [class.open]="visible">
+  <div class="catalog-header">
+    <h2>{{ brand.name }} Catálogo</h2>
+    <button class="btn-close" (click)="onClose()">✕</button>
+  </div>
+
+  <div class="catalog-content">
+    <div class="brand-info">
+      <img [src]="brand.image" [alt]="brand.name" class="brand-image">
+      <p class="brand-description">{{ brand.description }}</p>
+    </div>
+
+
+
+    <div class="pdf-section">
+      <h3>Catálogo PDF</h3>
+      <div class="pdf-container">
+        <iframe [src]="safePdfUrl" frameborder="0"></iframe>
+      </div>
+    </div>
+
+    <div class="action-section">
+      <button class="preguntar-btn" (click)="onPreguntar()">Preguntar</button>
+    </div>
+  </div>
+</div>
