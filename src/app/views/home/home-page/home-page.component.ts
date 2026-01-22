@@ -1,16 +1,16 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {MapComponent} from '../map/map.component';
-import {ContextEnterpriseComponent} from '../context-enterprise/context-enterprise.component';
 import {Meta, Title} from '@angular/platform-browser';
 import {SeoSchemaService} from '../../../services/SEO/seo-schema-service';
 import {PrincipalBannerComponent} from '../principal-banner/principal-banner.component';
 import {BrandCarousel} from '../brand-carousel/brand-carousel.component';
 import {InformativeCategoryItem} from '../informative-category-item/informative-category-item';
 import {BannerIotComponent} from '../banner-iot/banner-iot.component';
+import {PersonalizedProfiles} from '../personalized-profiles/personalized-profiles';
 
 @Component({
   selector: 'app-home',
-  imports: [MapComponent, ContextEnterpriseComponent, PrincipalBannerComponent, BrandCarousel, InformativeCategoryItem, BannerIotComponent],
+  imports: [MapComponent, PrincipalBannerComponent, BrandCarousel, InformativeCategoryItem, BannerIotComponent, PersonalizedProfiles],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })

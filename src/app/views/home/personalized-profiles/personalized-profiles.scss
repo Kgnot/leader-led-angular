@@ -1,0 +1,340 @@
+.personalized-profiles {
+  position: relative;
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #115566;
+  overflow: hidden;
+
+  .content-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1400px; // Aumentado para más espacio lateral
+    padding: 0 2rem;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-top: 0;
+      position: relative;
+      z-index: 10; // Por encima de las imágenes
+    }
+
+    >p {
+      color: #F5F5F5;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+      position: relative;
+      z-index: 10;
+    }
+
+    .showcase-container {
+      position: relative;
+      height: 600px; // Aumentado para más espacio vertical
+      width: 100%;
+      margin-bottom: 2rem;
+      overflow: visible;
+      perspective: 1500px;
+    }
+  }
+}
+
+.profile-item {
+  position: absolute;
+  // NO usar transform inicial aquí, GSAP lo manejará
+  transform-origin: center;
+  will-change: transform, opacity, left, top;
+  backface-visibility: hidden;
+  pointer-events: none;
+  z-index: 5; // Por debajo del texto pero visible
+
+  img {
+    width: 380px;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.3),
+      0 0 40px rgba(17, 85, 102, 0.2);
+    filter:
+      drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4)) brightness(1.05);
+    transition: filter 0.3s ease;
+  }
+
+  // Efecto de brillo sutil al estar activo
+  &:hover img {
+    filter:
+      drop-shadow(0 15px 40px rgba(26, 107, 122, 0.5)) brightness(1.1);
+  }
+}
+
+.profile-info {
+  text-align: center;
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  margin-top: 1rem;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10; // Siempre por encima de las imágenes
+  backdrop-filter: blur(10px);
+
+  h3 {
+    color: #115566;
+    font-size: 2.4rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+
+  .dimensions {
+    color: #1a6b7a;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .application {
+    color: #424242;
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+  }
+
+  .description {
+    color: #616161;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+}
+
+// Indicador de scroll
+.scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: bounce 2s ease-in-out infinite;
+  z-index: 10;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  &::after {
+    content: '↓';
+    font-size: 1.8rem;
+    opacity: 0.8;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-12px);
+  }
+}
+
+// Responsive - Tablet
+@media (max-width: 1024px) {
+  .personalized-profiles {
+    .content-wrapper {
+      max-width: 900px;
+
+      .showcase-container {
+        height: 500px;
+        perspective: 1200px;
+      }
+    }
+  }
+
+  .profile-item {
+    img {
+      width: 320px;
+      max-height: 220px;
+    }
+  }
+
+  .profile-info {
+    padding: 1.8rem 2rem;
+    min-height: 200px;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    .dimensions {
+      font-size: 1.3rem;
+    }
+
+    .application {
+      font-size: 1.15rem;
+    }
+
+    .description {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+// Responsive - Mobile
+@media (max-width: 768px) {
+  .personalized-profiles {
+    .content-wrapper {
+      padding: 0 1rem;
+      max-width: 100%;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      >p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .showcase-container {
+        height: 400px;
+        perspective: 1000px;
+      }
+    }
+  }
+
+  .profile-item {
+    img {
+      width: 260px;
+      max-height: 180px;
+    }
+  }
+
+  .profile-info {
+    padding: 1.5rem;
+    min-height: 180px;
+    background: rgba(255, 255, 255, 0.97);
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    .dimensions {
+      font-size: 1.2rem;
+    }
+
+    .application {
+      font-size: 1.1rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  .scroll-hint {
+    font-size: 0.9rem;
+    bottom: 2rem;
+  }
+}
+
+// Responsive - Small Mobile
+@media (max-width: 480px) {
+  .personalized-profiles {
+    .content-wrapper {
+      h2 {
+        font-size: 2rem;
+      }
+
+      >p {
+        font-size: 1.1rem;
+      }
+
+      .showcase-container {
+        height: 350px;
+        perspective: 800px;
+      }
+    }
+  }
+
+  .profile-item {
+    img {
+      width: 200px;
+      max-height: 140px;
+    }
+  }
+
+  .profile-info {
+    padding: 1rem 1.2rem;
+    min-height: 160px;
+    background: rgba(255, 255, 255, 0.98);
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    .dimensions {
+      font-size: 1.1rem;
+    }
+
+    .application {
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+    }
+  }
+
+  .scroll-hint {
+    font-size: 0.85rem;
+    bottom: 1.5rem;
+  }
+}
+
+// Preferencias de movimiento reducido
+@media (prefers-reduced-motion: reduce) {
+
+  .profile-item,
+  .profile-info,
+  .scroll-hint {
+    animation: none !important;
+  }
+
+  .scroll-hint {
+    &::after {
+      animation: none !important;
+    }
+  }
+}
