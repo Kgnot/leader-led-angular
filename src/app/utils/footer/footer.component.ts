@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {FaIconComponent, FaIconLibrary} from '@fortawesome/angular-fontawesome';
-import {faFacebookF, faInstagram, faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
-import {RouterLink} from '@angular/router';
+import { FaIconComponent, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +13,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  currentYear: number = new Date().getFullYear();
   constructor(library: FaIconLibrary) {
     library.addIcons(faFacebookF, faInstagram, faLinkedinIn);
   }
