@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #424242, #616161, #757575);
+  background: #115566;
   overflow: hidden;
 
   .content-wrapper {
@@ -29,16 +29,14 @@
       margin-bottom: 0.5rem;
       font-size: 3rem;
       font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       margin-top: 0;
     }
 
     >p {
-      color: #FAFAFA;
+      color: #F5F5F5;
       margin-bottom: 3rem;
       font-size: 1.4rem;
       font-weight: 300;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     }
 
     .showcase-container {
@@ -68,55 +66,45 @@
     max-height: 250px;
     object-fit: contain;
     border-radius: 15px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
-    transition: filter 0.3s ease;
-  }
-
-  // Efecto hover solo en el perfil visible
-  &:hover img {
-    filter: drop-shadow(0 15px 40px rgba(76, 175, 80, 0.4));
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 }
 
 .profile-info {
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 15px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 2rem;
-  min-height: 200px; // Evitar saltos al cambiar contenido
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   h3 {
-    color: #FFFFFF;
+    color: #115566;
     font-size: 2.2rem;
     margin: 0 0 0.5rem 0;
     font-weight: 600;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   }
 
   .dimensions {
-    color: #4CAF50;
+    color: #1a6b7a;
     font-size: 1.4rem;
     font-weight: 500;
     margin: 0 0 0.5rem 0;
-    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
   }
 
   .application {
-    color: #FAFAFA;
+    color: #424242;
     font-size: 1.3rem;
     font-weight: 400;
     margin: 0 0 1rem 0;
   }
 
   .description {
-    color: #BDBDBD;
+    color: #616161;
     font-size: 1.1rem;
     line-height: 1.5;
     margin: 0;
@@ -131,13 +119,12 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  animation: bounce 2s infinite;
 
   &::after {
     content: '↓';
@@ -189,6 +176,7 @@
   .profile-info {
     padding: 1.5rem;
     min-height: 180px;
+    background: rgba(255, 255, 255, 0.95);
 
     h3 {
       font-size: 1.8rem;
@@ -236,6 +224,7 @@
   .profile-info {
     padding: 1rem;
     min-height: 160px;
+    background: rgba(255, 255, 255, 0.95);
 
     h3 {
       font-size: 1.6rem;
