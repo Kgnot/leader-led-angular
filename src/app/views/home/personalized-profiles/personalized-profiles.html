@@ -3,11 +3,11 @@
     <h2>Perfiles Personalizados</h2>
     <p>Descubre cómo nuestros perfiles de iluminación se adaptan perfectamente a cualquier espacio</p>
 
-    <div class="showcase-container">
+    <div class="showcase-container" #showcaseContainer>
       @for (profile of profiles; track profile.id) {
-        <div class="profile-item" #profileItem>
-          <img [src]="profile.imageUrl" [alt]="'Perfil ' + profile.name + ' - ' + profile.dimensions" />
-        </div>
+      <div class="profile-item" #profileItem>
+        <img [src]="profile.imageUrl" [alt]="'Perfil ' + profile.name" loading="lazy" />
+      </div>
       }
     </div>
 
@@ -17,5 +17,8 @@
       <p class="application">{{currentProfile.application}}</p>
       <p class="description">{{currentProfile.description}}</p>
     </div>
+
+    <!-- Hint de scroll (opcional) -->
+    <div class="scroll-hint">Desliza para ver más</div>
   </div>
 </section>

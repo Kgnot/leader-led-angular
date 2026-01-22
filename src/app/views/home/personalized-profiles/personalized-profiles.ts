@@ -10,6 +10,11 @@ interface ProfileShowcase {
   application: string;
   imageUrl: string;
   description: string;
+  // Posiciones de entrada y salida
+  enterFrom: { x: string; y: string };
+  centerAt: { x: string; y: string };
+  exitTo: { x: string; y: string };
+  rotation: { enter: number; center: number; exit: number };
 }
 
 @Component({
@@ -45,7 +50,11 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       dimensions: '65x65 mm',
       application: 'Oficinas modernas',
       imageUrl: 'perfiles/65x65.png',
-      description: 'Ideal para espacios de trabajo contemporáneos'
+      description: 'Ideal para espacios de trabajo contemporáneos',
+      enterFrom: { x: '100%', y: '50%' },    // Entra desde la derecha
+      centerAt: { x: '75%', y: '30%' },      // Se posiciona arriba derecha
+      exitTo: { x: '-30%', y: '20%' },       // Sale por la izquierda arriba
+      rotation: { enter: 45, center: 0, exit: -25 }
     },
     {
       id: 2,
@@ -53,7 +62,11 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       dimensions: '100x50 mm',
       application: 'Centros comerciales',
       imageUrl: 'perfiles/lineal.png',
-      description: 'Perfecto para iluminación de pasillos largos'
+      description: 'Perfecto para iluminación de pasillos largos',
+      enterFrom: { x: '-30%', y: '0%' },     // Entra desde arriba izquierda
+      centerAt: { x: '25%', y: '50%' },      // Centro izquierda
+      exitTo: { x: '100%', y: '80%' },       // Sale abajo derecha
+      rotation: { enter: -30, center: 0, exit: 35 }
     },
     {
       id: 3,
@@ -61,7 +74,11 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       dimensions: '150x75 mm',
       application: 'Bodegas',
       imageUrl: 'perfiles/industrial.png',
-      description: 'Resistente para ambientes industriales exigentes'
+      description: 'Resistente para ambientes industriales exigentes',
+      enterFrom: { x: '50%', y: '-30%' },    // Entra desde arriba centro
+      centerAt: { x: '70%', y: '70%' },      // Abajo derecha
+      exitTo: { x: '0%', y: '100%' },        // Sale por abajo izquierda
+      rotation: { enter: 15, center: 0, exit: -40 }
     },
     {
       id: 4,
@@ -69,15 +86,23 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       dimensions: '80x40 mm',
       application: 'Áreas de recepción',
       imageUrl: 'perfiles/receptivo.png',
-      description: 'Elegante para primeras impresiones'
+      description: 'Elegante para primeras impresiones',
+      enterFrom: { x: '100%', y: '100%' },   // Entra desde abajo derecha
+      centerAt: { x: '30%', y: '25%' },      // Arriba izquierda
+      exitTo: { x: '-30%', y: '70%' },       // Sale centro izquierda
+      rotation: { enter: 50, center: 0, exit: -30 }
     },
     {
       id: 5,
       name: 'Perfil Suspendido',
       dimensions: '120x60 mm',
-      application: 'Espacios abiertos ',
+      application: 'Espacios abiertos',
       imageUrl: 'perfiles/suspendido.png',
-      description: 'Para iluminación colgante moderna'
+      description: 'Para iluminación colgante moderna',
+      enterFrom: { x: '-30%', y: '100%' },   // Entra desde abajo izquierda
+      centerAt: { x: '75%', y: '50%' },      // Centro derecha
+      exitTo: { x: '100%', y: '0%' },        // Sale por arriba derecha
+      rotation: { enter: -45, center: 0, exit: 40 }
     },
     {
       id: 6,
@@ -85,7 +110,11 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       dimensions: '200x100 mm',
       application: 'Diseños personalizados',
       imageUrl: 'perfiles/arquitectonico.png',
-      description: 'Soluciones a medida para proyectos únicos'
+      description: 'Soluciones a medida para proyectos únicos',
+      enterFrom: { x: '0%', y: '-30%' },     // Entra desde arriba izquierda
+      centerAt: { x: '50%', y: '50%' },      // Centro (último perfil)
+      exitTo: { x: '50%', y: '110%' },       // Sale por abajo centro
+      rotation: { enter: -20, center: 0, exit: 15 }
     }
   ];
 
@@ -127,11 +156,16 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
     // Set initial states for all profiles
     profileElements.forEach((elementRef, index) => {
       const element = elementRef.nativeElement;
+      const profile = this.profiles[index];
+
       gsap.set(element, {
-        opacity: index === 0 ? 1 : 0,
-        scale: index === 0 ? 1 : 0.7,
-        x: index === 0 ? 0 : 100,
-        rotation: index === 0 ? 0 : 20
+        opacity: index === 0 ? 0 : 0,
+        scale: index === 0 ? 0.6 : 0.5,
+        left: profile.enterFrom.x,
+        top: profile.enterFrom.y,
+        rotation: profile.rotation.enter,
+        xPercent: -50, // Mantener centrado en su posición
+        yPercent: -50
       });
     });
 
@@ -140,8 +174,8 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
       scrollTrigger: {
         trigger: section,
         start: 'top top',
-        end: '+=300%', // Más espacio para scroll suave
-        scrub: 1,
+        end: '+=400%', // Más espacio para animaciones complejas
+        scrub: 1.5, // Más suave
         pin: true,
         anticipatePin: 1,
         onUpdate: (self) => {
@@ -155,61 +189,79 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
             this.currentProfileIndex = newIndex;
             this.currentProfile = this.profiles[this.currentProfileIndex];
 
-            // Animar el cambio de información
-            gsap.fromTo(infoElement,
-              { opacity: 0, y: 20 },
-              { opacity: 1, y: 0, duration: 0.3 }
-            );
-
-            // Forzar detección de cambios
-            this.cdr.detectChanges();
+            // Animar el cambio de información con efecto de desvanecimiento
+            gsap.timeline()
+              .to(infoElement, {
+                opacity: 0,
+                y: -15,
+                duration: 0.2,
+                ease: 'power2.in'
+              })
+              .set(infoElement, { y: 15 })
+              .to(infoElement, {
+                opacity: 1,
+                y: 0,
+                duration: 0.3,
+                ease: 'power2.out',
+                onStart: () => {
+                  this.cdr.detectChanges();
+                }
+              });
           }
         }
       }
     });
 
-    // Animar cada perfil secuencialmente
+    // Animar cada perfil con su trayectoria única
     profileElements.forEach((elementRef, index) => {
       const element = elementRef.nativeElement;
+      const profile = this.profiles[index];
       const isFirst = index === 0;
       const isLast = index === profileElements.length - 1;
 
-      if (!isFirst) {
-        // Entrada del nuevo perfil
-        this.masterTimeline.fromTo(element,
-          {
-            opacity: 0,
-            scale: 0.7,
-            x: 100,
-            rotation: 20
-          },
-          {
-            opacity: 1,
-            scale: 1,
-            x: 0,
-            rotation: 0,
-            duration: 0.5,
-            ease: 'power2.out'
-          },
-          index * 0.5 // Espaciado entre animaciones
-        );
-      }
+      // Fase 1: ENTRADA - desde enterFrom hacia centerAt
+      this.masterTimeline.fromTo(element,
+        {
+          opacity: 0,
+          scale: 0.5,
+          left: profile.enterFrom.x,
+          top: profile.enterFrom.y,
+          rotation: profile.rotation.enter
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          left: profile.centerAt.x,
+          top: profile.centerAt.y,
+          rotation: profile.rotation.center,
+          duration: 1,
+          ease: 'power2.out'
+        },
+        index * 1.5 // Espaciado entre perfiles
+      );
 
-      // Mantener visible un momento
+      // Fase 2: MANTENER visible en centerAt
       if (!isLast) {
         this.masterTimeline.to(element, {
           opacity: 1,
-          duration: 0.3
+          duration: 0.5
         });
 
-        // Salida del perfil actual
+        // Fase 3: SALIDA - desde centerAt hacia exitTo
         this.masterTimeline.to(element, {
           opacity: 0,
-          scale: 0.7,
-          x: -100,
-          rotation: -20,
-          duration: 0.5,
+          scale: 0.6,
+          left: profile.exitTo.x,
+          top: profile.exitTo.y,
+          rotation: profile.rotation.exit,
+          duration: 1,
           ease: 'power2.in'
+        });
+      } else {
+        // El último perfil se mantiene visible más tiempo
+        this.masterTimeline.to(element, {
+          opacity: 1,
+          duration: 1
         });
       }
     });
@@ -221,7 +273,7 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
         opacity: 1,
         y: 0,
         duration: 0.8,
-        delay: 0.3,
+        delay: 0.5,
         ease: 'power2.out'
       }
     );
