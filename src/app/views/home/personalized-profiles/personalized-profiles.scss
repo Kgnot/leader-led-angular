@@ -1,0 +1,267 @@
+.personalized-profiles {
+  position: relative;
+  width: 100vw;
+  // IMPORTANTE: Altura suficiente para permitir scroll
+  // El pin de GSAP necesita espacio vertical
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #424242, #616161, #757575);
+  overflow: hidden;
+
+  .content-wrapper {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 1200px;
+    padding: 0 2rem;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 0;
+    }
+
+    >p {
+      color: #FAFAFA;
+      margin-bottom: 3rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .showcase-container {
+      position: relative;
+      height: 500px;
+      width: 100%;
+      margin-bottom: 2rem;
+      overflow: visible; // Permitir que elementos salgan
+      perspective: 1200px; // Añadir profundidad 3D
+    }
+  }
+}
+
+.profile-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); // Centrar el elemento
+  transform-origin: center;
+  will-change: transform, opacity;
+  backface-visibility: hidden; // Mejorar rendimiento
+  pointer-events: none; // Evitar interferencia con eventos
+
+  img {
+    width: 350px;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+  }
+
+  // Efecto hover solo en el perfil visible
+  &:hover img {
+    filter: drop-shadow(0 15px 40px rgba(76, 175, 80, 0.4));
+  }
+}
+
+.profile-info {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  min-height: 200px; // Evitar saltos al cambiar contenido
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h3 {
+    color: #FFFFFF;
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .dimensions {
+    color: #4CAF50;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+  }
+
+  .application {
+    color: #FAFAFA;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0 0 1rem 0;
+  }
+
+  .description {
+    color: #BDBDBD;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+// Indicador de scroll (opcional pero útil)
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: bounce 2s infinite;
+
+  &::after {
+    content: '↓';
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .personalized-profiles {
+    .content-wrapper {
+      padding: 0 1rem;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+
+      >p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .showcase-container {
+        height: 400px;
+        perspective: 1000px;
+      }
+    }
+  }
+
+  .profile-item {
+    img {
+      width: 280px;
+      max-height: 180px;
+    }
+  }
+
+  .profile-info {
+    padding: 1.5rem;
+    min-height: 180px;
+
+    h3 {
+      font-size: 1.8rem;
+    }
+
+    .dimensions {
+      font-size: 1.2rem;
+    }
+
+    .application {
+      font-size: 1.1rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .personalized-profiles {
+    .content-wrapper {
+      h2 {
+        font-size: 2rem;
+      }
+
+      >p {
+        font-size: 1.1rem;
+      }
+
+      .showcase-container {
+        height: 350px;
+        perspective: 800px;
+      }
+    }
+  }
+
+  .profile-item {
+    img {
+      width: 220px;
+      max-height: 140px;
+    }
+  }
+
+  .profile-info {
+    padding: 1rem;
+    min-height: 160px;
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    .dimensions {
+      font-size: 1.1rem;
+    }
+
+    .application {
+      font-size: 1rem;
+    }
+
+    .description {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Preferencias de movimiento reducido
+@media (prefers-reduced-motion: reduce) {
+
+  .profile-item,
+  .profile-info,
+  .scroll-hint {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,21 @@
+<section class="personalized-profiles" #showcaseSection>
+  <div class="content-wrapper">
+    <h2>Perfiles Personalizados</h2>
+    <p>Descubre cómo nuestros perfiles de iluminación se adaptan perfectamente a cualquier espacio</p>
+
+    <div class="showcase-container">
+      @for (profile of profiles; track profile.id) {
+        <div class="profile-item" #profileItem>
+          <img [src]="profile.imageUrl" [alt]="'Perfil ' + profile.name + ' - ' + profile.dimensions" />
+        </div>
+      }
+    </div>
+
+    <div class="profile-info">
+      <h3>{{currentProfile.name}}</h3>
+      <p class="dimensions">{{currentProfile.dimensions}}</p>
+      <p class="application">{{currentProfile.application}}</p>
+      <p class="description">{{currentProfile.description}}</p>
+    </div>
+  </div>
+</section>
