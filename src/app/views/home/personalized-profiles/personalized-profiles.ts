@@ -149,7 +149,7 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
     const infoElement = section.querySelector('.profile-info');
 
     if (!profileElements.length || !infoElement) {
-      console.warn('GSAP elements not ready');
+      // console.warn('GSAP elements not ready');
       return;
     }
 

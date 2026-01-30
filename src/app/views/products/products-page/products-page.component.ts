@@ -58,7 +58,6 @@ export class ProductsPageComponent implements OnInit {
   }
 
   private loadData() {
-    console.log('🔄 Iniciando carga de datos...');
     this.isLoading.set(true);
 
     forkJoin({
@@ -72,8 +71,6 @@ export class ProductsPageComponent implements OnInit {
       next: (result) => {
         this.applications.set(result.applications);
         this.categories.set(result.categories);
-        console.log('Applications:', this.applications());
-        console.log('Categories:', this.categories());
       },
       error: (error) => {
         console.error("Error al cargar los datos - ",error)

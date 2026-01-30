@@ -37,9 +37,9 @@
 
         // Exponerlo globalmente
         window.semanticSearchWasm = module;
-        console.log('WASM module loaded successfully');
+        // console.log('WASM module loaded successfully');
       } catch (error) {
-        console.warn('WASM module failed to load, continuing without semantic search:', error);
+        // console.warn('WASM module failed to load, continuing without semantic search:', error);
         window.semanticSearchWasm = null;
       }
     })();

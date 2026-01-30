@@ -47,7 +47,7 @@ export class SemanticSearchComponent {
     // Wait for WASM to be ready (only in browser)
     if (isPlatformBrowser(this.platformId) && (window as any).semanticSearchWasmReady) {
       (window as any).semanticSearchWasmReady.then(() => {
-        console.log('WASM ready for semantic search');
+        // console.log('WASM ready for semantic search');
       }).catch(() => {
         console.warn('WASM not available, using fallback search');
       });
