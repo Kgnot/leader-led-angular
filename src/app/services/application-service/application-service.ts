@@ -15,7 +15,6 @@ export class ApplicationService implements IApplicationService {
   constructor(private http: HttpClient) {}
 
   getApplication(): Observable<Application[]> {
-    // console.log("Get: ,  ", COMMON.GET_APPLICATIONS)
     return this.http.get<ApiApplication[]>(COMMON.GET_APPLICATIONS).pipe(
       map(adapterApplicationArray),
       catchError(() => of([]))

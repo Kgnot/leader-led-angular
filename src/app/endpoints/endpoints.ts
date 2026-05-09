@@ -26,7 +26,8 @@ export const PRODUCTS = {
     if (filters) {
       if (filters.brandId) query.append('brandId', filters.brandId.toString());
       if (filters.categoryId) query.append('categoryId', filters.categoryId.toString());
-      if (filters.technologyId) query.append('technologyId', filters.technologyId.toString());
+      if (filters.technologyId) query.append
+      ('technologyId', filters.technologyId.toString());
       if (filters.applicationId) query.append('applicationId', filters.applicationId.toString());
     }
     const queryString = query.toString();
