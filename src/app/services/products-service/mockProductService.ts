@@ -38,4 +38,12 @@ export class MockProductService implements ProductService {
   getProductsByLetter(name: string): Observable<Product[]> {
     return of([]);
   }
+
+  getProductsByApplicationName(name: string): Observable<Product[]> {
+    return of([]);
+  }
+
+  getProductsByCategoryName(name: string): Observable<Product[]> {
+    return of([]);
+  }
 }

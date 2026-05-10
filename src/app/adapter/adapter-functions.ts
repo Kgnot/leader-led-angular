@@ -5,9 +5,10 @@ import {ApiBrand} from '../dto/api-brand.dto';
 
 export function adapterApplication(data: ApiApplication): Application {
   return {
+    type: 'application',
     id: data.id,
     name: data.name,
-    imageUrl: data.imageUrl,
+    imageUrl: data.imageUrl
   };
 }
 
@@ -17,10 +18,11 @@ export function adapterApplicationArray(data: ApiApplication[]):Application[] {
 
 export function adaptCategory(data: ApiCategory): Category {
   return {
+    type: "category",
     id: data.id,
     name: data.name,
     slug: data.slug,
-    imageUrl: data.imageUrl,
+    imageUrl: data.imageUrl
   };
 }
 

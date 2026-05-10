@@ -1,0 +1,126 @@
+<div class="page">
+
+  <!-- ── HEADER ────────────────────────────────────────── -->
+  <section class="page-header">
+    <div class="header-inner">
+
+      <div class="header-text">
+        <span class="page-label">Catálogo · Aplicación</span>
+        <h1 class="page-title">{{ applicationName }}</h1>
+        <p class="page-subtitle">Explora nuestra línea de luminarias y soluciones de iluminación.</p>
+      </div>
+
+      <div class="search-bar-wrapper">
+        <div class="search-bar">
+          <span class="search-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+          </span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Buscar por nombre, referencia..."
+            [value]="searchQuery()"
+            (input)="onSearch($any($event.target).value)"
+          />
+          @if (searchQuery()) {
+            <button class="search-clear" (click)="onSearch('')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+          }
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stats-bar">
+      <span class="stat-item">
+        <strong>{{ filteredProducts().length }}</strong> productos encontrados
+      </span>
+      @if (activeFiltersCount() > 0) {
+        <button class="clear-all-btn" (click)="clearAll()">
+          Limpiar filtros ({{ activeFiltersCount() }})
+        </button>
+      }
+      <div class="view-toggle">
+        <button class="view-btn" [class.active]="viewMode() === 'grid'" (click)="viewMode.set('grid')" title="Cuadrícula">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/>
+            <rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>
+          </svg>
+        </button>
+        <button class="view-btn" [class.active]="viewMode() === 'list'" (click)="viewMode.set('list')" title="Lista">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LAYOUT ────────────────────────────────────────── -->
+  <div class="layout">
+
+    <app-products-sidebar
+      [isOpen]="sidebarOpen()"
+      [brands]="options().brands"
+      [technologies]="options().technologies"
+      [categories]="options().categories"
+      [applications]="options().applications"
+      [selectedBrands]="selectedBrands()"
+      [selectedTechnologies]="selectedTechnologies()"
+      [selectedCategories]="selectedCategories()"
+      [selectedApplications]="selectedApplications()"
+      (close)="sidebarOpen.set(false)"
+      (brandChange)="toggleBrand($event)"
+      (technologyChange)="toggleTechnology($event)"
+      (categoryChange)="toggleCategory($event)"
+      (applicationChange)="toggleApplication($event)"
+    />
+
+    <div class="content">
+
+      <app-products-toolbar
+        [selectedBrands]="selectedBrands()"
+        [selectedTechnologies]="selectedTechnologies()"
+        [selectedCategories]="selectedCategories()"
+        [selectedApplications]="selectedApplications()"
+        [sortOrder]="sortOrder()"
+        [activeLetter]="activeLetter()"
+        (openSidebar)="sidebarOpen.set(true)"
+        (brandRemove)="toggleBrand($event)"
+        (technologyRemove)="toggleTechnology($event)"
+        (categoryRemove)="toggleCategory($event)"
+        (applicationRemove)="toggleApplication($event)"
+        (sortChange)="sortOrder.set($event)"
+        (letterChange)="onLetterChange($event)"
+      />
+
+      @if (isLoading()) {
+        <div class="loading-state">Cargando productos...</div>
+      } @else if (filteredProducts().length === 0) {
+        <div class="empty-state">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <p>No se encontraron productos con los filtros aplicados.</p>
+          <button class="btn-secondary" (click)="clearAll()">Limpiar filtros</button>
+        </div>
+      } @else {
+        <app-products-grid
+          [products]="filteredProducts()"
+          [viewMode]="viewMode()"
+        />
+      }
+
+    </div>
+  </div>
+
+  @if (sidebarOpen()) {
+    <div class="sidebar-overlay" (click)="sidebarOpen.set(false)"></div>
+  }
+
+</div>

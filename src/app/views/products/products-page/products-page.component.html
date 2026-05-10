@@ -18,7 +18,7 @@
       <p>Cargando categorías y aplicaciones...</p>
     </div>
   } @else {
-    <app-items-grid
+    <app-taxonomy-grid
       [items]="getCurrentItems()"
       (itemSelected)="onItemSelected($event)"
     />

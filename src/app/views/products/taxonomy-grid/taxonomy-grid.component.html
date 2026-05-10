@@ -1,0 +1,8 @@
+<div class="items-grid">
+  @for (item of items; track item.id){
+    <app-taxonomy-card
+      [taxonomy]="item"
+      (itemSelected)="onItemSelected($event)">
+    </app-taxonomy-card>
+  }
+</div>

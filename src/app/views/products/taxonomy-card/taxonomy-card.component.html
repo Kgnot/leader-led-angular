@@ -1,0 +1,8 @@
+<div class="item-card" (click)="onItemClick()">
+  <div class="card-image">
+    <img [src]="taxonomy.imageUrl" [alt]="taxonomy.name" loading="lazy" />
+  </div>
+  <div class="card-content">
+    <h3>{{ taxonomy.name }}</h3>
+  </div>
+</div>

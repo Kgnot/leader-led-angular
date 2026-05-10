@@ -1,0 +1,152 @@
+$accent: #111111;
+$border: #e0e0e0;
+$text-main: #111111;
+$text-muted: #666666;
+$text-light: #999999;
+$font-body: var(--font-body);
+$font-display: var(--font-primary);
+
+:host { display: block; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-toggle-mobile {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  background: $accent;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.badge {
+  background: var(--color-3);
+  color: $text-main;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.active-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1;
+    padding: 0;
+    color: inherit;
+    opacity: 0.7;
+    &:hover { opacity: 1; }
+  }
+}
+
+.chip-brand { background: var(--color-10); color: $text-main; border-color: #bbb; }
+.chip-tech  { background: rgba(33,150,243,0.1); color: #1565c0; border-color: rgba(33,150,243,0.3); }
+.chip-cat   { background: rgba(255,152,0,0.1);  color: #b45309; border-color: rgba(255,152,0,0.3); }
+.chip-app   { background: rgba(76,175,80,0.1);  color: #2e7d32; border-color: rgba(76,175,80,0.3); }
+
+.sort-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.sort-label {
+  font-family: $font-body;
+  font-size: 0.82rem;
+  color: $text-muted;
+  white-space: nowrap;
+}
+
+.sort-select {
+  border: 1.5px solid $accent;
+  background: #fff;
+  font-family: $font-body;
+  font-size: 0.85rem;
+  color: $text-main;
+  padding: 0.4rem 1.8rem 0.4rem 0.65rem;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+}
+
+// Alphabet bar
+
+.alphabet-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+  border-top: 1.5px solid $border;
+  border-bottom: 1.5px solid $border;
+}
+
+.letter-btn {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: 1.5px solid transparent;
+  font-family: $font-display;
+  font-size: 0.78rem;
+  color: $text-muted;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+
+  &:hover { border-color: $accent; color: $text-main; }
+  &.active { background: $accent; border-color: $accent; color: #fff; }
+}
+
+.letter-clear {
+  color: #cc0000;
+  font-size: 0.7rem;
+  &:hover { border-color: #cc0000; color: #cc0000; }
+}
+
+@media (max-width: 1024px) {
+  .filter-toggle-mobile { display: inline-flex; }
+}
+
+@media (max-width: 768px) {
+  .letter-btn { width: 26px; height: 26px; font-size: 0.72rem; }
+}
