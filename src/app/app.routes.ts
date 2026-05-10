@@ -37,5 +37,25 @@ export const routes: Routes = [
       import('./views/catalogs/catalogs-page/catalogs-page.component')
         .then(m => m.CatalogsPageComponent),
     title: 'Catálogos de Marcas'
+  },
+  // rutas dinamicas:
+  //categoria:
+  {
+    path: 'products/applications/:slug',
+    loadComponent: () =>
+      import('./views/products/application-component/application-component')
+        .then(m => m.ApplicationComponent)
+  },
+  {
+    path: 'products/categories/:slug',
+    loadComponent: () =>
+      import('./views/products/category-component/category-component')
+        .then(m => m.CategoryComponent)
+  },
+  {
+    path: 'products/:slug',
+    loadComponent: () =>
+      import('./views/products/product-detail-component/product-detail-component')
+        .then(m => m.ProductDetailComponent)
   }
 ];

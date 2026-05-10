@@ -8,9 +8,18 @@ import {ICategoryService} from './interface-category.service';
 })
 export class MockCategoryService implements ICategoryService {
   private mockCategories: Category[] = [
-    { id: 1, name: 'Panel', slug: 'panel', imageUrl: '/products/category/panel.webp' },
-    { id: 2, name: 'Driver', slug: 'driver', imageUrl: '/products/category/driver.webp' },
-    { id: 3, name: 'Bombillo', slug: 'bombillo', imageUrl: '/products/category/bombillo.webp' }
+    {
+      id: 1, name: 'Panel', slug: 'panel', imageUrl: '/products/category/panel.webp',
+      type: "category"
+    },
+    {
+      id: 2, name: 'Driver', slug: 'driver', imageUrl: '/products/category/driver.webp',
+      type: "category"
+    },
+    {
+      id: 3, name: 'Bombillo', slug: 'bombillo', imageUrl: '/products/category/bombillo.webp',
+      type: "category"
+    }
   ];
 
   getCategory(): Observable<Category[]> {

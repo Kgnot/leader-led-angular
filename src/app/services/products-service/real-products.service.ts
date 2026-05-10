@@ -11,7 +11,8 @@ import {adapterProduct, adapterProductArray} from '../../adapter/adapter-product
   providedIn: 'root'
 })
 export class RealProductsService implements ProductService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   getTotalProducts(): Observable<number> {
     return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL()).pipe(
@@ -35,21 +36,21 @@ export class RealProductsService implements ProductService {
   }
 
   getProductsByCategory(categoryId: number): Observable<Product[]> {
-    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({ categoryId })).pipe(
+    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({categoryId})).pipe(
       map(adapterProductArray),
       catchError(() => of([]))
     );
   }
 
   getProductsByTechnology(technologyId: number): Observable<Product[]> {
-    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({ technologyId })).pipe(
+    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({technologyId})).pipe(
       map(adapterProductArray),
       catchError(() => of([]))
     );
   }
 
   getProductsByApplication(applicationId: number): Observable<Product[]> {
-    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({ applicationId })).pipe(
+    return this.http.get<ApiProduct[]>(PRODUCTS.GET_ALL({applicationId})).pipe(
       map(adapterProductArray),
       catchError(() => of([]))
     );
@@ -62,6 +63,30 @@ export class RealProductsService implements ProductService {
         p.name.toLowerCase().includes(name.toLowerCase())
       )),
       catchError(() => of([]))
+    );
+  }
+
+  getProductsByApplicationName(name: string): Observable<Product[]> {
+    return this.http.get<ApiProduct[]>(
+      PRODUCTS.GET_BY_APPLICATION_NAME(name)
+    ).pipe(
+      map(adapterProductArray),
+      catchError(error => {
+        console.error('ERROR BACKEND:', error);
+        return of([]);
+      })
+    );
+  }
+
+  getProductsByCategoryName(name: string): Observable<Product[]> {
+    return this.http.get<ApiProduct[]>(
+      PRODUCTS.GET_BY_CATEGORY_NAME(name)
+    ).pipe(
+      map(adapterProductArray),
+      catchError(error => {
+        console.error('ERROR BACKEND:', error);
+        return of([]);
+      })
     );
   }
 }

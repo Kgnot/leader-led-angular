@@ -1,0 +1,100 @@
+<aside class="sidebar" [class.sidebar-open]="isOpen()">
+
+  <div class="sidebar-header">
+    <span class="sidebar-title">Filtros</span>
+    <button class="sidebar-close" (click)="close.emit()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Marca -->
+  <div class="filter-group">
+    <button class="filter-group-header" (click)="toggleSection('brand')">
+      <span>Marca</span>
+      <svg class="chevron" [class.open]="sections['brand']"
+           width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+    @if (sections['brand']) {
+      <div class="filter-options">
+        @for (item of brands(); track item) {
+          <label class="filter-option">
+            <input type="checkbox" [checked]="selectedBrands().includes(item)" (change)="brandChange.emit(item)" />
+            <span class="check-custom"></span>
+            <span class="option-label">{{ item }}</span>
+          </label>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Tecnología -->
+  <div class="filter-group">
+    <button class="filter-group-header" (click)="toggleSection('tech')">
+      <span>Tecnología</span>
+      <svg class="chevron" [class.open]="sections['tech']"
+           width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+    @if (sections['tech']) {
+      <div class="filter-options">
+        @for (item of technologies(); track item) {
+          <label class="filter-option">
+            <input type="checkbox" [checked]="selectedTechnologies().includes(item)" (change)="technologyChange.emit(item)" />
+            <span class="check-custom"></span>
+            <span class="option-label">{{ item }}</span>
+          </label>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Categoría -->
+  <div class="filter-group">
+    <button class="filter-group-header" (click)="toggleSection('category')">
+      <span>Categoría</span>
+      <svg class="chevron" [class.open]="sections['category']"
+           width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+    @if (sections['category']) {
+      <div class="filter-options">
+        @for (item of categories(); track item) {
+          <label class="filter-option">
+            <input type="checkbox" [checked]="selectedCategories().includes(item)" (change)="categoryChange.emit(item)" />
+            <span class="check-custom"></span>
+            <span class="option-label">{{ item }}</span>
+          </label>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Aplicación -->
+  <div class="filter-group">
+    <button class="filter-group-header" (click)="toggleSection('application')">
+      <span>Aplicación</span>
+      <svg class="chevron" [class.open]="sections['application']"
+           width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="m6 9 6 6 6-6"/>
+      </svg>
+    </button>
+    @if (sections['application']) {
+      <div class="filter-options">
+        @for (item of applications(); track item) {
+          <label class="filter-option">
+            <input type="checkbox" [checked]="selectedApplications().includes(item)" (change)="applicationChange.emit(item)" />
+            <span class="check-custom"></span>
+            <span class="option-label">{{ item }}</span>
+          </label>
+        }
+      </div>
+    }
+  </div>
+
+</aside>

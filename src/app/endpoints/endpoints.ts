@@ -1,5 +1,5 @@
-import { environment } from '../../environments/environment.prod';
-// import {environment} from '../../environments/environment';
+// import { environment } from '../../environments/environment.prod';
+import {environment} from '../../environments/environment';
 
 const API_BASE_URL = environment.apiBaseUrl;
 
@@ -34,6 +34,8 @@ export const PRODUCTS = {
   },
   GET_ONE: (id: string | number) => `${API_BASE_URL}/products/${id}`,
   CREATE: `${API_BASE_URL}/products`,
+  GET_BY_APPLICATION_NAME: (name: string) => `${API_BASE_URL}/products/applications/${name}`,
+  GET_BY_CATEGORY_NAME: (name: string) => `${API_BASE_URL}/products/category/${name}`,
 };
 
 export const CART = {

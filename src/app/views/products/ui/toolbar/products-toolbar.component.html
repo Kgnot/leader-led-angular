@@ -1,0 +1,56 @@
+<div class="toolbar">
+
+  <!-- Mobile: abrir sidebar -->
+  <button class="filter-toggle-mobile" (click)="openSidebar.emit()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/>
+    </svg>
+    Filtros
+    @if (activeFiltersCount() > 0) {
+      <span class="badge">{{ activeFiltersCount() }}</span>
+    }
+  </button>
+
+  <!-- Chips de filtros activos -->
+  <div class="active-chips">
+    @for (brand of selectedBrands(); track brand) {
+      <span class="chip chip-brand">{{ brand }}<button (click)="brandRemove.emit(brand)">×</button></span>
+    }
+    @for (tech of selectedTechnologies(); track tech) {
+      <span class="chip chip-tech">{{ tech }}<button (click)="technologyRemove.emit(tech)">×</button></span>
+    }
+    @for (cat of selectedCategories(); track cat) {
+      <span class="chip chip-cat">{{ cat }}<button (click)="categoryRemove.emit(cat)">×</button></span>
+    }
+    @for (app of selectedApplications(); track app) {
+      <span class="chip chip-app">{{ app }}<button (click)="applicationRemove.emit(app)">×</button></span>
+    }
+  </div>
+
+  <!-- Sort -->
+  <div class="sort-wrapper">
+    <label class="sort-label">Ordenar:</label>
+    <select class="sort-select"
+            [value]="sortOrder()"
+            (change)="sortChange.emit($any($event.target).value)">
+      <option value="default">Relevancia</option>
+      <option value="az">Nombre A–Z</option>
+      <option value="za">Nombre Z–A</option>
+    </select>
+  </div>
+
+</div>
+
+<!-- Barra alfabética -->
+<div class="alphabet-bar">
+  @for (letter of alphabet; track letter) {
+    <button
+      class="letter-btn"
+      [class.active]="activeLetter() === letter"
+      (click)="letterChange.emit(letter)"
+    >{{ letter }}</button>
+  }
+  @if (activeLetter()) {
+    <button class="letter-btn letter-clear" (click)="letterChange.emit(null)">✕</button>
+  }
+</div>
