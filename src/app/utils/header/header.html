@@ -1,15 +1,52 @@
-<header>
+<header [class.scrolled]="isScrolled">
+
   <section class="presentation-container-header">
-    <img class="img-mgng-srch" src="/utils/magnifying_glass_search.svg" alt="Logo">
-    <img class="img-logo-header" src="/utils/leaderled-logo-colorized.svg" alt="Logo">
-    <app-carrito-compras
-      [viewSidebarCart]="showSidebarCart"
-      (toggleSidebar)="toggleSidebarCart()">
-    </app-carrito-compras>
+
+    <div class="center-header">
+      <img
+        class="img-logo-header"
+        ngSrc="/utils/leaderled-logo-colorized.svg"
+        alt="Logo"
+        height="500"
+        width="700"
+      >
+    </div>
+
+    <div class="right-header">
+      <app-carrito-compras
+        [viewSidebarCart]="showSidebarCart"
+        (toggleSidebar)="toggleSidebarCart()">
+      </app-carrito-compras>
+    </div>
   </section>
+
   <section class="nav-bar-header">
-    <app-navbar/>
+    <app-navbar />
   </section>
+
+  <section class="scrolled-row">
+    <div class="left-header">
+      <img
+        class="img-logo-header"
+        ngSrc="/utils/leaderled-logo-colorized.svg"
+        alt="Logo"
+        height="500"
+        width="700"
+      >
+    </div>
+
+    <div class="center-header">
+      <app-navbar />
+    </div>
+
+    <div class="right-header">
+      <app-carrito-compras
+        [viewSidebarCart]="showSidebarCart"
+        (toggleSidebar)="toggleSidebarCart()">
+      </app-carrito-compras>
+    </div>
+  </section>
+
 </header>
 
 <app-sidebar-cart
