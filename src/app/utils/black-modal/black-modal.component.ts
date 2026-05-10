@@ -3,9 +3,10 @@ import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-black-modal',
+  standalone: true,
   imports: [],
   templateUrl: './black-modal.component.html',
-  styleUrl: './black-modal.component.scss'
+  styleUrls: ['./black-modal.component.scss']
 })
 export class BlackModalComponent implements OnInit, OnDestroy{
   @Output() close = new EventEmitter<void>();

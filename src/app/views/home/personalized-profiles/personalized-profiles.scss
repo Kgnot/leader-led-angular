@@ -62,7 +62,7 @@
   z-index: 5; // Por debajo del texto pero visible
 
   img {
-    width: 380px;
+    //width: 380px;
     height: auto;
     max-height: 280px;
     object-fit: contain;
@@ -127,7 +127,6 @@
     color: #616161;
     font-size: 1.15rem;
     line-height: 1.6;
-    margin: 0;
     max-width: 650px;
     margin: 0 auto;
   }

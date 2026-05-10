@@ -1,7 +1,11 @@
 :host {
   display: block;
   height: 184px;
-  transition: height 0.3s ease;
+  transition: height 0.4s ease;
+
+  &.scrolled-host {
+    height: 72px;
+  }
 }
 
 header {
