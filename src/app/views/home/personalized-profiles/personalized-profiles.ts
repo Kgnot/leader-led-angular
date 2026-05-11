@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, ViewChildren, QueryList, OnInit, OnDestroy, AfterViewInit, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
-import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {CommonModule, isPlatformBrowser} from '@angular/common';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -106,8 +106,8 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
     },
     {
       id: 6,
-      name: 'Perfil Arquitectónico',
-      dimensions: '200x100 mm',
+      name: 'Perfil Decorativo',
+      dimensions: 'Circular',
       application: 'Diseños personalizados',
       imageUrl: 'perfiles/arquitectonico.png',
       description: 'Soluciones a medida para proyectos únicos',
@@ -216,7 +216,6 @@ export class PersonalizedProfiles implements OnInit, OnDestroy, AfterViewInit {
     profileElements.forEach((elementRef, index) => {
       const element = elementRef.nativeElement;
       const profile = this.profiles[index];
-      const isFirst = index === 0;
       const isLast = index === profileElements.length - 1;
 
       // Fase 1: ENTRADA - desde enterFrom hacia centerAt

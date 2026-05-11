@@ -1,3 +1,8 @@
+@if (visible) {
+  <!--  Black modal backdrop que se cierra con el sidebar -->
+  <app-black-modal (close)="closeSidebar()"></app-black-modal>
+}
+
 <div class="sidebar-cart" [class.open]="visible">
   <div class="cart-header">
     <h2>Carrito de Productos</h2>

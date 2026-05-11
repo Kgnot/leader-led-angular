@@ -148,6 +148,42 @@ $font-body: var(--font-body);
   &:hover { background: transparent; color: $accent; }
 }
 
+.btn-add-carrito {
+  background: rgba(17, 17, 17, 0.04);
+  color: $accent;
+  border: 1.5px dashed rgba(17, 17, 17, 0.25);
+  padding: 0.65rem 1rem;
+  font-family: $font-body;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  width: 100%;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.18s ease;
+
+  &::before {
+    content: "+";
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  &:hover {
+    background: rgba(17, 17, 17, 0.08);
+    border-color: $accent;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
 .tag {
   display: inline-flex;
   align-items: center;

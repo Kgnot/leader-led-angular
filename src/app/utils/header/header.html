@@ -13,15 +13,12 @@
     </div>
 
     <div class="right-header">
-      <app-carrito-compras
-        [viewSidebarCart]="showSidebarCart"
-        (toggleSidebar)="toggleSidebarCart()">
-      </app-carrito-compras>
+      <app-carrito-compras/>
     </div>
   </section>
 
   <section class="nav-bar-header">
-    <app-navbar />
+    <app-navbar/>
   </section>
 
   <section class="scrolled-row">
@@ -36,20 +33,15 @@
     </div>
 
     <div class="center-header">
-      <app-navbar />
+      <app-navbar/>
     </div>
 
     <div class="right-header">
-      <app-carrito-compras
-        [viewSidebarCart]="showSidebarCart"
-        (toggleSidebar)="toggleSidebarCart()">
-      </app-carrito-compras>
+      <app-carrito-compras/>
     </div>
   </section>
 
 </header>
 
-<app-sidebar-cart
-  [visible]="showSidebarCart"
-  (close)="showSidebarCart = false">
+<app-sidebar-cart>
 </app-sidebar-cart>

@@ -11,7 +11,6 @@ import {
   applyFilters,
   buildFilterOptions,
   toggle,
-  // EMPTY_FILTER_STATE,
   FilterState
 } from '../ui/filter.utils';
 

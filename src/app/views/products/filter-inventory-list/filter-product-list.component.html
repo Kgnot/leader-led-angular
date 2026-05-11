@@ -9,10 +9,10 @@
 
 @if (isModalOpen()) {
 
-  <!--  Puede servir el otro modal, pero tendria que maniobrar xd-->
-  <div class="overlay" (click)="closeModal()"></div>
+  <app-black-modal (close)="closeModal()"></app-black-modal>
 
   <div class="modal">
+
     @if (filterProductList().length === 0) {
       <p class="empty-message">No hay productos encontrados.</p>
     }
