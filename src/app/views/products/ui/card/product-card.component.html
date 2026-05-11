@@ -2,7 +2,7 @@
 
   <div class="card-image">
     @if (product().images.length > 0) {
-      <img [src]="product().images[0].url" [alt]="product().name" class="product-img" />
+      <img [src]="product().images[0].url" [alt]="product().name" class="product-img"/>
     } @else {
       <div class="img-placeholder">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -47,6 +47,7 @@
 
   <div class="card-footer">
     <button class="btn-primary">Ver producto</button>
+    <button class="btn-add-carrito" (click)="addToCart()">Agregar a carrito</button>
   </div>
 
 </article>
