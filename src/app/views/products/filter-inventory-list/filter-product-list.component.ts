@@ -3,15 +3,18 @@ import {Product} from '../../../models/product';
 import {ProductService, RealProductsService} from '../../../services';
 import {ProductCard} from '../product-card/product-card';
 import {FormsModule} from '@angular/forms';
+import { BlackModalComponent } from '../../../utils/black-modal/black-modal.component';
 
 @Component({
   selector: 'app-filter-inventory-list',
+  standalone: true,
   imports: [
     ProductCard,
+    BlackModalComponent,
     FormsModule,
   ],
   templateUrl: './filter-product-list.component.html',
-  styleUrl: './filter-product-list.component.scss',
+  styleUrls: ['./filter-product-list.component.scss'],
 
 })
 export class FilterProductListComponent {

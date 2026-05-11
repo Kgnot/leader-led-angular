@@ -1,60 +1,55 @@
-import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, AsyncPipe } from '@angular/common';
-import { CartService } from '../../services/cart-service/cart.service';
-import { Observable } from 'rxjs';
-import { CartItemComponent } from './cart-item/cart-item.component';
-import { MsgWsp } from '../../services';
-import { BuyConcept } from '../../models/cart/buy-concept';
-import { Product } from '../../models/product';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  Inject,
+  PLATFORM_ID
+} from '@angular/core';
+import {AsyncPipe} from '@angular/common';
+import {CartService} from '../../services/cart-service/cart.service';
+import {Observable, Subscription} from 'rxjs';
+import {CartItemComponent} from './cart-item/cart-item.component';
+import {MsgWsp} from '../../services';
+import {BuyConcept} from '../../models/cart/buy-concept';
+import {Product} from '../../models/product';
+import {SidebarCartService} from '../service/sidebar-cart.service';
+import {BlackModalComponent} from '../black-modal/black-modal.component';
 
 @Component({
   selector: 'app-sidebar-cart',
   standalone: true,
   templateUrl: './sidebar-cart.html',
-  imports: [CartItemComponent, AsyncPipe],
+  imports: [CartItemComponent, AsyncPipe, BlackModalComponent],
   styleUrl: './sidebar-cart.scss'
 })
-export class SidebarCart implements OnInit, OnChanges, OnDestroy {
-  @Input() visible = false;
-  @Output() close = new EventEmitter<void>();
-  @Output() consult = new EventEmitter<void>();
+export class SidebarCart implements OnInit, OnDestroy {
 
+  visible = false;
+  private sub!: Subscription;
   items$!: Observable<BuyConcept[]>;
 
   constructor(
+    private sidebarService: SidebarCartService,
     private cartService: CartService,
     private msgWsp: MsgWsp,
     @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.items$ = this.cartService.items$;
-    this.toggleBodyScroll(this.visible);
+    this.sub = this.sidebarService.visible$.subscribe(v => {
+      this.visible = v;
+    });
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['visible']) {
-      this.toggleBodyScroll(this.visible);
-    }
-  }
 
   ngOnDestroy(): void {
-    this.toggleBodyScroll(false);
-  }
-
-  private toggleBodyScroll(disable: boolean) {
-    if (!isPlatformBrowser(this.platformId)) return; // ⛔ proteger SSR
-
-    const body = document.body;
-    if (disable) {
-      body.classList.add('no-scroll');
-    } else {
-      body.classList.remove('no-scroll');
-    }
+    this.sub.unsubscribe();
   }
 
   closeSidebar() {
-    this.close.emit();
+    this.sidebarService.close();
   }
 
   onAddItem(product: Product) {
@@ -82,7 +77,6 @@ export class SidebarCart implements OnInit, OnChanges, OnDestroy {
 
     const message = this.buildWhatsAppMessage(items);
     this.msgWsp.sendMessage(message);
-    this.consult.emit();
   }
 
   private buildWhatsAppMessage(items: BuyConcept[]): string {
