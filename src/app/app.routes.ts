@@ -53,9 +53,9 @@ export const routes: Routes = [
         .then(m => m.CategoryComponent)
   },
   {
-    path: 'products/:slug',
+    path: 'products/:reference',
     loadComponent: () =>
-      import('./views/products/product-detail-component/product-detail-component')
-        .then(m => m.ProductDetailComponent)
+      import('./views/products/specific-item-component/specific-item-component')
+        .then(m => m.SpecificItemComponent)
   }
 ];

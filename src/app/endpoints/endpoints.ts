@@ -37,6 +37,7 @@ export const PRODUCTS = {
   CREATE: `${API_BASE_URL}/products`,
   GET_BY_APPLICATION_NAME: (name: string) => `${API_BASE_URL}/products/applications/${name}`,
   GET_BY_CATEGORY_NAME: (name: string) => `${API_BASE_URL}/products/category/${name}`,
+  GET_BY_REFERENCE: (reference: string) => `${API_BASE_URL}/products/reference/${reference}`,
 };
 
 export const CART = {

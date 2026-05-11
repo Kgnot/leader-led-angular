@@ -89,7 +89,6 @@ export class ApplicationComponent implements OnInit, OnDestroy {
       },
       error: () => this.isLoading.set(false)
     });
-
   }
 
   ngOnDestroy(): void {

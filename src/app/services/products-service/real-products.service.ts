@@ -89,4 +89,16 @@ export class RealProductsService implements ProductService {
       })
     );
   }
+
+  getProductByReference(reference: string): Observable<Product | null> {
+    return this.http.get<ApiProduct>(
+      PRODUCTS.GET_BY_REFERENCE(reference)
+    ).pipe(
+      map(adapterProduct),
+      catchError(error => {
+        console.error('ERROR BACKEND:', error);
+        return of(null);
+      })
+    );
+  }
 }

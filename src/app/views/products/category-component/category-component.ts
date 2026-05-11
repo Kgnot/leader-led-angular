@@ -78,9 +78,7 @@ export class CategoryComponent {
         this.resetFilters();
         this.products.set([]);
         this.isLoading.set(true);
-        const products = this.productService.getProductsByCategoryName(this.categoryName);
-        console.log("products", products);
-        return products;
+        return this.productService.getProductsByCategoryName(this.categoryName);
       })
     ).subscribe({
       next: products => {

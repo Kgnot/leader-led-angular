@@ -23,6 +23,11 @@ export class MockProductService implements ProductService {
     return of(null);
   }
 
+  getProductByReference(reference: string): Observable<Product | null> {
+    return of(null);
+  }
+
+
   getProductsByCategory(categoryId: number): Observable<Product[]> {
     return of([]);
   }

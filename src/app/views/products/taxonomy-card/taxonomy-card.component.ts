@@ -24,8 +24,6 @@ export class TaxonomyCardComponent {
       category: () => this.router.navigate(['/products/categories', this.taxonomy.name]),
       application: () => this.router.navigate(['/products/applications', this.taxonomy.name])
     };
-    console.log(this.taxonomy);
-
     routes[this.taxonomy.type]();
     this.itemSelected.emit(this.taxonomy);
   }
