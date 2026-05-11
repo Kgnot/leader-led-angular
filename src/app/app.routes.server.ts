@@ -30,7 +30,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Server
   },
   {
-    path: 'products/:slug',
+    path: 'products/:reference',
     renderMode: RenderMode.Server
   }
 ];

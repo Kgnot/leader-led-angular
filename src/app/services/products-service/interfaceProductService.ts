@@ -10,6 +10,8 @@ export interface ProductService {
   getProductsByApplication: (applicationId: number) => Observable<Product[]>
   getProductsByApplicationName: (name: string) => Observable<Product[]>
   getProductsByLetter: (name: string) => Observable<Product[]>
+  //
+  getProductByReference: (reference: string) => Observable<Product | null>
 
   //
   getTotalProducts(): Observable<number>
