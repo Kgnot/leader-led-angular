@@ -1,3 +1,7 @@
+@if (visible) {
+  <app-black-modal (close)="onClose()"></app-black-modal>
+}
+
 <div class="sidebar-catalog" [class.open]="visible">
   <div class="catalog-header">
     <h2>{{ brand.name }} Catálogo</h2>
@@ -10,12 +14,14 @@
       <p class="brand-description">{{ brand.description }}</p>
     </div>
 
-
-
     <div class="pdf-section">
       <h3>Catálogo PDF</h3>
       <div class="pdf-container">
         <iframe [src]="safePdfUrl" frameborder="0"></iframe>
+        <!-- Fallback: muchos navegadores móviles no renderizan PDF embebido en iframe -->
+        <a [href]="brand.pdfUrl" target="_blank" rel="noopener" class="pdf-fallback-link">
+          Abrir / descargar PDF
+        </a>
       </div>
     </div>
 

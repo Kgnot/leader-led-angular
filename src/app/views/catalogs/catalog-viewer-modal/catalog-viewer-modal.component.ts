@@ -2,11 +2,13 @@ import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges, OnIni
 import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Brand } from '../../../services/brands/brands.service';
-import { MsgWsp } from '../../../services/message-wsp-service/msg-wsp';
+import { MsgWsp } from '../../../services';
+import {BlackModalComponent} from '../../../utils/black-modal/black-modal.component';
 
 @Component({
   selector: 'app-catalog-viewer-modal',
   standalone: true,
+  imports: [BlackModalComponent],
   templateUrl: './catalog-viewer-modal.component.html',
   styleUrl: './catalog-viewer-modal.component.scss'
 })
